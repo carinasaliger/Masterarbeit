@@ -177,6 +177,19 @@ Zusätzlich nimmt die Zeit der Toucheingabe ab dem vierten Buchstaben nochmal de
 Wir modellieren zum einen eine Zeit für das Tippen der ersten 3 Buchstaben und addieren für die Vorbereitung des ersten Buchstabens eine feste Zeit V(1. Bu) hinzu, wie schon bei den Aktionen L und Inkr. (s). 
 Für alle weiteren Buchstaben gibt es eine neue geringere Durchschnittszeit, die verwendet werden soll, siehe \fref{tab:OperatorzeitenNachWechsel3_TouchGeste}.  
 
+Im nächsten Schritt werden wir unsere Aktionen für die Modalität Sprache noch vereinfachen, um unterschiedlich lange Wörter unterscheiden zu können. 
+
+Bei der Aktion Swipe Liste muss für die Modalität Sprache lediglich "`Maria Müller"' gesagt werden, um in der Liste zur richtigen Position zu scrollen. Bei der Aktion Inkr. (d) muss "`80 Prozent"' gesagt werden, um den Slider auf 80 Prozent zu verschieben. 
+Da beides die Dauer darstellt, die für 2 Wörter benötigt wird, wollen wir diese Zeiten trotz signifikanter Unterschiede zusammenfassen (siehe \fref{tab:OperatorzeitenNachWechsel3_Sprache}). 
+
+Ähnlich dazu, wollen wir die Zeiten für Touch und Sprache des Bestätigungspopups und des Ok Buttons verbinden und diese als einheitliche Aktion Bestätigung (B) zusammen fassen. Sowohl bei Touch, als auch bei Sprache gibt es keine signifikanten Unterschiede zwischen dem Popup und dem Ok Button.
+
+Als letztes fassen wir die Wortlängen M (Dorfweg) und L (Kirchengasse) zusammen. 
+Diese sind beide signifikant unterschiedlich zur Wortlänge S (Rom), aber gegenseitig weisen sie keine signifikanten Unterschiede auf. 
+Die Unterscheidung der Modalitäten wird allerdings erhalten, da unmittelbar davor der Moduswechsel statt gefunden hat. 
+Bei diesen Aktionen wird jetzt lediglich unterschieden, ob sie einsilbig oder mehrsilbig sind. 
+Diese Aktionen kürzen wir ab mit Wort(e) für ein einsilbiges Wort und Wort(m) für ein mehrsilbiges Wort (siehe \fref{tab:OperatorzeitenNachWechsel3_Sprache}).
+
 \begin{table}[ht]
   \centering
 	\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
@@ -214,7 +227,7 @@ Für alle weiteren Buchstaben gibt es eine neue geringere Durchschnittszeit, die
 		Inkr. (d)				& $\textbf{2,795}$ & $\textbf{3,365}$	& $\textbf{3,242}$ &	4,865	&	4,593	&	4,720	\\		
 									& \small{$(GT,ST)^{**}$} & \small{$(TT){**}$}	& \small{$(TT){**}$}  &	&	&		 \\	
 		\hline		
-		Best. 				& \multicolumn{3}{|c|}{0,829} &	\multicolumn{3}{|c|}{1,200}\\			
+		B 				& \multicolumn{3}{|c|}{0,829} &	\multicolumn{3}{|c|}{1,200}\\			
 		\hline
 		V(1. Bu.)
 										& {1,123} 	& {1,348}		& {1,341} 	&				& 			&  	\\
@@ -252,25 +265,15 @@ Für alle weiteren Buchstaben gibt es eine neue geringere Durchschnittszeit, die
 	\label{tab:OperatorzeitenNachWechsel3_Sprache}
 \end{table}
 
-Im nächsten Schritt werden wir unsere Aktionen für die Modalität Sprache noch vereinfachen, um unterschiedlich lange Wörter unterscheiden zu können. 
-
-Bei der Aktion Swipe Liste muss für die Modalität Sprache lediglich "`Maria Müller"' gesagt werden, um in der Liste zur richtigen Position zu scrollen. Bei der Aktion Inkr. (d) muss "`80 Prozent"' gesagt werden, um den Slider auf 80 Prozent zu verschieben. 
-Da beides die Dauer darstellt, die für 2 Wörter benötigt wird, wollen wir diese Zeiten trotz signifikanter Unterschiede zusammenfassen (siehe \fref{tab:OperatorzeitenNachWechsel3_Sprache}). 
-
-Ähnlich dazu, wollen wir die Zeiten für Touch und Sprache des Bestätigungspopups und des Ok Buttons verbinden und diese als einheitliche Aktion Bestätigung (B) zusammen fassen. Sowohl bei Touch, als auch bei Sprache gibt es keine signifikanten Unterschiede zwischen dem Popup und dem Ok Button.
-
-Als letztes fassen wir die Wortlängen M (Dorfweg) und L (Kirchengasse) zusammen. 
-Diese sind beide signifikant unterschiedlich zur Wortlänge S (Rom), aber gegenseitig weisen sie keine signifikanten Unterschiede auf. 
-Die Unterscheidung der Modalitäten wird allerdings erhalten, da unmittelbar davor der Moduswechsel statt gefunden hat. 
-Bei diesen Aktionen wird jetzt lediglich unterschieden, ob sie einsilbig oder mehrsilbig sind. 
-Diese Aktionen kürzen wir ab mit Wort(e) für ein einsilbiges Wort und Wort(m) für ein mehrsilbiges Wort (siehe \fref{tab:OperatorzeitenNachWechsel3_Sprache}).
-
 \section[Multimodales Modell]{Multimodales Modell mit Wechselkosten}
-In den letzten Schritten haben wir die gesammelten Durchschnittszeiten gruppiert und zusammengefasst. Um das Ganze übersichtlich zu einem Modell zu bekommen betrachten wir jetzt die Aktionen vorerst unimodal (TT, GG und SS) und addieren je nach Moduswechsel die dementsprechenden Wechselkosten hinzu. 
+In den letzten Schritten haben wir die gesammelten Durchschnittszeiten gruppiert und zusammengefasst. 
+Um die verschiedenen Aktionen mit ihren Interaktionszeiten übersichtlich zu einem Modell zusammenzufassen, betrachten wir ab jetzt die Aktionen vorerst unimodal (TT, GG und SS) und addieren je nach Moduswechsel die dementsprechenden Wechselkosten hinzu. 
 
-Die unimodalen Interaktionszeiten waren immer schneller als die multimodalen Interaktionszeiten. Wir verwenden diese als unsere Ausgangszeiten, indem wir sie von den Multimodalen Varianten subtrahieren. Dadurch entstehen dann die sogenannten zusätzlichen Wechselkosten. Zum Beispiel die V(L) dauert für TT 0,705 Sekunden und für die multimodale Variante GT 1,116 Sekunden. Ziehen wir die unimodale Zeit von der multimodalen ab erhalten wir die Wechselkosten von 0,411 Sekunden, die bei einem Wechsel von Geste zu Touch (W$_{GT}$) anfallen. 
+Die unimodalen Interaktionszeiten waren immer schneller als die multimodalen Interaktionszeiten. Wir verwenden diese als unsere Ausgangszeiten, indem wir sie von den Multimodalen Varianten subtrahieren. Dadurch entstehen dann die sogenannten zusätzlichen Wechselkosten. Zum Beispiel die V(L) dauert für unimodalen Touch (TT) $0,705$ Sekunden und für die multimodale Variante Geste und anschließend Touch (GT) 1,116 Sekunden. Ziehen wir die unimodale Zeit von der multimodalen ab, erhalten wir die Wechselkosten von $0,411$ Sekunden, die bei einem Wechsel von Geste zu Touch (W$_{GT}$) anfallen. 
 
-Insgesamt haben wir jetzt die DA für Touch, Geste und Sprache vor einem Moduswechsel und 10 Aktionen nach einem möglichen Moduswechsel für Touch und Geste und 4 Aktionen nach einem möglichen Moduswechsel für Sprache. Dazu kommen die jeweiligen Wechselkosten unmittelbar nach einem Wechsel.
+Wir haben die Aktion (DA) vor einem Moduswechsel für jede Modalität (ergibt 3 Aktionszeiten) und 13 Aktionen nach einem möglichen Moduswechsel für Touch und Geste (ergibt 17 Aktionszeiten) und 4 Aktionen nach einem möglichen Moduswechsel für Sprache identifiziert. 
+Dies ergibt 24 Aktionen und 20 verschiedene Arten von Wechselkosten.
+Insgesamt kommen wir auf 44 verschiedene Interaktionszeiten für unser Modell.
 
 In \fref{tab:DA} sind die zusammengefassten Zeiten der Aktion DA, die vor dem Moduswechsel stattfinden und in \fref{tab:AktionenUnimodal} sind alle Aktionen mit ihren Interaktionszeiten aufgelistet. Wird eine dieser Aktionen mit einer anderen Modalität ausgeführt als die DA müssen die Wechselkosten addiert werden.
 Die dazugehörigen Wechselkosten für multimodale Interaktionen können aus \fref{tab:Wechselkosten} entnommen werden.
@@ -407,6 +410,7 @@ Bei unserem Modell konnten wir für die Modalität Sprache nur zwischen einsilbi
 
 Die Zeit der Toucheingabe ab dem vierten Buchstaben nochmal deutlich ab (0,501 statt 0,642 Sekunden). Warum?
 die Dauer darstellt, die für 2 Wörter benötigt wird, wollen wir diese Zeiten trotz signifikanter Unterschiede zusammenfassen. Warum? Weitere Messungen notwendig?
+Wir haben mehr Aktionen als erwartet. Warum und warum machen diese Sinn?
 
 Die Aktion Direktauswahl aus sichtbaren Elementen sollte noch erweitert werden, dass sie auch nach einem Wechsel modelliert stattfinden kann. In unseren Anwendungsbeispielen kam diese Variante nicht vor und konnte somit nicht modelliert werden.
 
