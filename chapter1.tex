@@ -4,30 +4,30 @@ Ein Fahrer will im Auto vielmehr auch die Möglichkeit haben Dinge zu nutzen, we
 Zum Beispiel navigiert sich der Autofahrer zu seinem Ziel, hört Musik, findet die nächste Tankstelle in der Umgebung, nimmt ein Telefongespräch an, sowie vieles mehr.
 Somit werden in aktuellen Autos die Funktionalität von Informationssystemen im Auto (IVIS von "`In-Vehicle-Information System"') komplexer und die Inhalte umfangreicher \citep{Kern:2009}.
 Hierbei besteht die Aufgabe und Herausforderung für Designer diese Masse an Information in geeigneter Weise für den Fahrer darzustellen und nutzbar zu machen.
-Dauert eine Interaktion mit einem IVIS zu lange oder ist sie schwer zu verstehen sind dies häufig Gründe für zu große Ablenkungen beim Fahren, was Autounfälle mit sich zieht \citep{neale2005overview}.
+Dauert eine Interaktion mit einem IVIS zu lange oder ist sie schwer zu verstehen, sind dies häufig Gründe für zu große Ablenkungen beim Fahren, was Autounfälle mit sich zieht \citep{neale2005overview}.
 Daher sollten diese potenziellen Ablenkungen so minimal wie möglich gehalten werden.
 Zusätzlich ist es wichtig, dem Nutzer eine einfache und intuitive Eingabe des Informationssystems im Auto zu ermöglichen, ohne ihn gleichzeitig zu sehr visuell oder mental zu belasten. 
 
 Hinzu kommt, dass die Bedienung von jeglichen Funktionen im Auto längst nicht mehr unimodal sind.
-Unimodal bezeichnit hierbei die Interaktion zwischen Mensch und Auto, welche lediglich eine Modalität verwendet, wie zum Beispiel Sprache.
-Dagegen is es dem Fahrer möglich verschiedenste Funktionen multimodal auszuführen.
-Zu den üblichen haptischen Bedienelementen kommen somit zusätzlich Touchdisplays oder Möglichkeiten der Sprachbedienung. 
-Allerdings unterstützen aktuell Nutzungsschnittstellen im Autos nur einige Varianten von unimodaler Interaktion. 
-Ein weit verbreiteter Modus ist die Spracheingabe, die zum Beispiel oft genutzt wird, um ein Telefonanruf zu starten oder anzunehmen. 
+Unimodal bezeichnet hierbei die Interaktion zwischen Mensch und Auto, welche lediglich eine Modalität verwendet, wie zum Beispiel haptische Bedienelemente.
+Dagegen ist es dem Fahrer möglich verschiedenste Funktionen multimodal auszuführen.
+Zu den üblichen haptischen Bedienelementen kommen somit zusätzlich Touchdisplays oder Möglichkeiten der Sprachbedienung, die in Kombination betätigt werden können. 
+ 
+Eine weit verbreitete Modalität ist die Spracheingabe, die zum Beispiel oft genutzt wird, um ein Telefonanruf zu starten oder anzunehmen. Dazu wird meist ein haptischer "`Push to Talk"' Button gedrückt und anschließend der Sprachbefehl gesagt. 
 
 Ein wesentlicher Vorteil der Sprachsteuerung ist, dass die Hand nicht vom Lenkrad genommen werden muss und auch der Blick auf der Straße verbleiben kann.
-\citet{maciej2009comparison} sind der Überzeugung, dass Sprachbedienung ein Unerlässlichkeit in zukünftigen Autos sein wird.
-Allerdings ist bei einer Autofahrt mit mehreren Mitfahrern, bei der geredet und Musik gehört wird, die Sprachsteuerung ungeeignet. 
+\citet{maciej2009comparison} sind der Überzeugung, dass Sprachbedienung eine Unerlässlichkeit in zukünftigen Autos sein wird.
+Allerdings ist bei einer Autofahrt mit mehreren Mitfahrern, bei der geredet und Musik gehört wird, die Sprachsteuerung nicht immer optimal. 
 
 Auch Gestensteuerungen sind in einigen Autos bereits vertreten.
 Zum Beispiel wird im BMW 7er eine Kreisbewegung mit dem Finger nach rechts bzw. links erkannt, um die Lautstärke zu erhöhen beziehungsweise zu verringern. 
 Es ist allerdings meist nicht möglich mit einer dieser neuen Modalitäten alle vorhandenen Funktionen auszuführen.
-Sobald allerdings ein Interface seriell-redundant ist, das heisst TODO(erklaerung von serial redundant), können auch Modalitäten wie zum Beispiel Sprache, Gestik oder Touch beliebig gewechselt werden \citep{neuss_2001}. 
+Ein Interface heißt seriell-redundant, wenn Modalitäten wie zum Beispiel Sprache, Gestik oder Touch beliebig gewechselt werden können \citep{neuss_2001}. 
 
 Mit einem seriell-redundanten multimodalen Informationssystemen im Auto könnte der Fahrer selbst entscheiden in welchen Situationen welcher Modus für den jeweiligen Schritt am einfachsten und sichersten ist.
-Dies ist stellt nach \citet{Muller_2011} einen wesentlichen Vorteil im Auto dar.
+Dies stellt nach \citet{Muller_2011} einen wesentlichen Vorteil im Auto dar.
 Natürlich gibt es auch Kombinationen, welche mit bestimmten Modalitäten weniger sinnvoll sind als andere.
-Unsere Motivation ist deshalb solche multimodalen Interaktionen in IVIS zukünftig besser verstehen um diese optimal umsetzen zu können.
+Unsere Motivation ist deshalb, solche multimodalen Interaktionen in IVIS zukünftig besser zu verstehen, um diese optimal umsetzen zu können.
 Es ist wichtig die schnellsten und einfachsten Kombinationen verschiedener Modalitäten zu kennen, um dem Fahrer auch die besten Möglichkeiten in verständlicher Weise anzuzeigen.
 Damit soll die visuelle und mentale Beanspruchung für den Fahrer so gering wie möglich gehalten werden. 
 
@@ -40,13 +40,13 @@ In den letzten Jahrzehnten wurde dieses vereinfachte Konzept jedoch auch auf Ger
 Das Ziel dieser Arbeit ist es, dieses Konzept für seriell redundante multimodale IVIS zu adaptieren und anzupassen.
 Dazu entwickeln wir ein Modell, mit dem Interaktionszeiten eines multimodalen IVIS vorhergesagt und verglichen werden können.
 Wir konzentrieren uns auf die Modalitäten Touch, Sprache und Geste und auf die entstehenden Kosten bei einem Wechsel zwischen zwei Modalitäten.
-Jede Modalität besitzt ihre Vorteile und Nachteile und können geeigneter Kombination den Fahrer optimal unterstützen.
+Jede Modalität besitzt ihre Vorteile und Nachteile und kann in geeigneter Kombination den Fahrer optimal unterstützen.
 
 Im Zuge dieser Masterarbeit soll daher die Bedienung im Fahrzeug beobachtet werden, mit dem Ziel die multimodale Interaktion für künftige Systeme modellieren zu können.
-Ein besonderer Aspekt liegt dabei auf der multimodale Bedienung, bei der zum Beispiel Handlungen nacheinander oder alternativ über verschiedene Modalitäten abgewickelt werden.
+Ein besonderer Aspekt liegt dabei auf der multimodalen Bedienung, bei der zum Beispiel Handlungen nacheinander oder alternativ über verschiedene Modalitäten abgewickelt werden.
 Die Aktionen können dementsprechend unterschiedlich lang dauern und Wechselkosten enthalten.
 Basierend auf den empirisch zu ermittelnden Operatoren und Operatorzeiten soll dann ein erweitertes Modell erstellt werden, welches die Vorhersage für eine multimodale Interaktion im Fahrzeug ermöglicht.
-Zu diesem Zweck ist es sowohl unter den Aspekten der Bedienbarkeit und User Experience also auch der Fahrsicherheit und Fahrerablenkung geplant, verschiedene Untersuchungen (zum Beispiel Umfragen, Fokusgruppen, Laborstudien) durchzuführen.
+Zu diesem Zweck ist es sowohl unter den Aspekten der Bedienbarkeit und User Experience, als auch der Fahrsicherheit und Fahrerablenkung geplant, verschiedene Untersuchungen durchzuführen.
 Hierbei sollen Operatoren und Interaktionszeiten gemessen und validiert werden. 
 
 \section*{Gliederung}
@@ -56,7 +56,7 @@ Anschließend wird das ursprüngliche Keystroke-Level Modell und deren Erweiteru
 Außerdem befassen wir uns mit multimodalen Interaktionen im generellen, sowie mit multimodalen Interaktionen im automobilen Kontext. 
 
 In \textbf{Kapitel \ref{cha:Workshop}} erhalten wir in einer Brainstorming Runde einen Überblick über multimodale Interaktionen im Auto und deren bereits vorhandenen und möglichen Umsetzungsvarianten.
-Dort sammeln wir gemeinsam Ideen und gruppieren sie Schritt für Schritt bis wir auf deren Grundlage unser Konzept aufbauen können.
+Dort sammeln wir gemeinsam Ideen und gruppieren sie Schritt für Schritt, bis wir auf deren Grundlage unser Konzept aufbauen können.
 Aus den gesammelten Ideen und Ergebnissen leiten wir unsere Aktionen her und konstruieren geeignete Anwendungsbeispiele. 
 
 \textbf{Kapitel \ref{cha:Prototyp}} beschreibt die Idee und Implementierung des multimodalen Prototyps, der per Touch, Geste und Sprache, sowie je aus einer Kombination aus zwei Modalitäten bedient werden soll. 
