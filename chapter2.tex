@@ -1,5 +1,5 @@
 \chapter{Verwandte Arbeiten}\label{cha:verwandteArbeiten}
-Im folgenden Abschnitt gehen wir auf verschiedene Hintergründe und verwandten Arbeiten ein. 
+Im folgenden Kapitel gehen wir auf verschiedene Hintergründe und verwandten Arbeiten ein. 
 Zur besseren Einordnung beginnen wir mit einer Einführung des Interaktionsraumes im Fahrzeug und geben einen kurzen Überblick zu den Bereichen Design und Evaluation von Informationssystemen im Auto.
 
 Anschließend werden drei Modelle zu Vorhersage von Interaktionszeiten vorgestellt. 
@@ -8,107 +8,122 @@ Dabei gehen wir besonders auf das Konzept des Keystroke-Level Modell und Erweite
 Zuletzt befassen wir uns mit multimodalen Interaktionen, sowie mit multimodaler Interaktion im automobilen Kontext.   
 
 \section{Interaktionsraum beim Fahren}
-In heutigen Fahrzeugen wird dem Fahrer eine Vielzahl von Informationen und Entertainment Funktionen angeboten und stellen einen multifunktionalen Raum für den Fahrer dar \citep{Kern:2009}. 
-Ausgestattet mit Medienfunktionen,  Navigationssystemen, die mittels GPS ortsbezogene Funktionen bieten (nächste Raststätte finden), Kommunikationssystemen oder dem angeschlossenen Smartphone, bieten Fahrzeuge einen vernetzten Interaktionsbereich.
+In heutigen Fahrzeugen wird dem Fahrer eine Vielzahl von Informationen und Entertainment Funktionen angeboten
+Diese stellen einen multifunktionalen Raum für den Fahrer dar \citep{Kern:2009}. 
+Ausgestattet mit Medienfunktionen, Navigationssystemen, die mittels GPS ortsbezogene Funktionen bieten (zum Beispiel "`finde die nächste Raststätte"'), Kommunikationssystemen und dem angeschlossenen Smartphone, bieten Fahrzeuge auch einen vernetzten Interaktionsbereich.
 
 Beim Fahren werden drei verschiedene Aufgabenbereiche unterschieden \citep{geiser1985man}. 
 \begin{figure}
 	\centering
-		\includegraphics[width=0.5\textwidth]{img/Fahrbereiche_Tonnis.JPG}
-	\caption{Aufteilung der Bereiche von primären, sekundären und tertiären Aufgaben. Bild stammt von \citet{Tonnis:2006}}
+	\includegraphics[width=0.5\textwidth]{img/Fahrbereiche_Tonnis.JPG}
+	\caption{Aufteilung der Bereiche von primären, sekundären und tertiären Aufgaben. Bild entnommen aus \citet{Tonnis:2006}}
 	\label{fig:Fahrbereiche_Tonnis}
 \end{figure}
 Die wichtigste Aufgabe des Fahrers ist das Fahren an sich, also die sichere Fortbewegung zum Ziel. 
-Diese Aufgabe wird als Primäre Aufgabe kategorisiert und beinhaltet das Fahren, Bremsen, Spur halten und Lenken. 
-Als nächste Kategorie gibt es die Sekundäre Aufgaben, die mit Aktionen und Reaktionen die primäre Aufgabe und die Sicherheit des Fahrens unterstützen wie zum Beispiel das Blinken, oder bei Dunkelheit das Licht einzuschalten. 
-Die letzte Kategorie sind die Tertiären Aufgaben, die alles beinhalten, dass unabhängig vom Fahren gemacht werden kann wie die Bedienung von Komfortfunktionen, Kommunikationsfunktionen oder Entertainmentfunktionen, aber auch Interaktionen mit dem Beifahrer\citep{geiser1985man},\citep{Kern:2009}. 
-Diese dritte Kategorie ist ein wesentlicher Bestandteil der Ablenkungen des Fahrers und führt oft zu Unfällen \citep{neale2005overview}, \citep{rumar1988vehicle}. 
+Diese Aufgabe wird als primäre Aufgabe (Primary Task) kategorisiert und beinhaltet das Fahren, Bremsen, Spur halten und Lenken. 
+Sekundäre Aufgaben (Secondary Tasks) bilden eine weitere Kategorie.
+Sie unterstützen mit Aktionen und Reaktionen die primäre Aufgabe und die Sicherheit des Fahrens.
+Hierzu gehören zum Beispiel das Blinken oder das Einschalten des Lichts bei Dunkelheit. 
+Die letzte Kategorie sind die tertiären Aufgaben (Tertiary Tasks).
+Sie beinhalten alle Aufgaben, die unabhängig vom Fahren gemacht werden können, wie zum Beispiel die Bedienung von Komfortfunktionen, Kommunikationsfunktionen oder Entertainmentfunktionen, aber auch Interaktionen mit dem Beifahrer \citep{geiser1985man}, \citep{Kern:2009}. 
+Diese dritte Kategorie ist ein wesentlicher Bestandteil der Ablenkungen des Fahrers und führt oft zu Fahrfehlern oder sogar Unfällen \citep{neale2005overview}, \citep{rumar1988vehicle}. 
 
 \subsection[Design von IVIS]{Design von Informationssystemen im Auto}
-Beim Design von Informationssystemen im Auto (IVIS) ist es wichtig im Kopf zu behalten, wer unsere Nutzer sind. \citet{Green_2002} zeigt in seinem Handbuch, dass sich das Alter von Autofahrern von 16 bis über 90 Jahren erstreckt. 
-Über 80\% davon machen die 21-75 jährigen aus \citep{Green_2002}, was eine sehr große Reichweite widerspiegelt. 
+Beim Design von Informationssystemen im Auto (IVIS) ist es wichtig im Kopf zu behalten, wer unsere Nutzer sind.
+Das Alter von Autofahrern kann sich von 16 bis über 90 Jahren erstreckt. 
+In der Gruppe der 21-75 jährigen haben über 80\% einen Füherschein \citep{Green_2002}.
+Unsere Nutzergruppe spiegelt also einer sehr große Altersspanne wieder. 
 Es ist zu erwarten, dass die verschiedenen Altersklassen mit unterschiedlicher Performanz Aufgaben verrichten \citep{Green_2002}. 
-Um Informationssysteme möglichst für jeden leicht verständlich zu gestalten, gibt es bereits viele Richtlinien, Prinzipien und Standards, die beim Design von Informationssystemen im Auto beachtet werden sollten (siehe unter anderem Alliance of Automobile Manufacturers (AAM) \citep{driver2006statement}, National Highway Traffic Safety Administration (NHTSA) \citep{national2012visual}, European Statement of Principles (ESoP) \citep{national2012recommandationl}, ISO, Society of Automotive Engineers (SAE) oder DIN). \citet{Green:2012:USI:2390256.2390258} hat dazu auch einige der Standards verglichen und zusammengefasst.
+Um Informationssysteme möglichst für jeden leicht verständlich zu gestalten, gibt es bereits viele Richtlinien, Prinzipien und Standards.
+Beim Design von Informationssystemen im Auto beachtet sollten diese beachtet werden (siehe unter anderem Alliance of Automobile Manufacturers (AAM) \citep{driver2006statement}, National Highway Traffic Safety Administration (NHTSA) \citep{national2012visual}, European Statement of Principles (ESoP) \citep{national2012recommandationl}, ISO, Society of Automotive Engineers (SAE) oder DIN).
+\citet{Green:2012:USI:2390256.2390258} hat dazu auch einige der Standards verglichen und zusammengefasst.
 
 \subsection[Evaluation von IVIS]{Evaluation von Informationssystemen im Auto}
 Informationssysteme im Auto können das Fahrverhalten negativ durch Ablenkung beeinflussen. 
-Deshalb ist es wichtig solche Systeme zu evaluieren, um den Effekt der Ablenkung, die mentalen Belastung oder die Interaktionsdauer zu messen. 
-Dafür gibt es verschiedene Methoden ein neues System oder Prototypen zu testen. 
+Deshalb ist es wichtig solche Systeme zu evaluieren, um den Effekt der Ablenkung, die mentalen Belastung und die Interaktionsdauer zu messen. 
+Es gibt verschiedene Methoden um ein neues System oder einen neuen Prototypen zu testen. 
 \citet{burnett2008designing} zeigt in seiner Abbildung \ref{fig:Evaluation_of_in_car_computing_devices_Burnett2008} die verschiedenen Evaluationstypen von einer realen Feldstudie auf der Straße bis hin zu Laborstudien. 
 \begin{figure}
 	\centering
 		\includegraphics[width=1\textwidth]{img/Evaluation_of_in_car_computing_devices_Burnett2008.jpg}
 	\caption[Evaluierungstypen und ihre Abhängigkeit zu Validität und deren Kontrollierbarkeit]{
-Evaluierungstypen und ihre Abhängigkeit zu Validität und deren Kontrollierbarkeit. 
+Evaluierungstypen und ihre Abhängigkeit zur Validität und deren Kontrollierbarkeit. 
 Bei realen Feldstudien verhalten sich Fahrer sehr natürlich, jedoch ist es schwer die Beeinflussung von Variablen zu kontrollieren. 
-Im Gegensatz dazu können in Laborstudien die Variablen genau kontrolliert werden, jedoch ist das Fahrverhalten dann sehr konstruiert und entspricht nicht mehr dem natürlichen Verhalten. 
-Idee und Bild stammen von \citet{burnett2008designing}}
+Im Gegensatz dazu können in Laborstudien die Variablen genau kontrolliert werden, jedoch ist das Fahrverhalten konstruiert und entspricht nicht mehr dem natürlichen Verhalten. 
+Idee und Bild aus \citet{burnett2008designing}}
 	\label{fig:Evaluation_of_in_car_computing_devices_Burnett2008}
 \end{figure}
 
 In realen Feldstudien zur Untersuchung des Fahrverhaltens werden die Fahrzeuge zur Erhebung gewünschter Werte instrumentiert und über einen Zeitraum beobachtet. 
 Mit dieser Methode können unter realistischen Bedingungen Daten erhoben werden. 
 Allerdings können Variablen wie das Wetter oder die Verkehrslage nicht beeinflusst werden. 
-In einer High Fidelity Fahrsimulation können äußere Einflüsse wie die Verkehrslage kontrolliert werden, jedoch nimmt hier bereits das natürliche Fahrverhalten ab, da sich der Fahrer offensichtlich in einer Studie befindet und möglicherweise anders verhält. 
+In einer High Fidelity Fahrsimulation können äußere Einflüsse wie die Verkehrslage kontrolliert werden, jedoch nimmt hier bereits das natürliche Fahrverhalten ab, da sich der Fahrer offensichtlich in einer Studie befindet und sich möglicherweise anders verhält. 
 Außerdem sind die Kosten und der Aufwand einer solchen Studie sehr hoch. 
 Eine Low Fidelity Fahrsimulation ist einfacher umzusetzen, jedoch nimmt das realistische Fahrverhalten weiter ab. 
 Die Validität der Daten ist bei realen Feldstudien am besten und nimmt bis zu den Laborstudien immer mehr ab. 
 Umgekehrt ist die Kontrolle von Variablen und deren Wiederholbarkeit bei Laborstudien am besten und bei realen Feldstudien am unkontrollierbarsten.
 
-Bei der Wahl einer Evaluierungsmethode sollte einem die Abwägung zwischen Validität der Daten und die Kontrollierbarkeit der Variablen bewusst sein.
+Bei der Wahl einer Evaluierungsmethode sollte die Abwägung zwischen Validität der Daten und die Kontrollierbarkeit der Variablen bewusst getroffen werden.
 
-Wir stellen im Folgenden vier Varianten vor, mit denen IVIS bereits evaluiert wurden. Die 15-Sekunden Regel, der NASA Task Load Index (NASA TLX), der DALI, die Okklusions Methode und der Lane-Change Test. 
+Wir stellen im Folgenden fünf Varianten vor, mit denen IVIS bereits evaluiert wurden. Die 15-Sekunden Regel, der NASA Task Load Index (NASA TLX), der Driving Activity Load Index (DALI), die Okklusions Methode und der Lane-Change Test. 
 Diese Varianten können in einem stehenden Fahrzeug getestet werden. 
+
 \subsubsection{15-Sekunden Regel}
-Die Länge einer sekundären oder tertiären Aufgabe steht in Korrelation mit dem Unfallrisiko. Da es einfacher ist die Gesamtdauer einer Aufgabe (Total Task Time) zu bestimmen, ist die 15 Sekundenregel eine vereinfachte Annahme, dass eine Aufgabe in einem stehenden Auto nicht länger als 15 Sekunden dauern soll \citet{green199915}. 
-Diese Regel ist die Grundlage eines vom Society of Automotive Engineers (SAE) vorgeschlagenen Standards \citet{green1999sae}. 
-\citet{green1999sae} definiert die Dauer in einem stehenden Auto oder einer Attrappe gemessen, in dem der Proband nur die gewünschte Aufgabe ausführt. 
+Die Länge einer sekundären oder tertiären Aufgabe steht in Korrelation mit dem Unfallrisiko. Da es einfacher ist die Gesamtdauer einer Aufgabe (Total Task Time) zu bestimmen, ist die 15 Sekundenregel eine vereinfachte Annahme, dass eine Aufgabe in einem stehenden Auto nicht länger als 15 Sekunden dauern soll \citep{green199915}. 
+Diese Regel ist die Grundlage eines vom Society of Automotive Engineers (SAE) vorgeschlagenen Standards \citep{green1999sae}. 
+\citet{green1999sae} definiert die Dauer in einem stehenden Auto oder einer Attrappe gemessen, in dem der Proband nur die gewünschte Aufgabe ausführt. TODO(Satz kapier ich nich)
 Das entspricht der Total Task Time, die wir in unserer Studie ebenfalls verwenden werden.
+
 \subsubsection{NASA TLX}
-\citet{hart1988development} publizierte 1988 den NASA Task Load Index, dessen Verfahren die mentale Belastung in 6 Dimensionen misst. 
+\citet{hart1988development} entwickelte den NASA Task Load Index, dessen Verfahren die mentale Belastung in 6 Dimensionen misst. 
 Dafür verwenden wir die deutsche Übersetzung des NASA TLX. 
 Die Beanspruchungen werden unterschieden in: 
 \begin{enumerate}
-	\item \textbf{Geistige Anforderungen:} Wie viel geistige Anstrengung war bei der Informationsaufnahme und -verarbeitung erforderlich (zum Beispiel Denken, Entscheiden, Rechnen, Erinnern, Hinsehen, Suchen...)? 
+	\item \textbf{Geistige Anforderungen:} Wie viel geistige Anstrengung war bei der Informationsaufnahme und -verarbeitung erforderlich (zum Beispiel Denken, Entscheiden, Rechnen, Erinnern, Hinsehen, Suchen)? 
 War die Aufgabe leicht oder anspruchsvoll, einfach oder komplex, erforderte sie hohe Genauigkeit oder war sie fehlertolerant?
 	\item \textbf{Körperliche Anforderungen:} Wie viel körperliche Aktivität war erforderlich (zum Beispiel Ziehen, Drücken, Drehen, Steuern, Aktivieren)? 
 	War die Aufgabe leicht oder schwer, einfach oder anstrengend, erholsam oder mühselig?
-	\item \textbf{Zeitliche Anforderungen:} Wie viel Zeitdruck empfanden Sie hinsichtlich der Häufigkeit oder dem Takt, mit dem Aufgaben oder Aufgabenelemente auftraten? War die Abfolge langsam und geruhsam oder schnell und hektisch?
-	\item \textbf{Leistung:} Wie erfolgreich haben Sie Ihrer Meinung nach die vom Versuchsleiter (oder Ihnen selbst) gesetzten Ziele erreicht? Wie zufrieden waren Sie mit Ihrer Leistung bei der Verfolgung dieser Ziele?
-	\item \textbf{Anstrengung:} Wie hart mussten sie arbeiten, um Ihren Grad an Aufgabenerfüllung zu erreichen?
-	\item \textbf{Frustration:} Wie unsicher, entmutigt, irritiert, gestresst und verärgert (versus sicher, bestätigt, zufrieden, entspannt und zufrieden mit sich selbst) fühlten Sie sich während der Aufgabe?
+	\item \textbf{Zeitliche Anforderungen:} Wie viel Zeitdruck wurde hinsichtlich der Häufigkeit oder dem Takt, mit dem Aufgaben oder Aufgabenelemente auftraten, empfunden? War die Abfolge langsam und geruhsam oder schnell und hektisch?
+	\item \textbf{Leistung:} Wie erfolgreich wurde die vom Versuchsleiter (oder dem Probanten selbst) gesetzten Ziele erreicht? Wie zufrieden war der Probant mit seiner Leistung bei der Verfolgung dieser Ziele?
+	\item \textbf{Anstrengung:} Wie hart musste Der Probant arbeiten, um den Grad an Aufgabenerfüllung zu erreichen?
+	\item \textbf{Frustration:} Wie unsicher, entmutigt, irritiert, gestresst und verärgert (im Gegensatz zu sicher, bestätigt, entspannt und zufrieden mit sich selbst) fühlte sich der Probant während der Aufgabe?
 \end{enumerate}
-Für jede dieser Beanspruchungen soll ein Wert zwischen 1 (gering) und 20 (hoch) abgefragt werden. 
+Für jede dieser Beanspruchungen wird ein Wert zwischen 1 (gering) und 20 (hoch) abgefragt. 
 Anschließend werden im zweiten Teil noch die 6 Beanspruchungen verglichen. 
-Es werden alle mit allen einmal gegenüber gestellt und der Proband muss sich immer für die entscheiden, die aus seiner Sicht wichtiger ist. 
+Es werden alle Beanspruchungen gegenüber gestellt und der Proband muss sich immer für die Beanspruchung entscheiden, die aus seiner Sicht wichtiger ist. 
 Somit wird eine Gewichtung ermittelt, um den Grad der Belastung genauer bestimmen zu können. 
-Diese Bestimmung der Beanspruchung mit dem NASA TLX ist weitverbreitet und wird in der Forschung oft verwendet \citep{hart2006nasa}, wenn auch oft nur mit der kurzen Version (ohne den zweiten Teil). 
+Diese Bestimmung der Beanspruchung mit dem NASA TLX ist weitverbreitet und wird regelmäßig in der Forschung verwendet \citep{hart2006nasa}. 
+Teilweise wird die kurzen Version (ohne die Gewichtung durch den zweiten Teil) verwendet. 
+
 \subsubsection{DALI}
-Sehr ähnlich zu dem NASA TLX ist der DALI (Driving Activity Load Index), der sich jedoch auf den automobilen Kontext bezieht und den Beanspruchungswert mit angepasster Gewichtung berechnet. 
+Sehr ähnlich zu dem NASA TLX ist der DALI, der sich jedoch auf den automobilen Kontext bezieht und den Beanspruchungswert mit angepasster Gewichtung berechnet. 
 Der DALI evaluiert die subjektive mentale Belastung eines Fahrers während der Fahrt \citep{pauzie2008method}, mit oder ohne die Unterstützung eines Informationssystems. 
 Eine weitere Technik zur subjektiven Einschätzung der Belastung ist die "`Subjective Workload Assessment Technique"' (SWAT), siehe \citep{reid1982subjective}.
+
 \subsubsection{Okklusions Methode}
-Hier wird die visuelle Belastung von IVIS für die sekundären Aufgaben gemessen. 
+Hierbei wird die visuelle Belastung von IVIS für die sekundären Aufgaben gemessen. 
 Diese Verschluss Methode soll die Abwendung des Blickes simulieren, die zwischen der Hauptaufgabe dem Fahren und dem Blick zum IVIS passiert. 
-Die Hauptidee besteht darin die Sicht, durch Abdeckung, abwechselnd für 1,5 Sekunden zu verhindern und anschließend für 1,5 Sekunden zu öffnen. 
-Heutzutage gibt es spezielle Brillen mit denen diese Methode durchgeführt werden kann, siehe \citep{pettitt2006assessment}.
+Die Hauptidee besteht darin die Sicht, durch Abdeckung, abwechselnd für 1,5 Sekunden zu verhindern und anschließend für 1,5 Sekunden zu ermöglichen. 
+Heutzutage gibt es spezielle Brillen mit denen diese Methode durchgeführt werden kann \citep{pettitt2006assessment}.
 
 \subsubsection{Lane Change Test (LCT)}
-Dieser Test wurde in Kooperation von DaimlerChrysler und BMW von \citet{mattes2003lane} vorgestellt. 
+Dieser Test wurde in Kooperation von DaimlerChrysler und BMW von \citet{mattes2003lane} entwickelt. 
 Er misst die Performanz von Doppelaufgaben. 
 Der Proband muss eine simulierte Fahraufgabe lösen. 
 Diese ist in abstrakter Weise dargestellt und es muss auf einer dreispurigen Autobahn zwischen den Spuren gewechselt werden. 
-Wann gewechselt werden muss wird mit Schildern angezeigt und es werden daraus verschiedenen Zeiten gemessen (wie lange dauert ein Wechsel, wurde jedes mal richtig gewechselt). 
-Diese Fahraufgabe macht ein Proband zuerst ohne sekundäre Aufgabe und wird als Referenzwert verwendet. 
-Anschließend muss der Proband sowohl die Fahraufgabe bewerkstelligen, als auch das zu Testende IVIS. 
-Natürlich hat dabei die Fahraufgabe höhere Priorität.  
-Am Ende können die Zeiten verglichen werden von reiner Fahraufgabe und Fahraufgabe mit IVIS. 
-Diese Methode kommt dem natürlichen Fahrverhalten schon deutlich näher, als der 15- Sekunden Regel und der Okklusion Methode.
+Wann gewechselt werden muss wird mit Schildern angezeigt und es werden hieraus verschiedenen Zeiten gemessen (wie lange dauert ein Wechsel, wurde jedes mal richtig gewechselt). 
+Diese Fahraufgabe löst der Proband zuerst ohne sekundäre Aufgabe.
+Dies wird als Referenzwert verwendet. 
+Anschließend soll der Proband sowohl die Fahraufgabe bewerkstelligen, als auch das zu Testende IVIS. 
+Natürlich hat dabei die Fahraufgabe die höhere Priorität.  
+Am Ende können die Zeiten von reiner Fahraufgabe und Fahraufgabe mit IVIS verglichen werden. 
+Diese Methode kommt dem natürlichen Fahrverhalten deutlich näher, als der 15- Sekunden Regel und der Okklusion Methode.
 
 \section[Vorhersagemodelle]{Modelle zur Vorhersage von Interaktionszeiten}
 Zur Vorhersage von Bedien- oder Interaktionszeiten gibt es verschiedene Ansätze und Modelle. 
 In den nächsten Unterkapiteln stellen wir drei Varianten vor. 
-Dabei gehen wir vor allem auf das Keystroke-Level Modell und Erweiterungen ein. 
+Dabei gehen wir vor allem auf das Keystroke-Level Modell und dessen Erweiterungen ein. 
+
 \subsection[Fitts` Law]{Fitts` Law}
 Der Psychologe Paul Fitts entwickelte 1954 ein Gesetz, dass die Zeit berechnet, die eine eindimensionale Bewegung einer Strecke zu einem Ziel einer bestimmten Größe benötigt \citep{fitts1954information}. 
 \begin{figure}
@@ -119,15 +134,16 @@ Der Psychologe Paul Fitts entwickelte 1954 ein Gesetz, dass die Zeit berechnet, 
 	\label{fig:FittsLaw}
 \end{figure}
 
-Dieses Gesetz bekam im laufe der Zeit den Namen Fitts`Law und wurde in der Mensch-Maschine Interaktion oft verwendet. 
-Die Formel hat ihren Ursprung bei MacKenzie \citep{MacKenzie:1992} und berechnet sich folgendermaßen:
+Dieses Gesetz bekam im laufe der Zeit den Namen Fitts` Law und wurde in der Mensch-Maschine Interaktion oft verwendet. 
+Die Formel hat ihren Ursprung bei MacKenzie \citep{MacKenzie:1992} und berechnet sich wie folgt:
 \[
-MT= a+b * log_2 (\frac{D}{W}+1)
+\text{MT} = a+b * log_2 (\frac{D}{W}+1)
 \]
-Wobei MT der Bewegungszeit (movement time) entspricht, a und b sind konstanten, D ist die Distanz des Startpunkts bis zur Mitte des Zielobjekts und W stellt die Breite des Objekts dar, die entlang der Bewegungsrichtung gemessen wird. 
-Aus Fitts`Law können wir entnehmen, dass mit größer werdender Distanz sich die Zeit verlangsamt und mit größerem Zielobjekt sich die Zeit verkürzt. 
+Wobei MT der Bewegungszeit (movement time) entspricht, $a$ und $b$ Konstanten sind, $D$ die Distanz des Startpunkts bis zur Mitte des Zielobjekts ist und $W$ die Breite des Objekts darstellt, die entlang der Bewegungsrichtung gemessen wird. 
+Aus Fitts` Law können wir entnehmen, dass Distanz und Bewegungszeit positiv korreliert sind , das heißt mit größer werdender Distanz sich die Zeit verlängert.
+Zeit und Größe des Zielobjekt sind dagegen negativ korreliert, das heißt mit größer werdendem Zielobject verkürzt sich die Zeit.
 Bei Designentscheidungen kann mit Fitts` Law die schnellere Variante berechnet werden. 
-Zum Beispiel bei zwei Interfacekonzepten mit unterschiedlich großen Buttons, die unterschiedlich positioniert sind. 
+Zum Beispiel bei zwei Konzepten für eine Interface mit unterschiedlich großen Buttons, die unterschiedlich positioniert sind. 
 
 \subsection[GOMS]{GOMS}
 Ein weiteres Modell zur Vorhersage von Interaktionszeiten auf einem Bildschirm mit Eingabe durch Tastatur und Maus ist GOMS (Goal, Operator, Method und Selection Rules). 
