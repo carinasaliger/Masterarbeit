@@ -1,15 +1,15 @@
 \documentclass[11pt,a4paper,twoside]{book}
 
-% LaTeX-Umsetzung der "Richtlinien für Projekt- und Diplomarbeiten"
-% der LFE Medieninformatik, LMU München. (Autor: Richard Atterer, 27.9.2006, 23.10.2007), Bug-Fixing Mark Kaczkowski (23.6.2008)
+% LaTeX-Umsetzung der "Richtlinien fÃ¼r Projekt- und Diplomarbeiten"
+% der LFE Medieninformatik, LMU MÃ¼nchen. (Autor: Richard Atterer, 27.9.2006, 23.10.2007), Bug-Fixing Mark Kaczkowski (23.6.2008)
 
 \usepackage[T1]{fontenc} % sonst geht \hyphenation nicht mit Umlauten
-\usepackage[latin1]{inputenc} % man kann schreiben äöüß, statt "a"o"u"s
-%\usepackage[utf8]{inputenc} % wie oben, aber UTF-8 als Encoding statt ISO-8859-1 (latin1)
+%\usepackage[latin1]{inputenc} % man kann schreiben Ã¤Ã¶Ã¼ÃŸ, statt "a"o"u"s
+\usepackage[utf8]{inputenc} % wie oben, aber UTF-8 als Encoding statt ISO-8859-1 (latin1)
 \usepackage[ngerman]{babel} % deutsche Trennregeln, "Inhaltsverzeichnis" etc.
 %\usepackage{ngerman} % Alternative zum Babel-Paket oben
-\usepackage{mathptmx} % Times-Roman-Schrift (auch für mathematische Formeln)
-\usepackage{listings} % Für Codefragmente
+\usepackage{mathptmx} % Times-Roman-Schrift (auch fÃ¼r mathematische Formeln)
+\usepackage{listings} % FÃ¼r Codefragmente
 \usepackage{amsmath}
 \usepackage[round]{natbib}
 \usepackage[toctitles]{titlesec} % unterschiedlich lange Titel in Kopfzeile und Inhaltsverzeichnis
@@ -67,7 +67,7 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{\baselineskip}
 
-% Korrektes Format für Nummerierung von Abbildungen (figure) und
+% Korrektes Format fÃ¼r Nummerierung von Abbildungen (figure) und
 % Tabellen (table): <Kapitelnummer>.<Abbildungsnummer>
 \makeatletter
 \@addtoreset{figure}{section}
@@ -76,9 +76,9 @@
 \renewcommand{\thetable}{\thesection.\arabic{table}}
 \makeatother
 
-\sloppy % Damit LaTeX nicht so viel über "overfull hbox" u.Ä. meckert
+\sloppy % Damit LaTeX nicht so viel Ã¼ber "overfull hbox" u.Ã„. meckert
 
-% Ränder
+% RÃ¤nder
 \addtolength{\topmargin}{-16mm}
 \setlength{\oddsidemargin}{25mm}
 \setlength{\evensidemargin}{35mm}
@@ -93,9 +93,9 @@
 \pagenumbering{arabic} % Unsichtbare alphabetische Nummerierung
 
 \begin{center}
-\textsc{Ludwig-Maximilians-Universität München}\\
-Institut für Informatik\\
-Lehrstuhl für Mensch-Maschine-Interaktion\\
+\textsc{Ludwig-Maximilians-UniversitÃ¤t MÃ¼nchen}\\
+Institut fÃ¼r Informatik\\
+Lehrstuhl fÃ¼r Mensch-Maschine-Interaktion\\
 Prof.\ Dr.\ Andreas Butz
 
 \vspace{5cm}
@@ -116,12 +116,12 @@ Verantw. Hochschullehrer: & Prof. Dr.\ Butz
 \end{tabular}
 \cleardoublepage
 \chapter*{Zusammenfassung}
-Die Informationssysteme im Auto werden immer komplexer und können teils schon mit multimodalen Eingaben wie Sprache, Touch oder Gestik bedient werden. Diese multimodalen Interaktionen eröffnen den Nutzern neue Möglichkeiten, die passende Modalität je nach Situation und Eignung zu wählen. Jedoch muss darauf geachtet werden, die Ablenkung des Fahrers gering zu halten und die Modalitäten in geeigneten Kombinationen zu unterstützen.
+Die Informationssysteme im Auto werden immer komplexer und kÃ¶nnen teils schon mit multimodalen Eingaben wie Sprache, Touch oder Gestik bedient werden. Diese multimodalen Interaktionen erÃ¶ffnen den Nutzern neue MÃ¶glichkeiten, die passende ModalitÃ¤t je nach Situation und Eignung zu wÃ¤hlen. Jedoch muss darauf geachtet werden, die Ablenkung des Fahrers gering zu halten und die ModalitÃ¤ten in geeigneten Kombinationen zu unterstÃ¼tzen.
 
-Dadurch motiviert haben wir in dieser Arbeit ein multimodales Modell erstellt, dass Designern  multimodaler Schnittstellen helfen soll, die Interaktionszeiten verschiedener Modalitäten vorherzusagen und zu vergleichen. Dazu entwickelten wir einen Prototypen, der mit Touch, Geste und Sprache bedient werden kann. In einem Within-Subject-Design testeten 22 Probanden in vier Anwendungsbeispielen alle Kombinationen von Modalitäten mit einem Moduswechsel, sowie die unimodalen Varianten. Aus diesen Interaktionszeiten leiteten wir ein Modell mit verschiedenen Aktionszeiten für die Modalitäten Touch, Sprache und Geste ab, sowie deren Wechselkosten untereinander. 
-Unser Modell lehnt sich an das Konzept des Keystroke-Level Modells und Erweiterungen an, jedoch konzentrieren wir uns nicht auf einzelne Operatoren, sondern auf etwas gröbere Aktionen und deren Wechselkosten. 
+Dadurch motiviert haben wir in dieser Arbeit ein multimodales Modell erstellt, dass Designern  multimodaler Schnittstellen helfen soll, die Interaktionszeiten verschiedener ModalitÃ¤ten vorherzusagen und zu vergleichen. Dazu entwickelten wir einen Prototypen, der mit Touch, Geste und Sprache bedient werden kann. In einem Within-Subject-Design testeten 22 Probanden in vier Anwendungsbeispielen alle Kombinationen von ModalitÃ¤ten mit einem Moduswechsel, sowie die unimodalen Varianten. Aus diesen Interaktionszeiten leiteten wir ein Modell mit verschiedenen Aktionszeiten fÃ¼r die ModalitÃ¤ten Touch, Sprache und Geste ab, sowie deren Wechselkosten untereinander. 
+Unser Modell lehnt sich an das Konzept des Keystroke-Level Modells und Erweiterungen an, jedoch konzentrieren wir uns nicht auf einzelne Operatoren, sondern auf etwas grÃ¶bere Aktionen und deren Wechselkosten. 
 
-Zur Validierung des multimodalen Modells werden in einer weiteren Studie fünf verschiedene Aufgaben mit bis zu vier Moduswechseln untersucht und mit unserer Vorhersage des Modells verglichen. Es zeigte sich, dass unser Modell multimodale Interaktionen mit einem durchschnittlichen Vorhersagefehler von 14,746\% vorhersagen konnte.  Diese Abschätzung von multimodalen Interaktionszeiten im Auto ermöglicht es Designern bereits in einem frühen Stadium der Entwicklung zu unterstützen und hilft ihnen die Ablenkung des Fahrers zu minimieren.
+Zur Validierung des multimodalen Modells werden in einer weiteren Studie fÃ¼nf verschiedene Aufgaben mit bis zu vier Moduswechseln untersucht und mit unserer Vorhersage des Modells verglichen. Es zeigte sich, dass unser Modell multimodale Interaktionen mit einem durchschnittlichen Vorhersagefehler von 14,746\% vorhersagen konnte.  Diese AbschÃ¤tzung von multimodalen Interaktionszeiten im Auto ermÃ¶glicht es Designern bereits in einem frÃ¼hen Stadium der Entwicklung zu unterstÃ¼tzen und hilft ihnen die Ablenkung des Fahrers zu minimieren.
 
 
 
@@ -137,36 +137,36 @@ To validate our multimodal model we investigate in a second study five tasks and
 %\selectlanguage{ngerman}
 \clearpage
 \chapter*{Aufgabenstellung}
-In modernen Autos wird die Funktionalität von Informationssystemen im Auto immer komplexer. Es ist wichtig dem Nutzer eine einfache Eingabe zu ermöglichen, ohne ihn zu sehr visuell oder mental zu belasten. Durch die steigende Anzahl an eingebauter Technik in Autos wachsen auch die Eingabemöglichkeiten des Fahrers. Das Infotainmentsystem (IVIS) kann nicht nur durch haptische Knöpfe und Schalter oder Touch bedient werden, sondern auch per Sprache, Gesten und Blick. Die meisten Eingabeoptionen sind schon in aktuelle Autos integriert, jedoch ist es schwer für Entwickler der Schnittstellen, die Benutzbarkeit aller Eingabeoptionen sowie deren Kombination einzuschätzen, zum Beispiel bzgl. der Aufgabendauer.
+In modernen Autos wird die FunktionalitÃ¤t von Informationssystemen im Auto immer komplexer. Es ist wichtig dem Nutzer eine einfache Eingabe zu ermÃ¶glichen, ohne ihn zu sehr visuell oder mental zu belasten. Durch die steigende Anzahl an eingebauter Technik in Autos wachsen auch die EingabemÃ¶glichkeiten des Fahrers. Das Infotainmentsystem (IVIS) kann nicht nur durch haptische KnÃ¶pfe und Schalter oder Touch bedient werden, sondern auch per Sprache, Gesten und Blick. Die meisten Eingabeoptionen sind schon in aktuelle Autos integriert, jedoch ist es schwer fÃ¼r Entwickler der Schnittstellen, die Benutzbarkeit aller Eingabeoptionen sowie deren Kombination einzuschÃ¤tzen, zum Beispiel bzgl. der Aufgabendauer.
 
-Im Zuge dieser Masterarbeit soll daher die Bedienung im Fahrzeug beobachtet werden mit dem Ziel, die multimodale Interaktion für künftige Systeme modellieren zu können. Ein Beispiel dazu ist eine Erweiterung des Keystroke-Level Modells auf Bedienaufgaben eines multimodalen IVIS mit verschiedenen Inputmodalitäten, um damit Bedienzeiten vorhersagen zu können. Primäre Aufgabe wird dabei die Analyse und Berechnung von Interaktionszeiten. Dies erfordert einerseits eine aktuelle Bestandsaufnahme bzgl. existierender Modelle wie zum Beispiel erweiterten KLMs und deren Operatoren. Neue Bedienmöglichkeiten erfordern zudem die Ermittlung neuer Operatoren, um die Interaktion mit heutigen IVIS (zum Beispiel per Touch, Sprache und Geste) darstellen zu können. Ein besonderer Aspekt ist dabei die multimodale Bedienung, bei der zum Beispiel Handlungen nacheinander oder alternativ über verschiedene Modalitäten abgewickelt werden, die dementsprechend unterschiedlich lang dauern können (auch: Wechselzeiten / -kosten).
+Im Zuge dieser Masterarbeit soll daher die Bedienung im Fahrzeug beobachtet werden mit dem Ziel, die multimodale Interaktion fÃ¼r kÃ¼nftige Systeme modellieren zu kÃ¶nnen. Ein Beispiel dazu ist eine Erweiterung des Keystroke-Level Modells auf Bedienaufgaben eines multimodalen IVIS mit verschiedenen InputmodalitÃ¤ten, um damit Bedienzeiten vorhersagen zu kÃ¶nnen. PrimÃ¤re Aufgabe wird dabei die Analyse und Berechnung von Interaktionszeiten. Dies erfordert einerseits eine aktuelle Bestandsaufnahme bzgl. existierender Modelle wie zum Beispiel erweiterten KLMs und deren Operatoren. Neue BedienmÃ¶glichkeiten erfordern zudem die Ermittlung neuer Operatoren, um die Interaktion mit heutigen IVIS (zum Beispiel per Touch, Sprache und Geste) darstellen zu kÃ¶nnen. Ein besonderer Aspekt ist dabei die multimodale Bedienung, bei der zum Beispiel Handlungen nacheinander oder alternativ Ã¼ber verschiedene ModalitÃ¤ten abgewickelt werden, die dementsprechend unterschiedlich lang dauern kÃ¶nnen (auch: Wechselzeiten / -kosten).
 
-Basierend auf den empirisch zu ermittelnden Operatoren und Operatorzeiten soll dann ein erweitertes Modell erstellt werden, das die Vorhersage für eine multimodale Interaktion im Fahrzeug ermöglicht. Ein solches Modell kann dazu dienen, verschiedene Interaktionsmöglichkeiten zu vergleichen und erlaubt insbesondere in frühen Designphasen eine schnelle Abschätzung bzgl. der Interaktionsdauer im Fahrzeug.
+Basierend auf den empirisch zu ermittelnden Operatoren und Operatorzeiten soll dann ein erweitertes Modell erstellt werden, das die Vorhersage fÃ¼r eine multimodale Interaktion im Fahrzeug ermÃ¶glicht. Ein solches Modell kann dazu dienen, verschiedene InteraktionsmÃ¶glichkeiten zu vergleichen und erlaubt insbesondere in frÃ¼hen Designphasen eine schnelle AbschÃ¤tzung bzgl. der Interaktionsdauer im Fahrzeug.
 
-Zu diesem Zweck ist es sowohl unter den Aspekten der Bedienbarkeit, der User Experience also auch der Fahrsicherheit / Fahrerablenkung geplant, verschiedene Untersuchungen (zum Beispiel Umfragen, Fokusgruppen, Laborstudien) durchzuführen, um Operatoren und Interaktionszeiten zu messen und zu validieren. Im Speziellen sind die folgenden Schritte angedacht:
+Zu diesem Zweck ist es sowohl unter den Aspekten der Bedienbarkeit, der User Experience also auch der Fahrsicherheit / Fahrerablenkung geplant, verschiedene Untersuchungen (zum Beispiel Umfragen, Fokusgruppen, Laborstudien) durchzufÃ¼hren, um Operatoren und Interaktionszeiten zu messen und zu validieren. Im Speziellen sind die folgenden Schritte angedacht:
 
 \begin{enumerate}
 \item Recherche: Finden verwandter Arbeiten und Analyse des aktuellen Stands von IVIS \& KLM 
 \item Evtl. Nutzerbefragung/Brainstorming-Runde, um herauszufinden, welche Gesten und Sprachbefehle auf die Anwendungsbeispiele von Touch am besten geeignet sind. 
-\item Planung und Durchführung einer Studie zur Bestimmung von Interaktionszeiten multimodaler Interaktion im Fahrzeug. 
+\item Planung und DurchfÃ¼hrung einer Studie zur Bestimmung von Interaktionszeiten multimodaler Interaktion im Fahrzeug. 
 \item Ableitung eines geeigneten Modells. 
 \item Validierung des Modells in einer weiteren Studie. 
-\item Ggfs. Gestaltung eines Tools zur vereinfachten Berechnung von Interaktionen für neue Prototypen 
+\item Ggfs. Gestaltung eines Tools zur vereinfachten Berechnung von Interaktionen fÃ¼r neue Prototypen 
 \end{enumerate}
 
-\vfill % Sorgt dafür, dass das Folgende an das Seitenende rutscht
+\vfill % Sorgt dafÃ¼r, dass das Folgende an das Seitenende rutscht
 
-\noindent Ich erkläre hiermit, dass ich die vorliegende Arbeit
-selbstständig angefertigt, alle Zitate als solche kenntlich gemacht
+\noindent Ich erklÃ¤re hiermit, dass ich die vorliegende Arbeit
+selbststÃ¤ndig angefertigt, alle Zitate als solche kenntlich gemacht
 sowie alle benutzten Quellen und Hilfsmittel angegeben habe.
 
-\bigskip\noindent München, \today
+\bigskip\noindent MÃ¼nchen, \today
 
 \vspace{4ex}\noindent\makebox[7cm]{\dotfill}
 
 \cleardoublepage
 \pagestyle{fancy}
-%\pagenumbering{roman} % Römische Seitenzahlen
+%\pagenumbering{roman} % RÃ¶mische Seitenzahlen
 %\setcounter{page}{1}
 
 % Inhaltsverzeichnis erzeugen
@@ -174,7 +174,7 @@ sowie alle benutzten Quellen und Hilfsmittel angegeben habe.
 \tableofcontents
 \setlength{\parskip}{\baselineskip}
 
-%Abbildungsverzeichnis erzeugen - normalerweise nicht nötig
+%Abbildungsverzeichnis erzeugen - normalerweise nicht nÃ¶tig
 %\cleardoublepage
 %\listoffigures
 
@@ -183,7 +183,7 @@ sowie alle benutzten Quellen und Hilfsmittel angegeben habe.
 % Arabische Seitenzahlen
 %\pagenumbering{arabic}
 %\setcounter{page}{1}
-% Geändertes Format für Seitenränder, arabische Seitenzahlen
+% GeÃ¤ndertes Format fÃ¼r SeitenrÃ¤nder, arabische Seitenzahlen
 \fancyhead[LE,RO]{\rightmark}
 \fancyhead[LO,RE]{\leftmark}
 \fancyfoot[LE,RO]{\thepage}
@@ -204,9 +204,9 @@ sowie alle benutzten Quellen und Hilfsmittel angegeben habe.
 
 \chapter{Danksagung}\label{cha:Danksagung}
 
-Besonderer Dank geht an meine Betreuer Bastian Pfleging und Florian Roider, die mich während dieser Arbeit mit Rat und Tat unterstützt haben. Mein Dank geht natürlich auch an die insgesamt 32 Teilnehmer der zwei Nutzerstudien. Außerdem möchte ich meinem Mann (Sascha Rothe) für seine mentale Unterstützung und spontane Brainstorming Runden danken. 
+Besonderer Dank geht an meine Betreuer Bastian Pfleging und Florian Roider, die mich wÃ¤hrend dieser Arbeit mit Rat und Tat unterstÃ¼tzt haben. Mein Dank geht natÃ¼rlich auch an die insgesamt 32 Teilnehmer der zwei Nutzerstudien. AuÃŸerdem mÃ¶chte ich meinem Mann (Sascha Rothe) fÃ¼r seine mentale UnterstÃ¼tzung und spontane Brainstorming Runden danken. 
 
-Für den Prototypen wurden verschiedene Icon von www.flaticon.com verwendet. 
+FÃ¼r den Prototypen wurden verschiedene Icon von www.flaticon.com verwendet. 
 \begin{itemize}
 	\item Daumen, Musik Icon: made by Gregor Cresnar (http://www.flaticon.com/authors/gregor-cresnar).
 	\item Touch Icon: made by Freepik (http://www.flaticon.com/authors/freepik).
@@ -238,7 +238,7 @@ Flaticon is licensed by Creative Commons BY 3.0 (http://creativecommons.org/lice
 \fancyhead[LE,RO,LO,RE]{} % Keine Kopfzeile mehr oben auf jeder Seite
 \chapter{Anhang}\label{cha:Anhang}
 \begin{enumerate}
-	\item Einverständniserklärung
+	\item EinverstÃ¤ndniserklÃ¤rung
 	\item demografischer Fragebogen
 	\item Fragebogen nach der Studie
 	\item Studienleitfaden
