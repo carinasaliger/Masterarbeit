@@ -131,10 +131,20 @@ Die Durchschnittszeiten aller Aktionen sind aus der \fref{tab:OperatorzeitenVorW
 	\label{tab:OperatorzeitenNachWechsel_Sprache}
 \end{table}
 
-Um das Modell etwas zu vereinfachen fassen wir einige der Zeiten zusammen. Alle Aktionen, die nicht unmittelbar nach einem Moduswechsel stattfinden. Diese Aktionen unmittelbar nach einem Moduswechsel sind L$_1$ (der erste Swipe aus den Kontakten), Inkr. (s)$_1$ (der erste Swipe, um die Temperatur zu inkrementieren), Inkr. (d) (Einstellung des Sliders) und 1. Bu. (der erste Touch des ersten Buchstaben). All diese Aktionen weisen auch signifikante Unterschiede untereinander auf, siehe \fref{tab:OperatorzeitenNachWechsel_TouchGeste}, \fref{tab:OperatorzeitenNachWechsel_Sprache}. 
+Um das Modell zu verallgemeinern, fassen wir einige der Zeiten zusammen. 
+Alle Aktionen, die nicht unmittelbar nach einem Moduswechsel stattfinden sollen zusammengefasst werden. 
+Diese Aktionen unmittelbar nach einem Moduswechsel sind L$_1$ (der erste Swipe aus den Kontakten), Inkr. (s)$_1$ (der erste Swipe, um die Temperatur zu inkrementieren), Inkr. (d) (Einstellung des Sliders) und 1. Bu. (der erste Touch des ersten Buchstaben). 
+All diese Aktionen weisen auch signifikante Unterschiede untereinander auf (siehe \fref{tab:OperatorzeitenNachWechsel_TouchGeste}, \fref{tab:OperatorzeitenNachWechsel_Sprache}). 
+Die Signifikanz wurde gemessen innerhalb einer Modalität nach einem potentiellen Wechsel. 
+Das heißt, die Interaktionszeiten der Modalität Sprache werden auf signifikante Unterschiede zum vorherigen Modus untersucht (TS, GS und SS).
+Fettgedruckte Zeiten sind signifikant. Unter der Interaktionszeit steht, zu welcher Kombination diese Zeit signifikant ist. 
+Dabei gilt zusätzlich: * Signifikanz $\leq 0,05$, ** Signifikanz $\leq 0,01$ und *** Signifikanz $\leq 0,001$. 
 
 Als ersten fassen wir die Zeiten der direkten Auswahl (DA) zusammen, die vor einem Moduswechsel stattfinden und somit keinen Einfluss eines Wechsel haben können. 
-Obwohl die Direktauswahl aus sichtbaren Elementen auf dem ersten Screen zwischen GG und GS und beim zweiten Screen zwischen TG und TS einen signifikanten Unterschied haben (siehe \fref{tab:OperatorzeitenVorWechsel1}), werden wir diese trotzdem für jede Modalität zusammenfassen. Jetzt haben wir noch sechs verschiedene Durchschnittszeiten (je Touch, Geste und Sprache für DA$_1$ und DA$_2$)
+Die Aktion DA$_1$ weist signifikante Unterschiede der unimodalen Variante Geste (GG) zur multimodalen Variante Geste und Sprache (GS) auf. 
+Im zweiten Screen gibt es ebenfalls einen signifikanten Unterschied in der Aktion DA$_2$ für Touch zwischen TS und TG (siehe \fref{tab:OperatorzeitenVorWechsel1}). 
+Wir werden die Interaktionszeiten trotzdem für jede Modalität zusammenfassen, da wir den möglichen Einfluss eines bevorstehenden Moduswechsels nicht berücksichtigen wollen.
+Jetzt haben wir noch sechs verschiedene Durchschnittszeiten (je Touch, Geste und Sprache für DA$_1$ und DA$_2$).
 
 Die Zeiten von DA$_1$ und DA$_2$ unterscheiden sich, jedoch ist es schwer zu begründen an welchen Variablen dieser Unterschied liegt. 
 \begin{figure}
@@ -143,25 +153,28 @@ Die Zeiten von DA$_1$ und DA$_2$ unterscheiden sich, jedoch ist es schwer zu beg
 	\caption{Unterschiedliche Varianten einer Direktauswahl}
 	\label{fig:Screen1vsScreen2}
 \end{figure}
-Die Größe der Buttons ist zwar gleich, jedoch ist die Anzahl der Buttons unterschiedlich. Es gibt auf dem zweiten Screen nur 3 Buttons, statt der 4 Buttons im ersten Screen. 
-Außerdem sind im Hauptscreen Icons und Texte und auf dem zweiten Screen nur Text abgebildet (siehe \fref{fig:Screen1vsScreen2}). Wir hätten zur Vereinfachung gerne eine einheitliche Durchschnittszeit der drei Modalitäten für diese Aktion (DA). Also die durchschnittliche Zeit, die für eine Auswahl von 3-4 Buttons der Größe 3,5cm x 4,5cm mit Text oder Icons benötigt wird. 
+Die Größe der Buttons ist zwar gleich, jedoch ist die Anzahl der Buttons unterschiedlich. 
+Es gibt auf dem zweiten Screen nur 3 Buttons, statt der 4 Buttons im ersten Screen. 
+Außerdem sind im Hauptscreen Icons und Texte dargestellt und auf dem zweiten Screen lediglich Text abgebildet (siehe \fref{fig:Screen1vsScreen2}). 
+Wir wollen eine einheitliche Durchschnittszeit der drei Modalitäten für diese Aktion Direktauswahl aus sichtbaren Elementen (DA). 
+Also die durchschnittliche Zeit, die für eine Auswahl von 3-4 Buttons der Größe 3,5cm x 4,5cm mit Text oder Icons benötigt wird. 
 Deshalb haben wir uns entschlossen die Zeiten zusammenzufassen (siehe \fref{tab:OperatorzeitenZusammengefasst1}).
 
 Als nächstes fassen wir Aktionen zusammen, bei denen der Moduswechsel bereits stattgefunden hat. 
 Der erste Swipe beispielsweise ist unmittelbar nach einem potenziellen Moduswechsel. 
-Ein Moduswechsel beinhaltet einen Homing Operator wie aus dem ursprüngliche KLM. 
-Bei Sprache zum Beispiel sind die Hände meist am Lenkrad. 
-Wechselt die Modalität von Sprache zu Touch muss die Hand vom Lenkrad genommen werden und sich zum Touchbereich bewegen. 
-Nach \citet{Green_2002} würde das dem Operator $R_f$ (Reach Far) entsprechen. 
+Ein Moduswechsel beinhaltet meist einen Homing Operator wie aus dem ursprüngliche KLM. 
+Wechselt die Modalität zum Beispiel von Sprache zu Touch, muss die Hand vom Lenkrad genommen werden und sich zum Touchbereich bewegen. 
+Nach \citet{Green_2002} würde das dem Operator $R_f$ (Reach Far) Operator entsprechen. 
 Eine Aktion unmittelbar nach einem Moduswechsel dauert also länger, was sich aus unseren ermittelten Zeiten auch bestätigen lässt. 
 
-Deshalb fassen wir für den zweiten und dritten Swipe der Liste (L$_2$), (L$_3$) die Modalität vor dem Moduswechsel zusammen. Subtrahieren wir diese Durchschnittszeit von (L$_1$) bekommen wir sozusagen die Vorbereitungszeit, die unsere Nutzer gebraucht haben, um zum Beispiel Ihre Hand zu bewegen und sich mental auf die Aufgabe vorzubereiten. Es entsteht also die einheitliche Aktion (L) für alle seitenweise Swipes und zusätzlich eine Vorbereitungszeit, die zum ersten Swipe addiert werden muss. Die Vorbereitungszeit unterscheiden wir für jede Modalität und somit bekommen wir die Aktion V(L), siehe \fref{tab:OperatorzeitenNachWechsel3_TouchGeste}.
+Deshalb fassen wir für den zweiten und dritten Swipe der Liste (L$_2$), (L$_3$) die Modalität vor dem Moduswechsel zusammen. Subtrahieren wir die Durchschnittszeit, die für einen zweiten oder dritten Swipe benötigt wird, von (L$_1$) bekommen wir sozusagen die eine Vorbereitungszeit. Diese Vorbereitungszeit enthält zum Beispiel eine Umpositionierung der Hand und eine mentale Vorbereitung der Aufgabe. Es entsteht also die einheitliche Aktion (L) für alle seitenweise Swipes und zusätzlich eine Vorbereitungszeit, die immer zum ersten Swipe addiert werden muss. Die Vorbereitungszeit unterscheiden wir für jede Modalität und somit entsteht die Aktion V(L), siehe \fref{tab:OperatorzeitenNachWechsel3_TouchGeste}.
  
-Das gleiche Vorgehen wenden wir für die Aktion Inkr. (s) an. Wir wollen eine einheitliche Aktion Inkr. (s) und zusätzlich eine Vorbereitungszeit V (Inkr. (s)), die dafür benötigt wird. 
+Das gleiche Vorgehen wenden wir für die Aktion Inkr. (s) an. Auch hier ist der erste Swipe im Schnitt ca. eine Sekunde langsamer als die folgenden. Wir wollen eine einheitliche Aktion Inkr. (s) und zusätzlich eine Vorbereitungszeit V (Inkr. (s)), die für die erste Ausführung benötigt wird. 
  
-Bei der Eingabe von Buchstaben per Touch unterscheiden wir die Zeiten zusätzlich in 2 Gruppen. Wie wir bereits aus der Abbildung \ref{fig:Kategorien} abgeleitet haben gibt es einerseits auch hier eine deutlich längere Zeit für den ersten Buchstaben. 
-Zusätzlich nimmt die Zeit der Toucheingabe ab dem vierten Buchstaben nochmal deutlich ab. 
-Wir modellieren also einmal eine Zeit für die ersten 3 Buchstaben und addieren für die Vorbereitung eine feste Zeit V(1. Bu) hinzu, wie schon bei den Aktionen L und Inkr. (s). 
+Bei der Eingabe von Buchstaben per Touch unterscheiden wir die Zeiten zusätzlich in 2 Gruppen. 
+Wie wir bereits aus der Abbildung \ref{fig:Kategorien} abgeleitet haben gibt es einerseits auch hier eine deutlich längere Zeit für den ersten Buchstaben. 
+Zusätzlich nimmt die Zeit der Toucheingabe ab dem vierten Buchstaben nochmal deutlich ab (0,501 statt 0,642 Sekunden). 
+Wir modellieren zum einen eine Zeit für das Tippen der ersten 3 Buchstaben und addieren für die Vorbereitung des ersten Buchstabens eine feste Zeit V(1. Bu) hinzu, wie schon bei den Aktionen L und Inkr. (s). 
 Für alle weiteren Buchstaben gibt es eine neue geringere Durchschnittszeit, die verwendet werden soll, siehe \fref{tab:OperatorzeitenNachWechsel3_TouchGeste}.  
 
 \begin{table}[ht]
@@ -229,23 +242,28 @@ Für alle weiteren Buchstaben gibt es eine neue geringere Durchschnittszeit, die
 		B						&\multicolumn{3}{|c|}{1,972}\\			
 		\hline
 		Wort   		& $\textbf{2,627}$	& $\textbf{2,785}$		& $\textbf{2,346}$ \\
-		einsilbig						& \small{$(SS)^{*}$}& \small{$(SS)^{***}$}	& \small{$(TS)^{*},(GS)^{***}$} \\
+		(e)						& \small{$(SS)^{*}$}& \small{$(SS)^{***}$}	& \small{$(TS)^{*},(GS)^{***}$} \\
 		\hline
 		Wort  			& 2,917 & $\textbf{2,944}$ 	& $\textbf{2,839}$ \\
-		mehrsilbig						& 			& \small{$(SS)^{*}$} & \small{$(GS)^{*}$} \\
+		(m)						& 			& \small{$(SS)^{*}$} & \small{$(GS)^{*}$} \\
 		\hline	
   \end{tabular}
 	\caption[Zweite Vereinfachung Durchschnittszeiten von Sprache nach dem Moduswechsel]{Durchschnittszeiten von Sprachbefehlen in Sekunden der Aktionen nach dem Moduswechsel. Signifikanz wurde gemessen innerhalb einer Modalität nach dem Wechsel (zum Beispiel TT, GT und ST). Fettgedruckte Zeiten sind signifikant. Unter der Zahl steht zu welcher Kombination diese Zeit signifikant ist. Dabei gilt zusätzlich: * Signifikanz $\leq 0,05$, ** Signifikanz $\leq 0,01$ und *** Signifikanz $\leq 0,001$}
 	\label{tab:OperatorzeitenNachWechsel3_Sprache}
 \end{table}
 
-Im nächsten Schritt werden wir das Modell noch etwas weiter vereinfachen, um es möglichst universell anwenden zu können. 
+Im nächsten Schritt werden wir unsere Aktionen für die Modalität Sprache noch vereinfachen, um unterschiedlich lange Wörter unterscheiden zu können. 
 
-Bei der Aktion Swipe Liste muss für die Modalität Sprache lediglich "`Maria Müller"' gesagt werden, um in der Liste zur richtigen Position zu scrollen. Bei der Aktion Slider muss "`80 Prozent"' gesagt werden um den Wert auf 80 Prozent zu ändern. Da beides die Dauer darstellt, die für 2 Wörter benötigt wird, wollen wir diese Zeiten trotz signifikanter Unterschiede zusammenfassen (siehe \fref{tab:OperatorzeitenNachWechsel3_Sprache}), um das Modell einfach zu halten. 
+Bei der Aktion Swipe Liste muss für die Modalität Sprache lediglich "`Maria Müller"' gesagt werden, um in der Liste zur richtigen Position zu scrollen. Bei der Aktion Inkr. (d) muss "`80 Prozent"' gesagt werden, um den Slider auf 80 Prozent zu verschieben. 
+Da beides die Dauer darstellt, die für 2 Wörter benötigt wird, wollen wir diese Zeiten trotz signifikanter Unterschiede zusammenfassen (siehe \fref{tab:OperatorzeitenNachWechsel3_Sprache}). 
 
-Ähnlich dazu, wollen wir die Zeiten für Touch und Sprache des Bestätigungspopups und des Ok Buttons verbinden und dies als einheitliche Aktion Bestätigung (B) zusammen fassen. Bei Touch und Sprache gibt keine signifikanten Unterschiede zwischen dem Popup und dem Ok Button.
+Ähnlich dazu, wollen wir die Zeiten für Touch und Sprache des Bestätigungspopups und des Ok Buttons verbinden und diese als einheitliche Aktion Bestätigung (B) zusammen fassen. Sowohl bei Touch, als auch bei Sprache gibt es keine signifikanten Unterschiede zwischen dem Popup und dem Ok Button.
 
-Als letztes fassen wir die Wortlängen M und L zusammen. Diese sind beide signifikant unterschiedlich zur Wortlänge S, aber gegenseitig weisen sie keine signifikanten Unterschiede auf. Die Unterscheidung der Modalitäten wird allerdings erhalten, da unmittelbar davor der Moduswechsel statt gefunden hat. Bei diesen Aktionen wird jetzt lediglich unterschieden, ob sie einsilbig oder mehrsilbig sind. Diese Aktionen kürzen wir ab mit Wort(e) für ein einsilbiges Wort und Wort(m) für ein mehrsilbiges Wort.
+Als letztes fassen wir die Wortlängen M (Dorfweg) und L (Kirchengasse) zusammen. 
+Diese sind beide signifikant unterschiedlich zur Wortlänge S (Rom), aber gegenseitig weisen sie keine signifikanten Unterschiede auf. 
+Die Unterscheidung der Modalitäten wird allerdings erhalten, da unmittelbar davor der Moduswechsel statt gefunden hat. 
+Bei diesen Aktionen wird jetzt lediglich unterschieden, ob sie einsilbig oder mehrsilbig sind. 
+Diese Aktionen kürzen wir ab mit Wort(e) für ein einsilbiges Wort und Wort(m) für ein mehrsilbiges Wort (siehe \fref{tab:OperatorzeitenNachWechsel3_Sprache}).
 
 \section[Multimodales Modell]{Multimodales Modell mit Wechselkosten}
 In den letzten Schritten haben wir die gesammelten Durchschnittszeiten gruppiert und zusammengefasst. Um das Ganze übersichtlich zu einem Modell zu bekommen betrachten wir jetzt die Aktionen vorerst unimodal (TT, GG und SS) und addieren je nach Moduswechsel die dementsprechenden Wechselkosten hinzu. 
@@ -386,6 +404,9 @@ Für die Sprachmodalität haben wir nicht alle Aktionen abgebildet.
 Statt zum Beispiel in einer Liste aus Kontakten durch einen Sprachbefehl "`nächste Seite"' zu scrollen , erschien es uns geeigneter direkt den Kontakt "`Maria Müller"' auszuwählen. Ebenso beim Einstellen der Temperatur oder der Lautstärke wurde der gewünschte Wert direkt, ohne Inkrementation, gesagt.
 
 Bei unserem Modell konnten wir für die Modalität Sprache nur zwischen einsilbigen Wörtern und mehrsilbigen Wörtern, sowie einer Durchschnittszeit von zwei Wörtern unterscheiden. In den meisten gängigen IVIS mit Sprachbedienung können auch ganze Sätze gesprochen werden wie zum Beispiel "`navigiere in die Kirchengasse Nummer 17"'. Um die Dauer eines Satzes zu modellieren müsste unser Modell noch dahingehend erweitert werden. 
+
+Die Zeit der Toucheingabe ab dem vierten Buchstaben nochmal deutlich ab (0,501 statt 0,642 Sekunden). Warum?
+die Dauer darstellt, die für 2 Wörter benötigt wird, wollen wir diese Zeiten trotz signifikanter Unterschiede zusammenfassen. Warum? Weitere Messungen notwendig?
 
 Die Aktion Direktauswahl aus sichtbaren Elementen sollte noch erweitert werden, dass sie auch nach einem Wechsel modelliert stattfinden kann. In unseren Anwendungsbeispielen kam diese Variante nicht vor und konnte somit nicht modelliert werden.
 
