@@ -1,0 +1,306 @@
+\documentclass[11pt,a4paper,twoside]{article}
+
+% LaTeX-Umsetzung der "Richtlinien für Projekt- und Diplomarbeiten"
+% der LFE Medieninformatik, LMU München. (Autor: Richard Atterer, 27.9.2006, 23.10.2007), Bug-Fixing Mark Kaczkowski (23.6.2008)
+
+\usepackage[T1]{fontenc} % sonst geht \hyphenation nicht mit Umlauten
+\usepackage[latin1]{inputenc} % man kann schreiben äöüß, statt "a"o"u"s
+%\usepackage[utf8]{inputenc} % wie oben, aber UTF-8 als Encoding statt ISO-8859-1 (latin1)
+\usepackage[ngerman,english]{babel} % deutsche Trennregeln, "Inhaltsverzeichnis" etc.
+%\usepackage{ngerman} % Alternative zum Babel-Paket oben
+\usepackage{mathptmx} % Times-Roman-Schrift (auch für mathematische Formeln)
+
+
+% Zum Setzen von URLs
+\usepackage{color}
+\definecolor{darkred}{rgb}{.25,0,0}
+\definecolor{darkgreen}{rgb}{0,.2,0}
+\definecolor{darkmagenta}{rgb}{.2,0,.2}
+\definecolor{darkcyan}{rgb}{0,.15,.15}
+\usepackage[plainpages=false,bookmarks=true,bookmarksopen=true,colorlinks=true,
+  linkcolor=darkred,citecolor=darkgreen,filecolor=darkmagenta,
+  menucolor=darkred,urlcolor=darkcyan]{hyperref}
+
+% pdflatex: Bilder in den Formaten .jpeg, .png und .pdf
+% latex: Bilder im .eps-Format
+\usepackage{graphicx}
+
+\usepackage{fancyhdr} % Positionierung der Seitenzahlen
+\fancyhead[LE,RO,LO,RE]{}
+\fancyfoot[CE,CO,RE,LO]{}
+\fancyfoot[LE,RO]{\Roman{page}}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{13.6pt} % behebt headheight Warning
+
+% Korrektes Format für Nummerierung von Abbildungen (figure) und
+% Tabellen (table): <Kapitelnummer>.<Abbildungsnummer>
+\makeatletter
+\@addtoreset{figure}{section}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\@addtoreset{table}{section}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\makeatother
+
+\sloppy % Damit LaTeX nicht so viel über "overfull hbox" u.Ä. meckert
+
+% Ränder
+\addtolength{\topmargin}{-16mm}
+\setlength{\oddsidemargin}{25mm}
+\setlength{\evensidemargin}{35mm}
+\addtolength{\oddsidemargin}{-1in}
+\addtolength{\evensidemargin}{-1in}
+\setlength{\textwidth}{15cm}
+\addtolength{\textheight}{34mm}
+%______________________________________________________________________
+
+\begin{document}
+
+\pagestyle{empty} % Vorerst keine Seitenzahlen
+\pagenumbering{alph} % Unsichtbare alphabetische Nummerierung
+
+\begin{center}
+\textsc{Ludwig-Maximilians-Universität München}\\
+Department ``Institut für Informatik''\\
+Lehr- und Forschungseinheit Medieninformatik\\
+Prof.\ Dr.\ Heinrich Hußmann
+
+\vspace{5cm}
+{\large\textbf{Masterarbeit}}\vspace{.5cm}
+
+{\LARGE \LaTeX Masterarbeit}\vspace{1cm}
+
+{\large Carina Rothe}\\\href{carina.saliger@live.de}{carina.saliger@live.de}
+
+\end{center}
+\vfill
+
+\begin{tabular}{ll}
+Bearbeitungszeitraum: & 16. 09. 2016 bis 17. 03. 2017\\
+Betreuer: & Dipl.-Inf. Bastian Pfleging \\
+Externer Betreuer von BMW: & Florian Roider\\
+Verantw. Hochschullehrer: & Prof. Butz 
+\end{tabular}
+%______________________________________________________________________
+
+\clearpage
+\section*{Zusammenfassung}
+
+Kurzzusammenfassung der Arbeit, maximal 250 Wörter.
+
+\selectlanguage{english}
+\section*{Abstract}
+
+Short abstract of the work, maximum of 250 words.
+
+\selectlanguage{ngerman}
+\clearpage
+\section*{Aufgabenstellung}
+
+
+In modernen Autos wird die Funktionaliät von Informationssystemen im Auto immer komplexer. Es ist wichtig dem Nutzer eine einfache Eingabe zu ermöglichen, ohne ihn zu sehr visuell oder mental zu belasten. Durch die steigende Anzahl an eingebauter Technik in Autos wachsen auch die Eingabemöglichkeiten des Fahrers. Das Infotainmentsystem (IVIS) kann nicht nur durch haptische Knöpfe und Schalter der Touch bedient werden, sondern auch per Sprache, Gesten und Blick. Die meisten Eingabeoptionen sind schon in aktuelle Autos integriert, jedoch ist es schwer für Entwickler der Schnittstellen, die Benutzbarkeit aller Eingabeoptionen sowie deren Kombination einzuschätzen, z.B. bzgl. der Aufgabendauer. \\
+Im Zuge dieser Masterarbeit soll daher die Bedienung im Fahrzeug beobachtet werden mit dem Ziel, die multimodale Interaktion für künftige Systeme modellieren zu können. Ein Beispiel dazu ist eine Erweiterung des Key-Stroke-Level Models auf Bedienaufgaben eines multimodalen IVIS mit verschiedenen Inputmodalitäten, um damit Bedienzeiten vorhersagen zu können. Primäre Aufgabe wird dabei die Analyse und Berechnung von Interaktionszeiten. Dies erfordert einerseits eine aktuelle Bestandsaufnahme bzgl. existierender Modelle wie z.B. erweiterten KLMs und deren Operatoren. Neue Bedienmöglichkeiten erfordern zudem die Ermittlung neuer Operatoren, um die Interaktion mit heutigen IVIS (z.b. per Touch, Sprache und Geste) darstellen zu können. Ein besonderer Aspekt ist dabei die multimodale Bedienung, bei der z.B. Handlungen nacheinander oder alternativ über verschiedene Modalitäten abgewickelt werden, die dementsprechend unterschiedlich lang dauern können (auch: Wechselzeiten / -kosten). \\
+Basierend auf den empirisch zu ermittelnden Operatoren und Operatorzeiten soll dann ein erweitertes Modell erstellt werden, das die Vorhersage für eine multimodale Interaktion im Fahrzeug ermöglicht. Ein solches Modell kann dazu dienen, verschiedene Interaktionsmöglichkeiten zu vergleichen und erlaubt insbesondere in frühen Designphasen eine schnelle Abschätzung bzgl. der Interaktionsdauer im Fahrzeug. \\
+Zu diesem Zweck ist es sowohl unter den Aspekten der Bedienbarkeit, der User Experience also auch der Fahrsicherheit / Fahrerablenkung geplant, verschiedene Untersuchungen (z.B. Umfragen, Fokusgruppen, Laborstudien) durchzuführen, um Operatoren und Interaktionszeiten zu messen und zu validieren. Im Speziellen sind die folgenden Schritte angedacht:
+\begin{enumerate}
+\item Recherche: Finden verwandter Arbeiten und Analyse des aktuellen Stands von IVIS \& KLM 
+\item Evtl. Nutzerbefragung/Brainstorming-Runde, um herauszufinden, welche Gesten und Sprachbefehle auf die Anwendungsbeispiele von Touch am besten geeignet sind. 
+\item Planung und Durchführung einer Studie zur Bestimmung von Interaktionszeiten multimodaler Interaktion im Fahrzeug. 
+\item Ableitung eines geeigneten Modells. 
+\item Validierung des Modells in einer weiteren Studie. 
+\item Ggfs. Gestaltung eines Tools zur vereinfachten Berechnung von Interaktionen für neue Prototypen 
+\end{enumerate}
+
+\vfill % Sorgt dafür, dass das Folgende an das Seitenende rutscht
+
+\noindent Ich erkläre hiermit, dass ich die vorliegende Arbeit
+selbstständig angefertigt, alle Zitate als solche kenntlich gemacht
+sowie alle benutzten Quellen und Hilfsmittel angegeben habe.
+
+\bigskip\noindent München, \today
+
+\vspace{4ex}\noindent\makebox[7cm]{\dotfill}
+
+%______________________________________________________________________
+
+\cleardoublepage
+\pagestyle{fancy}
+\pagenumbering{roman} % Römische Seitenzahlen
+\setcounter{page}{1}
+
+% Inhaltsverzeichnis erzeugen
+\tableofcontents
+
+%Abbildungsverzeichnis erzeugen - normalerweise nicht nötig
+%\cleardoublepage
+%\listoffigures
+%______________________________________________________________________
+
+\cleardoublepage
+
+% Arabische Seitenzahlen
+\pagenumbering{arabic}
+\setcounter{page}{1}
+% Geändertes Format für Seitenränder, arabische Seitenzahlen
+\fancyhead[LE,RO]{\rightmark}
+\fancyhead[LO,RE]{\leftmark}
+\fancyfoot[LE,RO]{\thepage}
+
+\section{Einleitung}
+
+In modernen Autos wird die Funktionaliät von Informationssystemen im Auto immer komplexer. Es ist wichtig dem Nutzer eine einfache Eingabe zu ermöglichen, ohne ihn zu sehr visuell oder mental zu belasten. Dazu ist die Bedienung von jeglichen Funktionen im Auto längst nicht mehr unimodal, sondern dem Fahrer ist es möglich verschiedenste Funktionen multimodal ausführen zu können. Diese neue Möglichenkeiten lassen den Fahrer selbst entscheiden in welchen Situationen welcher Modus am leichtesten auszuführen ist. Zudem sollten die schnellsten und einfachsten Varianten von Designern unterstützt werden, um dem Fahrer die besten Möglichkeiten verständlich anzuzeigen, um den Workload gering zu halten. Um Interfaces bereits in einem frühen Stadium der Entwicklung zu testen wurde in der Vergangenheit oft das Key-Stroke-Level Model in der ursprünglichen oder den erweiterten Varianten verwendet. Damit können bereits vor Implementierung eines Prototyps Interfacekonzepte auf ihre Bediendauer getestet werden. \\
+Das Key-Stroke-Level Modell bezieht sich in der ursprünglichen Variante nur auf Desktop basierte Anwendungen, die sich hauptsächlich auf Textverarbeitungsprogramme bezogen. In den letzten Jahrzehnten wurde dieses vereinfachte Konzept jedoch schon auf modernere Geräte und Anwendungen übertragen.
+Oh Mann, noch \emph{so} viele Seiten zu füllen...\\
+...und wieso muss bei diesem Format so viel auf eine Seite passen!?
+%______________________________________________________________________
+
+% Der Befehl \cleardoublepage erscheint nur vor \section, nicht vor
+% den "kleineren" Gliederungsbefehlen wie \subsection!
+\cleardoublepage % Neue rechte Seite anfangen
+\section{Hauptteil}
+
+\begin{figure}%[btph]
+  %% Datei ``beispielbild.eps'' oder ``beispielbild.png'', zentriert
+  %\begin{center}\includegraphics{beispielbild}\end{center}
+
+  %% Datei auf 8cm Breite verkleinert/vergrößert
+  %\includegraphics[width=8cm]{beispielbild}
+  %% Datei auf ganze Breite des Texts vergrößert
+  %\includegraphics[width=\columnwidth]{beispielbild}
+  %% Datei auf 60% der Textbreite verkleinert/vergrößert
+  %\includegraphics[width=.6\columnwidth]{beispielbild}
+  %% Weitere Optionen (Ausschnitt, drehen etc.) in der Doku zum graphicx-Paket
+
+  \begin{center}\LARGE [BILD]\end{center}
+  \caption{Bildunterschrift}
+  \label{fig:beispielbild}
+\end{figure}
+
+
+Siehe Abbildung \ref{fig:beispielbild} oder einschlägige Literatur, z.B.
+
+
+\bigskip % Größerer Abstand zum vorherigen Absatz
+\textbf{Hinweis:} Die Verweise im generierten PDF (HTTP-Links, Verweise auf Kapitel oder Bilder) sind leicht eingefärbt. Wer das nicht will, z.B. weil es die Druckkosten erhöht, kann am Anfang des Dokuments \texttt{linkcolor} usw. auf ``black'' setzen.
+\subsection{Verwandte Arbeiten}
+\subsubsection{Key-Sroke-Level Model}
+Das ursprüngliche Key-Stroke-Level Model(KLM) wurde 1980 von Card et al. \cite{Card_1980} für Desktopanwendungen mit Tastatur entwickelt. Damit kann die Zeit vorhergesagt werden, die ein Experte benötigt, um eine bestimmte Aufgabe zu lösen. Um diese Zeit vorhersagen zu können wird die Aufgabe in ihre Einzelschritte den Operatoren unterteil und deren Zeiten aufsummiert. Es gibt einen mentalen Operator M und vier physische Operatoren, \textbf{K} (Tastenklick), \textbf{P} (Maus zu einem Zielort verschieben), \textbf{D} (ein Set von geraden Linien mit der Maus malen) und \textbf{H} (der Wechsel zwischen Maus und Tastatur). Außerdem gibt es noch den Operator R(t), der die Dauer darstellt, die das System braucht um zu reagieren. Dieses Model ermöglicht in einem sehr frühen Stadium der Emtwicklungsphase, bereits vor der Implementation, vorherzusagen wie lange Experten für gängige Aufgaben benötigen.\\
+Um bei beliebigen Interafaces schnell und ohne Fehler das KLM zu erzeugen entwickelten 2004 John et al. \cite{John_2004} ein Tool, das von neuen Interfaces das KLM automatisch generiert...
+\subsubsection{Erweiterungen des KLM für tragbare Geräte}
+Luo et al. \cite{Luo_2005} haben 2005 das Model für tragbare Geräte mit Stiftnutzung statt der Tastatur erweitert beziehungsweise auf diesen Kontext angepasst. Die Modelle wurden mit Hilfe der für KLM entwickelten Software CogTool generiert \cite{John_2004}. Die verhergesagten und die gemessenen Zeiten betrugen nur einen Vorhersagefehler von weniger als 8\%.
+Holleis et al. \cite{Holleis_2007} und Li et al. \cite{Li_2010} ergänzen das KLM für die Handynutzung. Li et al. geht dabei mehr auf Stiftbasierte Operatoren ein und Holleis et al. betrachtet mehr die haptischen Tasten auf Handys und führt allgemeinere Operatoren hinzu. Holleis et al. \cite{Holleis_2007} erweitert das Key-Stroke-Level Model unter anderem mit 7 neuen Operatoren, um die Dauer von  fortgeschrittenen Interaktionen auf Handys vorhersagen zu können. Diese neuen Operatoren sind:\\
+~\\
+\textbf{Macro Attencion Shift ($S_{Macro}$):} Wechsel zwischen dem Handy und der realen Welt.\\
+\textbf{Micro Attention Shift ($S_{Micro}$):} Wechsel zwischen Display, Tastatur und dem Hotkeybereich.\\
+\textbf{Distraction(X):} Ein Ablenkungsfaktor wird mit den Operationen multipliziert.\\
+\textbf{Action (A(t)):} Aktionen, die nicht in Operatoren unterteilt werden können.\\
+\textbf{Gesture (G):} Gestenerkennung wie z.B. das Handy drehen oder Zahlen in die Luft malen.\\
+\textbf{Fingermovement(F):} Fingerbewegung von einer Position zu einer anderen.\\
+\textbf{Initial Act (I):} Zeit um z.B. das Handy aus der Tasche zu holen.\\
+Die Operatoren K, P und H des orginalen KLM werden etwas angepasst, M bleibt gleich und D wird nicht benötigt.\\ 
+Li et al. \cite{Li_2010} kombinieren das KLM mit einem neuem Konzept von Operatoren Blöcke. Ein Operator Block enthält eine Sequenz von Operatoren, die häufig als Einheit in Aktionen vorkommt. Dem originalen KLM werden neun physische Operatoren hinzugefügt und fünf mentale Operatoren, vovon vier für die Stiftnutzung angelegt sind. Teils entsprechen die physischen Operatoren denen von Holleis et al. \cite{Holleis_2007} und teils werden deren Operatoren wieder verworfen. 
+\subsubsection{Erweiterungen des KLM für Touch}
+Von Abdulin et al. \cite{Abdulin_2011} wurde das KLM für direkten Touch auf 7-17 Zoll großen Taplets erweitert. Das KLM wurden mit dem CogTool generiert. Insgesamt werden die Zeiten von drei verschiedenen Designs in Studien gemessen und anschliessend mit den Ergebnissen des KLM verglichen. Ebenfalls auf Touchscreens fokusieren sich El Batran et al. \cite{ElBatran_2014} und Rice et al. \cite{Rice_2014}. El Batran et al. \cite{ElBatran_2014} gewinnt in drei Studien Zeiten für drei Touch-Operatoren: Swipe, Zoom und Tap. Diese werden mit Hilfe von Fitt's Law berechnet. \\
+Rice et al. \cite{Rice_2014} lassen die ursprünglichen Opertoren K, H, M und R(t) unverändert. Die Operatoren X und I werden von Holleis et al. \cite{Holleis_2007} übernommen und acht weitere Operatoren hinzugefügt:\\
+~\\
+\textbf{Gesture (G):} Geste mit 1, 2 oder mehreren Fingern.\\
+\textbf{Pinch (P):} 2-Fingergeste, wobei die Finger am Ende geschlossen sind.\\
+\textbf{Zoom (Z):} 2-Fingergeste, wobei die Finger am Anfang geschlossen sind.\\
+\textbf{Tap (T):} Finger-Tap\\
+\textbf{Swipe (S):} Finger auf dem Touchscreen bewegt sich in horizontaler oder vertikaler Richtung.\\
+\textbf{Tilt (L(d)):} Neigung oder Rotation des ganzen Geräts um d Grad.\\
+\textbf{Rotate (O(d)):} 2-Fingergeste mit der auf dem Screen etwas um d Grad rotiert wird.\\
+\textbf{Drag (D)):} 1-Fingergeste mit der meist ein Objekt von einer Positione zu einer anderen gebracht wird.\\
+\subsubsection{Erweiterungen des KLM im automobilen Kontext}
+Die Infotainmentsysteme in Autos werden immer komplexer und auch hier ist es wichtig für Designer in einem frühen Stadium Interfaces testen zu können. Es gibt im Auto mehrere Bereiche mit verschiedensten Bedienelemnten wie ursprünglichen haptischen Knöpfen und Schalter, aber auch Touchdisplays und mögliche Sprach- oder Gestensteuerung. Pettit et al. \cite{Pettitt_2007} befasst sich 2007 mit diesem Thema und erweitert das KLM für Informationssysteme im Auto und testet dieses Model mit dem Occlusion Protokol. Sie verwenden die Zeiten von Card et al. \cite{Card_1980} und der Operator $R_f$ (Reach far) wurde von Green et al.\cite{Green_2002} adaptiert, genau wie der Operator (Reach near), dessen Zeit für die Bewegung innerhalb eines Systems mit Fitt's Law berechnet wird.\\
+Von Schneegaß et al. \cite{SchneegaB_2011} werden in einer Studie 4 Aufgaben im Auto mit insgesamt 78 Operatoren aufgezeichnet und deren Zeiten berechnet. Der interessanteste und für den automobilen Kontext neu hinzugefügte Operator ist der Turn(T) Operator. Dieser Operator wird für alle haptisch drehbare Knöpfe angewendet und es wurden 3 verschiedene Drehwinkel für links(negativ) und rechts (positiv) untersucht ( -180^\circ, -90^\circ, -45^\circ, 45^\circ, 90^\circ, 180^\circ). \\
+\subsubsection{Multimodale Interaktionen im Auto}
+Erweiterung von Luo et al. \cite{Luo_2005}, der blbab lbakhjhsg.\\
+Erweiterung von Holleis et al. \cite{Holleis_2007}, der blbab lbakhjhsg.\\
+\subsection{neues multimodales Konzept zur Bestimmung von Bedienzeiten}
+\subsubsection{Brainstorming}
+\paragraph{Ablauf}
+Einführung: \\
+Wir befinden uns in Cockpits moderner Autos. Welche Interaktionen und Aktionen gibt es bereits und wie werden diese multimodal haptisch, mit Touch, Gesten oder mit Sprache umgesetzt. Es sollen multimodale Interaktionen modelliert werden können, um die Bediendauern in diesem Kontext vorhersagen zu können.\\
+Wir wollen in diesem Workshop 2 Ziele erreichen:\\
+\textbf{Ziel 1:} Use-Cases sammeln und diese in ihre Aktionen zerlegen (Dauer: 30 Minuten)\\
+\textbf{Ziel 2:} Aktionsset definieren & Umsetzung für die verschiedenen Modi finden (Dauer: 60 Minuten)\
+\paragraph{Ergebnisse}\\
+Es haben sich 6 verschiedenen Aktionen herauskristallisert, aus denen alle Bedienbeispiele zusammengesetzt werden können.\\
+\textbf{Bestätigung (B):} bestätigen\\
+\textbf{Direktauswahl aus sichtbaren Elementen (DA):}  (Inkr)? + Auswahl\\
+\textbf{Ein/ausschalten (E/A):}  0/1\\
+\textbf{Listennavigation (L):}  inkrementieren (Seitenweise) + DA\\
+\textbf{De/inkrementieren (Inkr):}  scrollen, erhöhen/verringern\\
+\textbf{Texteingabe (T):}  xmal Buchstabe + DA\\
+
+Beispiele für mögliche Gesten:\\
+\textbf{B:} Daumen hoch, Tauch OK, bestimmte Geste halten\\
+\textbf{DA:} 3D-Pointing \\
+\textbf{E/A:} von offener zu geschlossener Hand\\
+\textbf{L:} relative Handbewegung (Wischgeste, Swipe), rechts/links Drehbewegung mit dem Finger  (hoch/runter, zoom in/out)\\
+\textbf{Inkr:} siehe Listennavigation\\
+\textbf{T:} In der Luft schreiben, 3D-Pointing auf Tastatur, L auf Tastatur\\
+
+Beispiele für mögliche Sprachbefehle:\\
+\textbf{B:} Ja, Ok, passt\\
+\textbf{DA:} Objekt/Funktion benennen \\
+\textbf{E/A:} Funktion "`ein"' / "`aus"'\\
+\textbf{L:} hoch/runter mit Start/Stop, weiter/zurück, Tonhöhe variieren \\
+\textbf{Inkr:} siehe Listennavigation\\
+\textbf{T:} diktieren, sprechen\\
+
+Geeignete Anwendungsbeispiele:\\
+navigieren zu Baumstraße (NAV): DA (NAV) + DA (Zieleingabe) + T (Eingabe: Baumstraße) + B (bestätigen)\\
+Song "`Happy"' aus beliebte Songs wählen (Media): DA (Media)+ DA (beliebte Songs) + L (Happy suchen + wählen)\\
+Temperatur um 3 Grad erhöhen (Komfortfunktionen): DA (Komfortfunktionen) + Inkr. (+ 3 Grad)\\
+Lautstärke um 45 Grad runter drehen (Einstellungen): DA (Bedienelement wählen) + Inkr. (45 Grad Drehung)\\
+Mama aus Kontakten anrufen (Kommunikation): DA (KOM) + DA (KOntakte) + L (Suchen \& "`Mama"' auswählen) + B (Bestätigung nach Feedback)\\
+
+\subsubsection{Studienvorbereitung}
+\begin{figure}
+  \includegraphics[width=0.7\textwidth]{../img/WP_20160816_006.jpg}
+  \caption{Noch ein Bild}
+  \label{fig:Bild1}
+\end{figure}
+\subsubsection{Studie}
+\begin{itemize}
+  \item Konzept
+  \item Ziele
+	\item Umsetzung
+\end{itemize}
+
+\subsection{Evaluation}
+\subsubsection{Was Sie schon immer wissen wollten, aber nie zu fragen
+  wagten}
+
+\paragraph{Überschrift}
+Diese Überschrift erscheint fettgedruckt am Anfang des Absatzes.
+
+\subsubsection{Was Sie nicht wissen wollten}
+
+Text text textextext\footnote{Oder so ähnlich}.
+
+%\_____________________________________________________________________
+
+\cleardoublepage
+\section{Zusammenfassung}
+
+\begin{figure}
+  \begin{center}\LARGE [BILD]\end{center}
+  \caption{Bild}
+  \label{fig:beispielbild3}
+\end{figure}
+%______________________________________________________________________
+
+\cleardoublepage
+\fancyhead[LE,RO,LO,RE]{} % Keine Kopfzeile mehr oben auf jeder Seite
+\section*{Inhalt der beigelegten CD}
+%______________________________________________________________________
+
+\cleardoublepage
+\begin{bibliography}{Masterarbeit}
+\bibliographystyle{unsrt}
+
+\end{bibliography}
+
+\end{document}

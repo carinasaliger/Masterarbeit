@@ -1,0 +1,256 @@
+\documentclass[11pt,a4paper,twoside]{book}
+
+% LaTeX-Umsetzung der "Richtlinien für Projekt- und Diplomarbeiten"
+% der LFE Medieninformatik, LMU München. (Autor: Richard Atterer, 27.9.2006, 23.10.2007), Bug-Fixing Mark Kaczkowski (23.6.2008)
+
+\usepackage[T1]{fontenc} % sonst geht \hyphenation nicht mit Umlauten
+\usepackage[latin1]{inputenc} % man kann schreiben äöüß, statt "a"o"u"s
+%\usepackage[utf8]{inputenc} % wie oben, aber UTF-8 als Encoding statt ISO-8859-1 (latin1)
+\usepackage[ngerman]{babel} % deutsche Trennregeln, "Inhaltsverzeichnis" etc.
+%\usepackage{ngerman} % Alternative zum Babel-Paket oben
+\usepackage{mathptmx} % Times-Roman-Schrift (auch für mathematische Formeln)
+\usepackage{listings} % Für Codefragmente
+\usepackage{amsmath}
+\usepackage[round]{natbib}
+\usepackage[toctitles]{titlesec} % unterschiedlich lange Titel in Kopfzeile und Inhaltsverzeichnis
+
+% Zum Setzen von URLs
+\usepackage{color}
+\definecolor{darkred}{rgb}{.25,0,0}
+\definecolor{darkgreen}{rgb}{0,.2,0}
+\definecolor{darkmagenta}{rgb}{.2,0,.2}
+\definecolor{darkcyan}{rgb}{0,.15,.15}
+\usepackage[plainpages=false,bookmarks=true,bookmarksopen=true,colorlinks=true,
+  linkcolor=darkred,citecolor=darkgreen,filecolor=darkmagenta,
+  menucolor=darkred,urlcolor=darkcyan]{hyperref}
+
+% pdflatex: Bilder in den Formaten .jpeg, .png und .pdf
+% latex: Bilder im .eps-Format
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{pdfpages}
+
+\usepackage{ifthen,hyperref}
+\usepackage[german,vario]{fancyref}
+\definecolor{darkblue}{rgb}{0,0,.5}
+\hypersetup{colorlinks=true, breaklinks=true, linkcolor=darkblue, menucolor=darkblue, urlcolor=darkblue, citecolor=darkblue}
+
+%----------------------------------------------------------
+\renewcommand*{\fancyrefdefaultspacing}{%
+\fancyreftightspacing
+}
+
+\makeatletter
+
+\let\@f@ref@sav=\@f@ref
+\renewcommand*{\@f@ref}[4]{%
+\def\@curtlabtype{#3}%
+\protect\@f@ref@sav{#1}{#2}{#3}{#4}%
+}%
+\addto\extrasngerman{%
+\renewcommand\reftextfaraway[1]{%
+\ifthenelse{\equal{\@curtlabtype}{chap}}{ab Seite}{%
+\ifthenelse{\equal{\@curtlabtype}{sec}}{ab Seite}{auf Seite}}~\pageref{#1}}
+}
+
+\makeatother
+%----------------------------------------------------------
+
+\usepackage{fancyhdr} % Positionierung der Seitenzahlen
+\fancyhead[LE,RO,LO,RE]{}
+\fancyfoot[CE,CO,RE,LO]{}
+%\fancyfoot[LE,RO]{\Roman{page}}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{13.6pt} % behebt headheight Warning
+
+% Absatz Einruecken und Space
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+
+% Korrektes Format für Nummerierung von Abbildungen (figure) und
+% Tabellen (table): <Kapitelnummer>.<Abbildungsnummer>
+\makeatletter
+\@addtoreset{figure}{section}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\@addtoreset{table}{section}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\makeatother
+
+\sloppy % Damit LaTeX nicht so viel über "overfull hbox" u.Ä. meckert
+
+% Ränder
+\addtolength{\topmargin}{-16mm}
+\setlength{\oddsidemargin}{25mm}
+\setlength{\evensidemargin}{35mm}
+\addtolength{\oddsidemargin}{-1in}
+\addtolength{\evensidemargin}{-1in}
+\setlength{\textwidth}{15cm}
+\addtolength{\textheight}{34mm}
+
+\begin{document}
+
+\pagestyle{empty} % Vorerst keine Seitenzahlen
+\pagenumbering{arabic} % Unsichtbare alphabetische Nummerierung
+
+\begin{center}
+\textsc{Ludwig-Maximilians-Universität München}\\
+Institut für Informatik\\
+Lehrstuhl für Mensch-Maschine-Interaktion\\
+Prof.\ Dr.\ Andreas Butz
+
+\vspace{5cm}
+{\large\textbf{Masterarbeit}}\vspace{.5cm}
+
+{\LARGE Modelling Multimodal Interaction in the Car}\vspace{1cm}
+
+{\large Carina Rothe}\\\href{carina.saliger@live.de}{carina.saliger@live.de}
+
+\end{center}
+\vfill
+
+\begin{tabular}{ll}
+Bearbeitungszeitraum: & 16. 09. 2016 bis 17. 03. 2017\\
+Betreuer: & Dr.\ Bastian Pfleging \\
+Externer Betreuer von BMW: & Dipl. Ing. Florian Roider\\
+Verantw. Hochschullehrer: & Prof. Dr.\ Butz 
+\end{tabular}
+\cleardoublepage
+\chapter*{Zusammenfassung}
+Die Informationssysteme im Auto werden immer komplexer und können teils schon mit multimodalen Eingaben wie Sprache, Touch oder Gestik bedient werden. Diese multimodalen Interaktionen eröffnen den Nutzern neue Möglichkeiten, die passende Modalität je nach Situation und Eignung zu wählen. Jedoch muss darauf geachtet werden, die Ablenkung des Fahrers gering zu halten und die Modalitäten in geeigneten Kombinationen zu unterstützen.
+
+Dadurch motiviert haben wir in dieser Arbeit ein multimodales Modell erstellt, dass Designern  multimodaler Schnittstellen helfen soll, die Interaktionszeiten verschiedener Modalitäten vorherzusagen und zu vergleichen. Dazu entwickelten wir einen Prototypen, der mit Touch, Geste und Sprache bedient werden kann. In einem Within-Subject-Design testeten 22 Probanden in vier Anwendungsbeispielen alle Kombinationen von Modalitäten mit einem Moduswechsel, sowie die unimodalen Varianten. Aus diesen Interaktionszeiten leiteten wir ein Modell mit verschiedenen Aktionszeiten für die Modalitäten Touch, Sprache und Geste ab, sowie deren Wechselkosten untereinander. 
+Unser Modell lehnt sich an das Konzept des Keystroke-Level Modells und Erweiterungen an, jedoch konzentrieren wir uns nicht auf einzelne Operatoren, sondern auf etwas gröbere Aktionen und deren Wechselkosten. 
+
+Zur Validierung des multimodalen Modells werden in einer weiteren Studie fünf verschiedene Aufgaben mit bis zu vier Moduswechseln untersucht und mit unserer Vorhersage des Modells verglichen. Es zeigte sich, dass unser Modell multimodale Interaktionen mit einem durchschnittlichen Vorhersagefehler von 14,746\% vorhersagen konnte.  Diese Abschätzung von multimodalen Interaktionszeiten im Auto ermöglicht es Designern bereits in einem frühen Stadium der Entwicklung zu unterstützen und hilft ihnen die Ablenkung des Fahrers zu minimieren.
+
+
+
+%\selectlanguage{english}
+\chapter*{Abstract}
+In-Vehicle-Information-Systems getting more and more complex and the possibility for users using multimodal interactions like speech, touch and gestures is growing. A big advantage of multimodal interactions is that a user can decide in which situation he wants to use the best choice of interaction. But such a multimodal system should minimize the distraction of the driver and support the best combinations of modalities.
+
+Motivated by this we designed in this thesis a multimodal model to support designers of multimodal interfaces by predicting the interaction time of such systems. By comparing interaction times the best combinations can be detected and a better design is possible.
+Our model is similar to the concept of the keystroke-level-model and its extensions, but we focus on actions for each modality and the resulting change costs, not on operator level. With the measured interaction times of our first study we developed a model with different times for each modality (touch, speech and gestures) and we also modeled the changing costs between one modality to another.
+
+To validate our multimodal model we investigate in a second study five tasks and compared the total task time with our prediction of the model. We showed that the prediction of our model is a good match compared to the observed times. The average RMSE was 14,746\%. Such predictions can support designer in an early stage of implementation and help them to reduce driver distraction.
+
+%\selectlanguage{ngerman}
+\clearpage
+\chapter*{Aufgabenstellung}
+In modernen Autos wird die Funktionalität von Informationssystemen im Auto immer komplexer. Es ist wichtig dem Nutzer eine einfache Eingabe zu ermöglichen, ohne ihn zu sehr visuell oder mental zu belasten. Durch die steigende Anzahl an eingebauter Technik in Autos wachsen auch die Eingabemöglichkeiten des Fahrers. Das Infotainmentsystem (IVIS) kann nicht nur durch haptische Knöpfe und Schalter oder Touch bedient werden, sondern auch per Sprache, Gesten und Blick. Die meisten Eingabeoptionen sind schon in aktuelle Autos integriert, jedoch ist es schwer für Entwickler der Schnittstellen, die Benutzbarkeit aller Eingabeoptionen sowie deren Kombination einzuschätzen, zum Beispiel bzgl. der Aufgabendauer.
+
+Im Zuge dieser Masterarbeit soll daher die Bedienung im Fahrzeug beobachtet werden mit dem Ziel, die multimodale Interaktion für künftige Systeme modellieren zu können. Ein Beispiel dazu ist eine Erweiterung des Keystroke-Level Modells auf Bedienaufgaben eines multimodalen IVIS mit verschiedenen Inputmodalitäten, um damit Bedienzeiten vorhersagen zu können. Primäre Aufgabe wird dabei die Analyse und Berechnung von Interaktionszeiten. Dies erfordert einerseits eine aktuelle Bestandsaufnahme bzgl. existierender Modelle wie zum Beispiel erweiterten KLMs und deren Operatoren. Neue Bedienmöglichkeiten erfordern zudem die Ermittlung neuer Operatoren, um die Interaktion mit heutigen IVIS (zum Beispiel per Touch, Sprache und Geste) darstellen zu können. Ein besonderer Aspekt ist dabei die multimodale Bedienung, bei der zum Beispiel Handlungen nacheinander oder alternativ über verschiedene Modalitäten abgewickelt werden, die dementsprechend unterschiedlich lang dauern können (auch: Wechselzeiten / -kosten).
+
+Basierend auf den empirisch zu ermittelnden Operatoren und Operatorzeiten soll dann ein erweitertes Modell erstellt werden, das die Vorhersage für eine multimodale Interaktion im Fahrzeug ermöglicht. Ein solches Modell kann dazu dienen, verschiedene Interaktionsmöglichkeiten zu vergleichen und erlaubt insbesondere in frühen Designphasen eine schnelle Abschätzung bzgl. der Interaktionsdauer im Fahrzeug.
+
+Zu diesem Zweck ist es sowohl unter den Aspekten der Bedienbarkeit, der User Experience also auch der Fahrsicherheit / Fahrerablenkung geplant, verschiedene Untersuchungen (zum Beispiel Umfragen, Fokusgruppen, Laborstudien) durchzuführen, um Operatoren und Interaktionszeiten zu messen und zu validieren. Im Speziellen sind die folgenden Schritte angedacht:
+
+\begin{enumerate}
+\item Recherche: Finden verwandter Arbeiten und Analyse des aktuellen Stands von IVIS \& KLM 
+\item Evtl. Nutzerbefragung/Brainstorming-Runde, um herauszufinden, welche Gesten und Sprachbefehle auf die Anwendungsbeispiele von Touch am besten geeignet sind. 
+\item Planung und Durchführung einer Studie zur Bestimmung von Interaktionszeiten multimodaler Interaktion im Fahrzeug. 
+\item Ableitung eines geeigneten Modells. 
+\item Validierung des Modells in einer weiteren Studie. 
+\item Ggfs. Gestaltung eines Tools zur vereinfachten Berechnung von Interaktionen für neue Prototypen 
+\end{enumerate}
+
+\vfill % Sorgt dafür, dass das Folgende an das Seitenende rutscht
+
+\noindent Ich erkläre hiermit, dass ich die vorliegende Arbeit
+selbstständig angefertigt, alle Zitate als solche kenntlich gemacht
+sowie alle benutzten Quellen und Hilfsmittel angegeben habe.
+
+\bigskip\noindent München, \today
+
+\vspace{4ex}\noindent\makebox[7cm]{\dotfill}
+
+\cleardoublepage
+\pagestyle{fancy}
+%\pagenumbering{roman} % Römische Seitenzahlen
+%\setcounter{page}{1}
+
+% Inhaltsverzeichnis erzeugen
+\setlength{\parskip}{1pt}
+\tableofcontents
+\setlength{\parskip}{\baselineskip}
+
+%Abbildungsverzeichnis erzeugen - normalerweise nicht nötig
+%\cleardoublepage
+%\listoffigures
+
+\cleardoublepage
+
+% Arabische Seitenzahlen
+%\pagenumbering{arabic}
+%\setcounter{page}{1}
+% Geändertes Format für Seitenränder, arabische Seitenzahlen
+\fancyhead[LE,RO]{\rightmark}
+\fancyhead[LO,RE]{\leftmark}
+\fancyfoot[LE,RO]{\thepage}
+
+\input{chapter1}
+
+\input{chapter2}
+
+\input{chapter3}
+
+\input{chapter4}
+
+\input{chapter5}
+
+\input{chapter6}
+
+\input{chapter7}
+
+\chapter{Danksagung}\label{cha:Danksagung}
+
+Besonderer Dank geht an meine Betreuer Bastian Pfleging und Florian Roider, die mich während dieser Arbeit mit Rat und Tat unterstützt haben. Mein Dank geht natürlich auch an die insgesamt 32 Teilnehmer der zwei Nutzerstudien. Außerdem möchte ich meinem Mann (Sascha Rothe) für seine mentale Unterstützung und spontane Brainstorming Runden danken. 
+
+Für den Prototypen wurden verschiedene Icon von www.flaticon.com verwendet. 
+\begin{itemize}
+	\item Daumen, Musik Icon: made by Gregor Cresnar (http://www.flaticon.com/authors/gregor-cresnar).
+	\item Touch Icon: made by Freepik (http://www.flaticon.com/authors/freepik).
+	\item Navigation Icon: made by Madebyoliver (http://www.flaticon.com/authors/madebyoliver). 
+	\item Telefon, Gefahr, Touch, Geste und Sprach Icon: made by Freepik (http://www.flaticon.com/authors/freepik). 
+	\item Klima Icon: made by Icon Works (http://www.flaticon.com/authors/icon-works). 
+\end{itemize}
+Flaticon is licensed by Creative Commons BY 3.0 (http://creativecommons.org/licenses/by/3.0/)
+
+ 
+
+\chapter{Verzeichnisse}\label{cha:Verzeichnisse}
+\begingroup
+\renewcommand{\cleardoublepage}{}
+\renewcommand{\clearpage}{}
+
+\addcontentsline{toc}{section}{Literaturverzeichnis}
+\bibliographystyle{plainnat}
+\bibliography{Masterarbeit}
+
+\endgroup
+\addcontentsline{toc}{section}{\listfigurename}
+\listoffigures% Abbildungsverzeichnis
+
+\addcontentsline{toc}{section}{\listtablename}
+\listoftables% Tabellenverzeichnis
+
+
+\fancyhead[LE,RO,LO,RE]{} % Keine Kopfzeile mehr oben auf jeder Seite
+\chapter{Anhang}\label{cha:Anhang}
+\begin{enumerate}
+	\item Einverständniserklärung
+	\item demografischer Fragebogen
+	\item Fragebogen nach der Studie
+	\item Studienleitfaden
+	\item NASA TLX (deutsche Version)
+	\item INTUI
+\end{enumerate}
+\includepdf[pages=-]{pdf/Einverstaendniserklaerung}
+\includepdf[pages=-]{pdf/Fragebogen_dem}
+\includepdf[pages=-]{pdf/Fragebogen}
+\includepdf[pages=-]{pdf/Studienleitfaden}
+\includepdf[pages=-]{pdf/NASATLX_Teil1}
+\includepdf[pages=-]{pdf/INTUI_de}
+\includepdf[pages=-]{pdf/Fragebogen_Eval}
+
+\end{document}

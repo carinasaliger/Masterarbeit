@@ -1,0 +1,494 @@
+\begin{thebibliography}{59}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Abdulin(2011)]{Abdulin_2011}
+Evgeniy Abdulin.
+\newblock Using the keystroke-level model for designing user interface on
+  middle-sized touch screens.
+\newblock In \emph{CHI '11 Extended Abstracts on Human Factors in Computing
+  Systems}, CHI EA '11, pages 673--686, New York, NY, USA, 2011. ACM.
+\newblock ISBN 978-1-4503-0268-5.
+\newblock \doi{10.1145/1979742.1979667}.
+\newblock URL \url{http://doi.acm.org/10.1145/1979742.1979667}.
+
+\bibitem[Administration et~al.(2012)]{national2012visual}
+National Highway Traffic~Safety Administration et~al.
+\newblock Visual-manual nhtsa driver distraction guidelines for in-vehicle
+  electronic devices.
+\newblock \emph{Washington, DC: National Highway Traffic Safety Administration
+  (NHTSA), Department of Transportation (DOT)}, 2012.
+
+\bibitem[Bertoldi and Filgueiras(2010)]{Bertoldi:2010}
+Eduardo Bertoldi and Lucia Filgueiras.
+\newblock Multimodal advanced driver assistance systems: An overview.
+\newblock In \emph{Proceedings of the 2Nd International Workshop on Multimodal
+  Interfaces for Automotive Applications}, MIAA '10, pages 2--5, New York, NY,
+  USA, 2010. ACM.
+\newblock ISBN 978-1-60558-997-8.
+\newblock \doi{10.1145/2002368.2002370}.
+\newblock URL
+  \url{http://doi.acm.org.emedien.ub.uni-muenchen.de/10.1145/2002368.2002370}.
+
+\bibitem[Burnett(2008)]{burnett2008designing}
+Gary Burnett.
+\newblock Designing and evaluating in-car user-interfaces.
+\newblock In \emph{Handbook of Research on User Interface Design and Evaluation
+  for Mobile Technology}, pages 218--236. IGI Global, 2008.
+
+\bibitem[Butz and Kr{\"u}ger(2014)]{butz2014mensch}
+Andreas Butz and Antonio Kr{\"u}ger.
+\newblock \emph{Mensch-Maschine-Interaktion}.
+\newblock Walter de Gruyter GmbH \& Co KG, 2014.
+
+\bibitem[Card et~al.(1980)Card, Moran, and Newell]{Card_1980}
+Stuart~K. Card, Thomas~P. Moran, and Allen Newell.
+\newblock The keystroke-level model for user performance time with interactive
+  systems.
+\newblock \emph{Commun. ACM}, 23\penalty0 (7):\penalty0 396--410, July 1980.
+\newblock ISSN 0001-0782.
+\newblock \doi{10.1145/358886.358895}.
+\newblock URL \url{http://doi.acm.org/10.1145/358886.358895}.
+
+\bibitem[Card et~al.(1983)Card, Newell, and Moran]{card1983psychology}
+Stuart~K Card, Allen Newell, and Thomas~P Moran.
+\newblock The psychology of human-computer interaction.
+\newblock 1983.
+
+\bibitem[Diefenbach and Hassenzahl(2010)]{diefenbach2010handbuch}
+S~Diefenbach and M~Hassenzahl.
+\newblock Handbuch zur fun-ni toolbox--user experience evaluation auf drei
+  ebenen.
+\newblock \emph{Online verf{\"u}gbar: http://fun-ni.
+  org/wpcontent/uploads/Diefenbach+ Hassenzahl\_2010\_HandbuchFun-niToolbox.
+  pdf}, 2010.
+
+\bibitem[D\"{o}ring et~al.(2011)D\"{o}ring, Kern, Marshall, Pfeiffer,
+  Sch\"{o}ning, Gruhn, and Schmidt]{Doring:2011}
+Tanja D\"{o}ring, Dagmar Kern, Paul Marshall, Max Pfeiffer, Johannes
+  Sch\"{o}ning, Volker Gruhn, and Albrecht Schmidt.
+\newblock Gestural interaction on the steering wheel: Reducing the visual
+  demand.
+\newblock In \emph{Proceedings of the SIGCHI Conference on Human Factors in
+  Computing Systems}, CHI '11, pages 483--492, New York, NY, USA, 2011. ACM.
+\newblock ISBN 978-1-4503-0228-9.
+\newblock \doi{10.1145/1978942.1979010}.
+\newblock URL
+  \url{http://doi.acm.org.emedien.ub.uni-muenchen.de/10.1145/1978942.1979010}.
+
+\bibitem[El~Batran and Dunlop(2014)]{ElBatran_2014}
+Karim El~Batran and Mark~D. Dunlop.
+\newblock Enhancing klm (keystroke-level model) to fit touch screen mobile
+  devices.
+\newblock In \emph{Proceedings of the 16th International Conference on
+  Human-computer Interaction with Mobile Devices \& Services}, MobileHCI '14,
+  pages 283--286, New York, NY, USA, 2014. ACM.
+\newblock ISBN 978-1-4503-3004-6.
+\newblock \doi{10.1145/2628363.2628385}.
+\newblock URL \url{http://doi.acm.org/10.1145/2628363.2628385}.
+
+\bibitem[Field and Hole(2002)]{field2002design}
+Andy Field and Graham Hole.
+\newblock \emph{How to design and report experiments}.
+\newblock Sage, 2002.
+
+\bibitem[Fitts(1954)]{fitts1954information}
+Paul~M Fitts.
+\newblock The information capacity of the human motor system in controlling the
+  amplitude of movement.
+\newblock \emph{Journal of experimental psychology}, 47\penalty0 (6):\penalty0
+  381, 1954.
+
+\bibitem[Geiser(1985)]{geiser1985man}
+G~Geiser.
+\newblock Man machine interaction in vehicles.
+\newblock \emph{ATZ}, 87\penalty0 (74-77):\penalty0 56, 1985.
+
+\bibitem[Green(1999{\natexlab{a}})]{green1999sae}
+P~Green.
+\newblock Sae j2364--navigation and route guidance function accessibility while
+  driving (draft).
+\newblock \emph{Warrendale, PA: Society of automotive engineers},
+  1999{\natexlab{a}}.
+
+\bibitem[Green(1999{\natexlab{b}})]{green199915}
+Paul Green.
+\newblock The 15-second rule for driver information systems.
+\newblock In \emph{Proceedings of the ITS America Ninth Annual Meeting}.
+  Intelligent Transportation Society of America Washington, DC,
+  1999{\natexlab{b}}.
+
+\bibitem[Green(2003)]{Green_2002}
+Paul Green.
+\newblock Motor vehicle driver interfaces.
+\newblock In Julie~A. Jacko and Andrew Sears, editors, \emph{The Human-computer
+  Interaction Handbook}, pages 844--860. L. Erlbaum Associates Inc., Hillsdale,
+  NJ, USA, 2003.
+\newblock ISBN 0-8058-3838-4.
+\newblock URL
+  \url{http://dl.acm.org.emedien.ub.uni-muenchen.de/citation.cfm?id=772072.772126}.
+
+\bibitem[Green(2012)]{Green:2012:USI:2390256.2390258}
+Paul Green.
+\newblock Using standards to improve the replicability and applicability of
+  driver interface research.
+\newblock In \emph{Proceedings of the 4th International Conference on
+  Automotive User Interfaces and Interactive Vehicular Applications},
+  AutomotiveUI '12, pages 15--22, New York, NY, USA, 2012. ACM.
+\newblock ISBN 978-1-4503-1751-1.
+\newblock \doi{10.1145/2390256.2390258}.
+\newblock URL
+  \url{http://doi.acm.org.emedien.ub.uni-muenchen.de/10.1145/2390256.2390258}.
+
+\bibitem[Group et~al.(2006)]{driver2006statement}
+Driver Focus-Telematics~Working Group et~al.
+\newblock Statement of principles, criteria and verification procedures on
+  driver interactions with advanced in-vehicle information and communication
+  systems.
+\newblock \emph{Alliance of automotive manufacturers}, 2006.
+
+\bibitem[Hart(2006)]{hart2006nasa}
+Sandra~G Hart.
+\newblock Nasa-task load index (nasa-tlx); 20 years later.
+\newblock In \emph{Proceedings of the human factors and ergonomics society
+  annual meeting}, volume~50, pages 904--908. Sage Publications Sage CA: Los
+  Angeles, CA, 2006.
+
+\bibitem[Hart and Staveland(1988)]{hart1988development}
+Sandra~G Hart and Lowell~E Staveland.
+\newblock Development of nasa-tlx (task load index): Results of empirical and
+  theoretical research.
+\newblock \emph{Advances in psychology}, 52:\penalty0 139--183, 1988.
+
+\bibitem[Holleis et~al.(2007)Holleis, Otto, Hussmann, and
+  Schmidt]{Holleis_2007}
+Paul Holleis, Friederike Otto, Heinrich Hussmann, and Albrecht Schmidt.
+\newblock Keystroke-level model for advanced mobile phone interaction.
+\newblock In \emph{Proceedings of the SIGCHI Conference on Human Factors in
+  Computing Systems}, CHI '07, pages 1505--1514, New York, NY, USA, 2007. ACM.
+\newblock ISBN 978-1-59593-593-9.
+\newblock \doi{10.1145/1240624.1240851}.
+\newblock URL \url{http://doi.acm.org/10.1145/1240624.1240851}.
+
+\bibitem[John et~al.(2004)John, Prevas, Salvucci, and Koedinger]{John_2004}
+Bonnie~E. John, Konstantine Prevas, Dario~D. Salvucci, and Ken Koedinger.
+\newblock Predictive human performance modeling made easy.
+\newblock In \emph{Proceedings of the SIGCHI Conference on Human Factors in
+  Computing Systems}, CHI '04, pages 455--462, New York, NY, USA, 2004. ACM.
+\newblock ISBN 1-58113-702-8.
+\newblock \doi{10.1145/985692.985750}.
+\newblock URL \url{http://doi.acm.org/10.1145/985692.985750}.
+
+\bibitem[Jude et~al.(2014)Jude, Poor, and Guinness]{Jude:2014}
+Alvin Jude, G.~Michael Poor, and Darren Guinness.
+\newblock Evaluating multimodal interaction with gestures and speech for point
+  and select tasks.
+\newblock In \emph{Proceedings of the 8th Nordic Conference on Human-Computer
+  Interaction: Fun, Fast, Foundational}, NordiCHI '14, pages 1027--1030, New
+  York, NY, USA, 2014. ACM.
+\newblock ISBN 978-1-4503-2542-4.
+\newblock \doi{10.1145/2639189.2670267}.
+\newblock URL
+  \url{http://doi.acm.org.emedien.ub.uni-muenchen.de/10.1145/2639189.2670267}.
+
+\bibitem[Kern and Schmidt(2009)]{Kern:2009}
+Dagmar Kern and Albrecht Schmidt.
+\newblock Design space for driver-based automotive user interfaces.
+\newblock In \emph{Proceedings of the 1st International Conference on
+  Automotive User Interfaces and Interactive Vehicular Applications},
+  AutomotiveUI '09, pages 3--10, New York, NY, USA, 2009. ACM.
+\newblock ISBN 978-1-60558-571-0.
+\newblock \doi{10.1145/1620509.1620511}.
+\newblock URL \url{http://doi.acm.org/10.1145/1620509.1620511}.
+
+\bibitem[Lee et~al.(2013)Lee, Lee, and Salvucci]{lee2013saliency}
+Joonbum Lee, John~D Lee, and Dario~D Salvucci.
+\newblock A saliency-based search model: Application of the saliency map for
+  driver-vehicle interfaces.
+\newblock In \emph{Proceedings of the Human Factors and Ergonomics Society
+  Annual Meeting}, volume~57, pages 1933--1937. SAGE Publications Sage CA: Los
+  Angeles, CA, 2013.
+
+\bibitem[Li et~al.(2010)Li, Liu, Liu, Wang, Li, and Rau]{Li_2010}
+Hui Li, Ying Liu, Jun Liu, Xia Wang, Yujiang Li, and Pei-Luen~Patrick Rau.
+\newblock Extended klm for mobile phone interaction: A user study result.
+\newblock In \emph{CHI '10 Extended Abstracts on Human Factors in Computing
+  Systems}, CHI EA '10, pages 3517--3522, New York, NY, USA, 2010. ACM.
+\newblock ISBN 978-1-60558-930-5.
+\newblock \doi{10.1145/1753846.1754011}.
+\newblock URL
+  \url{http://doi.acm.org.emedien.ub.uni-muenchen.de/10.1145/1753846.1754011}.
+
+\bibitem[Luo and John(2005)]{Luo_2005}
+Lu~Luo and Bonnie~E. John.
+\newblock Predicting task execution time on handheld devices using the
+  keystroke-level model.
+\newblock In \emph{CHI '05 Extended Abstracts on Human Factors in Computing
+  Systems}, CHI EA '05, pages 1605--1608, New York, NY, USA, 2005. ACM.
+\newblock ISBN 1-59593-002-7.
+\newblock \doi{10.1145/1056808.1056977}.
+\newblock URL \url{http://doi.acm.org/10.1145/1056808.1056977}.
+
+\bibitem[Maciej and Vollrath(2009)]{maciej2009comparison}
+Jannette Maciej and Mark Vollrath.
+\newblock Comparison of manual vs. speech-based interaction with in-vehicle
+  information systems.
+\newblock \emph{Accident Analysis \& Prevention}, 41\penalty0 (5):\penalty0
+  924--930, 2009.
+
+\bibitem[MacKenzie(1992)]{MacKenzie:1992}
+I.~Scott MacKenzie.
+\newblock Fitts' law as a research and design tool in human-computer
+  interaction.
+\newblock \emph{Hum.-Comput. Interact.}, 7\penalty0 (1):\penalty0 91--139,
+  March 1992.
+\newblock ISSN 0737-0024.
+\newblock \doi{10.1207/s15327051hci0701_3}.
+\newblock URL \url{http://dx.doi.org/10.1207/s15327051hci0701_3}.
+
+\bibitem[Mattes(2003)]{mattes2003lane}
+Stefan Mattes.
+\newblock The lane-change-task as a tool for driver distraction evaluation.
+\newblock \emph{Quality of Work and Products in Enterprises of the Future},
+  2003:\penalty0 57, 2003.
+
+\bibitem[Motion()]{Leap}
+Leap Motion.
+\newblock Unity - game engine kernel description.
+\newblock URL \url{https://www.leapmotion.com/}.
+
+\bibitem[Muller and Weinberg(2011)]{Muller_2011}
+Christian Muller and Garrett Weinberg.
+\newblock Multimodal input in the car, today and tomorrow.
+\newblock \emph{IEEE MultiMedia}, 18\penalty0 (1):\penalty0 98--103, January
+  2011.
+\newblock ISSN 1070-986X.
+\newblock \doi{10.1109/MMUL.2011.14}.
+\newblock URL \url{http://dx.doi.org/10.1109/MMUL.2011.14}.
+
+\bibitem[Neale et~al.(2005)Neale, Dingus, Klauer, Sudweeks, and
+  Goodman]{neale2005overview}
+Vicki~L Neale, Thomas~A Dingus, Sheila~G Klauer, Jeremy Sudweeks, and Michael
+  Goodman.
+\newblock An overview of the 100-car naturalistic study and findings.
+\newblock \emph{National Highway Traffic Safety Administration, Paper}, 2005.
+
+\bibitem[Neuss(2001)]{neuss_2001}
+Robert Neuss.
+\newblock \emph{Usability Engineering als Ansatz zum Multimodalen
+  Mensch-Maschine-Dialog}.
+\newblock Dissertation, Technische Universit{\"a}t M{\"u}nchen, M{\"u}nchen,
+  2001.
+
+\bibitem[of~the European~Communities(2008)]{national2012recommandationl}
+Commission of~the European~Communities.
+\newblock Commission recommendation of 22 december 2006 on safe and efficient
+  in-vehicle information and communication systems: update of the european
+  statement of principles on human machine interface.
+\newblock \emph{Official Journal of the European Union}, 2008.
+
+\bibitem[Pauzi{\'e}(2008)]{pauzie2008method}
+A~Pauzi{\'e}.
+\newblock A method to assess the driver mental workload: The driving activity
+  load index (dali).
+\newblock \emph{IET Intelligent Transport Systems}, 2\penalty0 (4):\penalty0
+  315, 2008.
+
+\bibitem[Pettitt et~al.(2006)Pettitt, Burnett, Bayer, and
+  Stevens]{pettitt2006assessment}
+MA~Pettitt, GE~Burnett, S~Bayer, and A~Stevens.
+\newblock Assessment of the occlusion technique as a means for evaluating the
+  distraction potential of driver support systems.
+\newblock In \emph{IEE Proceedings. Intelligent Transport Systems}, volume~4,
+  pages 259--266, 2006.
+
+\bibitem[Pettitt et~al.(2007)Pettitt, Burnett, and Stevens]{Pettitt_2007}
+Michael Pettitt, Gary Burnett, and Alan Stevens.
+\newblock An extended keystroke level model (klm) for predicting the visual
+  demand of in-vehicle information systems.
+\newblock In \emph{Proceedings of the SIGCHI Conference on Human Factors in
+  Computing Systems}, CHI '07, pages 1515--1524, New York, NY, USA, 2007. ACM.
+\newblock ISBN 978-1-59593-593-9.
+\newblock \doi{10.1145/1240624.1240852}.
+\newblock URL \url{http://doi.acm.org/10.1145/1240624.1240852}.
+
+\bibitem[Pfleging et~al.(2011)Pfleging, Kienast, Schmidt, and
+  D{\"o}ring]{Pfleging_t_2011}
+Bastian Pfleging, Michael Kienast, Albrecht Schmidt, and Tanja D{\"o}ring.
+\newblock T.: Speet: A multimodal interaction style combining speech and touch
+  interaction in automotive environments.
+\newblock In \emph{In Adjunct Proc. AutomotiveUI 11}, 2011.
+
+\bibitem[Pfleging et~al.(2012)Pfleging, Schneegass, and Schmidt]{Pfleging_2012}
+Bastian Pfleging, Stefan Schneegass, and Albrecht Schmidt.
+\newblock Multimodal interaction in the car: Combining speech and gestures on
+  the steering wheel.
+\newblock In \emph{Proceedings of the 4th International Conference on
+  Automotive User Interfaces and Interactive Vehicular Applications},
+  AutomotiveUI '12, pages 155--162, New York, NY, USA, 2012. ACM.
+\newblock ISBN 978-1-4503-1751-1.
+\newblock \doi{10.1145/2390256.2390282}.
+\newblock URL \url{http://doi.acm.org/10.1145/2390256.2390282}.
+
+\bibitem[Pieraccini et~al.(2004)Pieraccini, Dayanidhi, Bloom, Dahan, Phillips,
+  Goodman, and Prasad]{Pieraccini_2004}
+Roberto Pieraccini, Krishna Dayanidhi, Jonathan Bloom, Jean-Gui Dahan, Michael
+  Phillips, Bryan~R. Goodman, and K.~Venkatesh Prasad.
+\newblock Multimodal conversational systems for automobiles.
+\newblock \emph{Commun. ACM}, 47\penalty0 (1):\penalty0 47--49, January 2004.
+\newblock ISSN 0001-0782.
+\newblock \doi{10.1145/962081.962104}.
+\newblock URL
+  \url{http://doi.acm.org.emedien.ub.uni-muenchen.de/10.1145/962081.962104}.
+
+\bibitem[Reeves et~al.(2004)Reeves, Lai, Larson, Oviatt, Balaji, Buisine,
+  Collings, Cohen, Kraal, Martin, McTear, Raman, Stanney, Su, and
+  Wang]{Reeves_2004}
+Leah~M. Reeves, Jennifer Lai, James~A. Larson, Sharon Oviatt, T.~S. Balaji,
+  St{\'e}phanie Buisine, Penny Collings, Phil Cohen, Ben Kraal, Jean-Claude
+  Martin, Michael McTear, TV~Raman, Kay~M. Stanney, Hui Su, and Qian~Ying Wang.
+\newblock Guidelines for multimodal user interface design.
+\newblock \emph{Commun. ACM}, 47\penalty0 (1):\penalty0 57--59, January 2004.
+\newblock ISSN 0001-0782.
+\newblock \doi{10.1145/962081.962106}.
+\newblock URL
+  \url{http://doi.acm.org.emedien.ub.uni-muenchen.de/10.1145/962081.962106}.
+
+\bibitem[Reid et~al.(1982)Reid, Eggemeier, and
+  Shingledecker]{reid1982subjective}
+Gary~B Reid, F~Thomas Eggemeier, and Clark~A Shingledecker.
+\newblock Subjective workload assessment technique.
+\newblock Technical report, DTIC Document, 1982.
+
+\bibitem[Rice and Lartigue(2014)]{Rice_2014}
+Andrew~D. Rice and Jonathan~W. Lartigue.
+\newblock Touch-level model (tlm): Evolving klm-goms for touchscreen and mobile
+  devices.
+\newblock In \emph{Proceedings of the 2014 ACM Southeast Regional Conference},
+  ACM SE '14, pages 53:1--53:6, New York, NY, USA, 2014. ACM.
+\newblock ISBN 978-1-4503-2923-1.
+\newblock \doi{10.1145/2638404.2638532}.
+\newblock URL
+  \url{http://doi.acm.org.emedien.ub.uni-muenchen.de/10.1145/2638404.2638532}.
+
+\bibitem[Riener et~al.(2013)Riener, Ferscha, Bachmair, Hagm\"{u}ller, Lemme,
+  Muttenthaler, P\"{u}hringer, Rogner, Tappe, and Weger]{Riener:2013:SIG}
+A.~Riener, A.~Ferscha, F.~Bachmair, P.~Hagm\"{u}ller, A.~Lemme,
+  D.~Muttenthaler, D.~P\"{u}hringer, H.~Rogner, A.~Tappe, and F.~Weger.
+\newblock Standardization of the in-car gesture interaction space.
+\newblock In \emph{Proceedings of the 5th International Conference on
+  Automotive User Interfaces and Interactive Vehicular Applications},
+  AutomotiveUI '13, pages 14--21, New York, NY, USA, 2013. ACM.
+\newblock ISBN 978-1-4503-2478-6.
+\newblock \doi{10.1145/2516540.2516544}.
+\newblock URL
+  \url{http://doi.acm.org.emedien.ub.uni-muenchen.de/10.1145/2516540.2516544}.
+
+\bibitem[Rumar(1988)]{rumar1988vehicle}
+K~Rumar.
+\newblock In--vehicle information systems.
+\newblock \emph{International journal of vehicle design}, 9\penalty0
+  (4-5):\penalty0 548--556, 1988.
+
+\bibitem[R\"{u}melin and Butz(2013)]{Rumelin:2013}
+Sonja R\"{u}melin and Andreas Butz.
+\newblock How to make large touch screens usable while driving.
+\newblock In \emph{Proceedings of the 5th International Conference on
+  Automotive User Interfaces and Interactive Vehicular Applications},
+  AutomotiveUI '13, pages 48--55, New York, NY, USA, 2013. ACM.
+\newblock ISBN 978-1-4503-2478-6.
+\newblock \doi{10.1145/2516540.2516557}.
+\newblock URL
+  \url{http://doi.acm.org.emedien.ub.uni-muenchen.de/10.1145/2516540.2516557}.
+
+\bibitem[Salber and Coutaz(1993)]{salber1993applying}
+Daniel Salber and Jo{\"e}lle Coutaz.
+\newblock Applying the wizard of oz technique to the study of multimodal
+  systems.
+\newblock In \emph{International Conference on Human-Computer Interaction},
+  pages 219--230. Springer, 1993.
+
+\bibitem[Sasangohar et~al.(2009)Sasangohar, MacKenzie, and
+  Scott]{sasangohar2009evaluation}
+Farzan Sasangohar, I~Scott MacKenzie, and Stacey~D Scott.
+\newblock Evaluation of mouse and touch input for a tabletop display using
+  fitts' reciprocal tapping task.
+\newblock In \emph{Proceedings of the Human Factors and Ergonomics Society
+  Annual Meeting}, volume~53, pages 839--843. SAGE Publications, 2009.
+
+\bibitem[Schneega\ss(2009)]{schneegass_2009}
+Stefan Schneega\ss.
+\newblock Modeling interaction with automotive user interfaces.
+\newblock Master's thesis, University Duisburg-Essen, 2009.
+
+\bibitem[Schneega\ss et~al.(2011)Schneega\ss, Pfleging, Kern, and
+  Schmidt]{SchneegaB_2011}
+Stefan Schneega\ss, Bastian Pfleging, Dagmar Kern, and Albrecht Schmidt.
+\newblock Support for modeling interaction with automotive user interfaces.
+\newblock In \emph{Proceedings of the 3rd International Conference on
+  Automotive User Interfaces and Interactive Vehicular Applications},
+  AutomotiveUI '11, pages 71--78, New York, NY, USA, 2011. ACM.
+\newblock ISBN 978-1-4503-1231-8.
+\newblock \doi{10.1145/2381416.2381428}.
+\newblock URL \url{http://doi.acm.org/10.1145/2381416.2381428}.
+
+\bibitem[Sharma et~al.(1998)Sharma, Pavlovic, and Huang]{sharma1998toward}
+Rajeev Sharma, Vladimir~I Pavlovic, and Thomas~S Huang.
+\newblock Toward multimodal human-computer interface.
+\newblock \emph{Proceedings of the IEEE}, 86\penalty0 (5):\penalty0 853--869,
+  1998.
+
+\bibitem[Stracke(2014)]{stracke2014touch}
+Tobias Stracke.
+\newblock Touch-screen-interaktion auf der mittelkonsole zur steuerung von
+  funktionen im fahrzeug.
+\newblock Master's thesis, Universit{\"a}t Stuttgart, 2014.
+
+\bibitem[Technologies({\natexlab{a}})]{OrionBeta}
+Unity Technologies.
+\newblock Leap motion sdk, orion beta, {\natexlab{a}}.
+\newblock URL \url{https://developer.leapmotion.com/unity#100}.
+
+\bibitem[Technologies({\natexlab{b}})]{Unity}
+Unity Technologies.
+\newblock Unity - game engine kernel description, {\natexlab{b}}.
+\newblock URL \url{https://unity3d.com/de}.
+
+\bibitem[Teo and John(2006)]{Teo:2006}
+Leonghwee Teo and Bonnie~E. John.
+\newblock Comparisons of keystroke-level model predictions to observed data.
+\newblock In \emph{CHI '06 Extended Abstracts on Human Factors in Computing
+  Systems}, CHI EA '06, pages 1421--1426, New York, NY, USA, 2006. ACM.
+\newblock ISBN 1-59593-298-4.
+\newblock \doi{10.1145/1125451.1125713}.
+\newblock URL \url{http://doi.acm.org/10.1145/1125451.1125713}.
+
+\bibitem[Tonnis et~al.(2006)Tonnis, Broy, and Klinker]{Tonnis:2006}
+Marcus Tonnis, Verena Broy, and Gudrun Klinker.
+\newblock A survey of challenges related to the design of 3d user interfaces
+  for car drivers.
+\newblock In \emph{Proceedings of the 3D User Interfaces}, 3DUI '06, pages
+  127--134, Washington, DC, USA, 2006. IEEE Computer Society.
+\newblock ISBN 1-4244-0225-5.
+\newblock \doi{10.1109/VR.2006.19}.
+\newblock URL
+  \url{http://dx.doi.org.emedien.ub.uni-muenchen.de/10.1109/VR.2006.19}.
+
+\bibitem[Ullrich and Diefenbach(2010)]{ullrich2010intui}
+Daniel Ullrich and Sarah Diefenbach.
+\newblock Intui. exploring the facets of intuitive interaction.
+\newblock In \emph{Mensch \& computer}, volume~10, page 251, 2010.
+
+\bibitem[Wobbrock et~al.(2009)Wobbrock, Morris, and Wilson]{Wobbrock:2009}
+Jacob~O. Wobbrock, Meredith~Ringel Morris, and Andrew~D. Wilson.
+\newblock User-defined gestures for surface computing.
+\newblock In \emph{Proceedings of the SIGCHI Conference on Human Factors in
+  Computing Systems}, CHI '09, pages 1083--1092, New York, NY, USA, 2009. ACM.
+\newblock ISBN 978-1-60558-246-7.
+\newblock \doi{10.1145/1518701.1518866}.
+\newblock URL \url{http://doi.acm.org/10.1145/1518701.1518866}.
+
+\end{thebibliography}

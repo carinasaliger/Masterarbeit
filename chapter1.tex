@@ -1,0 +1,66 @@
+\chapter{Einleitung}
+Das Auto zu fahren besteht schon längst nicht mehr einfach aus dem einzigen Ziel, von A nach B zu kommen.
+Ein Fahrer will im Auto die Möglichkeit haben viele Dinge zu Nutzen, die nichts mit der Hauptaufgabe des Fahren (Primäre Aufgabe) zu tun haben.
+Ein Autofahrer navigiert sich zu seinem Ziel, hört Musik, findet die nächste Tankstelle in der Umgebung, kann telefonieren sowie vieles mehr.
+Somit wird in aktuellen Autos die Funktionalität von Informationssystemen im Auto (IVIS von "`In-Vehicle-Information System"') auch immer komplexer und die Inhalte immer umfangreicher \citep{Kern:2009}.
+Es ist eine große Aufgabe und Herausforderung für Designer diese Masse an Information in geeigneter Weise für den Fahrer darzustellen.
+Dauert eine Interaktion mit einem IVIS zu lange oder ist sie schwer zu verstehen sind das häufig Gründe für zu große Ablenkungen beim Fahren, die viele Autounfälle \citep{neale2005overview} mit sich ziehen.
+Diese potenziellen Ablenkungen sollten natürlich so minimal wie möglich gehalten werden.
+Es ist zusätzlich sehr wichtig, dem Nutzer eine einfache und intuitive Eingabe des Informationssystems im Auto zu ermöglichen, ohne ihn gleichzeitig zu sehr visuell oder mental zu belasten. 
+
+Hinzu kommt, dass die Bedienung von jeglichen Funktionen im Auto längst nicht mehr unimodal sind.
+Dem Fahrer ist es möglich verschiedenste Funktionen multimodal auszuführen.
+Zu den üblichen haptischen Bedienelementen kommen zusätzlich Touchdisplays oder Möglichkeiten der Sprachbedienung. 
+Allerdings unterstützen aktuell Nutzungsschnittstellen im Autos nur einige Varianten von unimodaler Interaktion. 
+Ein weit Verbreiteter Modus ist die Spracheingabe, die zum Beispiel oft genutzt wird, um jemanden anzurufen. 
+
+Ein wesentlicher Vorteil der Sprachsteuerung ist, dass die Hand nicht vom Lenkrad genommen werden muss und auch der Blick auf der Straße bleibt.
+\citet{maciej2009comparison} sind der Überzeugung, dass Sprachbedienung ein muss in zukünftigen Autos sein wird.
+Bei einer Autofahrt mit mehreren Mitfahrern, bei der geredet und Musik gehört wird ist die Sprachsteuerung wahrscheinlich weniger geeignet. 
+
+Auch Gestensteuerungen sind in einigen Autos bereits vertreten wie zum Beispiel im BMW 7er eine Kreisbewegung mit dem Finger nach rechts bzw. links erkannt wird, um die Lautstärke zu erhöhen bzw. zu verringern. 
+Es ist allerdings meist nicht möglich mit einem dieser neueren Modalitäten alle vorhandenen Funktionen auszuführen.
+Sobald allerdings ein Interface seriell-redundant ist, können auch Modalitäten wie zum Beispiel Sprache, Gestik oder Touch beliebig gewechselt werden \citep{neuss_2001}. 
+
+Mit einem seriell redundanten multimodalen IVIS könnte der Fahrer selbst entscheiden in welchen Situationen welcher Modus für den jeweiligen Schritt am geeignetsten und ungefährlichsten ist, was auch laut \citet{Muller_2011} einen wesentlichen Vorteil in Autos darstellt.
+Natürlich gibt es auch Kombinationen, die mit bestimmten Modalitäten weniger sinnvoll sind als andere. Deshalb ist unsere Motivation in Zukunft solche multimodalen Interaktionen in IVIS besser verstehen zu können und diese optimal umsetzen zu können.
+Es ist wichtig die schnellsten und einfachsten Kombinationen von Modalitäten zu kennen, um dem Fahrer auch die besten Möglichkeiten in verständlicher Weise anzuzeigen.
+Damit soll die visuelle und mentale Beanspruchung für den Fahrer so gering wie möglich gehalten werden. 
+
+Um Interfaces bereits in einem frühen Stadium der Entwicklung zu testen wurde in der Vergangenheit oft das Keystroke-Level Modell in der ursprünglichen oder den erweiterten Varianten verwendet.
+Damit können bereits vor der Implementierung eines Prototyps Interfacekonzepte auf ihre Bediendauer getestet werden, indem die Dauer einer gewählten Aufgabe vorhergesagt wird, womit es möglich wird, auf einfache Art verschiedene Varianten zu vergleichen.
+Das Keystroke-Level Modell bezieht sich in der ursprünglichen Variante nur auf Desktop-basierte Anwendungen, die sich hauptsächlich auf Textverarbeitungsprogramme bezogen.
+In den letzten Jahrzehnten wurde dieses vereinfachte Konzept jedoch auf Geräte und Anwendungen übertragen und erwies sich als günstige Methode zur Einschätzung der Interaktionsdauer. 
+
+Das Ziel dieser Arbeit ist, dieses Konzept für seriell redundante multimodale IVIS zu adaptieren und anzupassen.
+Dazu entwickeln wir ein Modell, mit dem Interaktionszeiten eines multimodalen IVIS vorhergesagt und verglichen werden können.
+Wir konzentrieren uns auf die Modalitäten Touch, Sprache und Geste und den entstehenden Kosten bei einem Wechsel zwischen zwei Modalitäten.
+Jede Modalität besitzt ihre Vorteile und in geeigneter Kombination können sie dem Fahrer helfen.
+
+Im Zuge dieser Masterarbeit soll daher die Bedienung im Fahrzeug beobachtet werden mit dem Ziel, die multimodale Interaktion für künftige Systeme modellieren zu können.
+Ein besonderer Aspekt dabei ist die multimodale Bedienung, bei der zum Beispiel Handlungen nacheinander oder alternativ über verschiedene Modalitäten abgewickelt werden, die dementsprechend unterschiedlich lang dauern können und Wechselkosten enthalten.
+Basierend auf den empirisch zu ermittelnden Operatoren und Operatorzeiten soll dann ein erweitertes Modell erstellt werden, das die Vorhersage für eine multimodale Interaktion im Fahrzeug ermöglicht.
+Zu diesem Zweck ist es sowohl unter den Aspekten der Bedienbarkeit, der User Experience also auch der Fahrsicherheit / Fahrerablenkung geplant, verschiedene Untersuchungen (zum Beispiel Umfragen, Fokusgruppen, Laborstudien) durchzuführen, um Operatoren und Interaktionszeiten zu messen und zu validieren. 
+
+\section*{Gliederung}
+Wir sind folgendermaßen vorgegangen. Im \textbf{Kapitel \ref{cha:verwandteArbeiten}} werden als erstens die Grundlagen und Richtlinien zu Informationssystemen im Auto, deren Design und Evaluationsmöglichkeiten erläutert.
+Anschließend wird das ursprüngliche Keystroke-Level Modell und deren Erweiterungen auf tragbare Geräte, für Touch und dem KLM im automobilen Kontext erläutert.
+Außerdem befassen wir uns mit multimodalen Interaktionen im generellen, sowie mit multimodalen Interaktionen im automobilen Kontext. 
+
+Im \textbf{Kapitel \ref{cha:Workshop}} erhalten wir in einer Brainstorming Runde einen Überblick über multimodale Interaktionen im Auto und deren bereits vorhandenen und möglichen Umsetzungsvarianten.
+Dort sammeln wir gemeinsam Ideen und clustern sie Schritt für Schritt bis wir auf deren Grundlage unser Konzept aufbauen können.
+Aus den gesammelten Ideen und Ergebnissen leiten wir unsere Aktionen her und konstruieren geeignete Anwendungsbeispiele. 
+
+Das \textbf{Kapitel \ref{cha:Prototyp}} beschreibt die Idee und Implementierung des multimodalen Prototyps, der per Touch, Geste und Sprache, sowie je aus einer Kombination aus zwei Modalitäten bedient werden soll. 
+Wir gehen auf die Anwendungsbeispiele und die Umsetzungen ein. 
+
+Das Studiendesign, die Durchführung der Studie und die anschließende Auswertung wird im \textbf{Kapitel \ref{cha:Studie}} erläutert. Die 22 Probanden führen 4 verschiedene Anwendungsbeispiele mit allen Moduskombinationen durch.
+Das ergibt 33 verschiedene Kombinationen, die von jedem Probanden durchgeführt werden, um für alle Aktionen unseres Modells genügend Daten für jede Moduskombination und deren Wechselkosten zu erhalten.
+Aus den Studienergebnissen werden die Zeiten der Aktionen erhoben und ein Modell mit Durchschnittszeiten erstellt und untersucht, welchen Einfluss ein Moduswechsel auf die Interaktionszeiten hat und in welchem Maße.
+Anschließend werden die Ergebnisse dieser Studie diskutiert und mit anderen Arbeiten verglichen.
+
+Um die ermittelten Aktionszeiten des erstellten Modells zur Vorhersage/Abschätzung von Interaktionszeiten zu validieren, wird im \textbf{Kapitel \ref{cha:Evaluation}} der Prototyp angepasst und in einer zweiten Studie an 10 weiteren Probanden getestet.
+Dazu werden die Daten ausgewertet und mit unserem erstellen Modell verglichen.
+Anschließend diskutieren wir über die Erkenntnisse.
+
+\textbf{Kapitel \ref{cha:Zusamenfassung}} fasst die Erkenntnisse der beiden Studien und der gesamten Arbeit zusammen und gibt einen Ausblick auf weitere Forschungsideen.
