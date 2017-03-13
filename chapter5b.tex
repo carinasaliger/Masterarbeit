@@ -173,7 +173,7 @@ Das gleiche Vorgehen wenden wir für die Aktion Inkr. (s) an. Auch hier ist der 
  
 Bei der Eingabe von Buchstaben per Touch unterscheiden wir die Zeiten zusätzlich in 2 Gruppen. 
 Wie wir bereits aus der Abbildung \ref{fig:Kategorien} abgeleitet haben gibt es einerseits auch hier eine deutlich längere Zeit für den ersten Buchstaben. 
-Zusätzlich nimmt die Zeit der Toucheingabe ab dem vierten Buchstaben nochmal deutlich ab (0,501 statt 0,642 Sekunden). 
+Zusätzlich nimmt die Zeit der Touch-Eingabe ab dem vierten Buchstaben nochmal deutlich ab (0,501 statt 0,642 Sekunden). 
 Wir modellieren zum einen eine Zeit für das Tippen der ersten 3 Buchstaben und addieren für die Vorbereitung des ersten Buchstabens eine feste Zeit V(1. Bu) hinzu, wie schon bei den Aktionen L und Inkr. (s). 
 Für alle weiteren Buchstaben gibt es eine neue geringere Durchschnittszeit, die verwendet werden soll, siehe \fref{tab:OperatorzeitenNachWechsel3_TouchGeste}.  
 
@@ -357,67 +357,118 @@ Die dazugehörigen Wechselkosten für multimodale Interaktionen können aus \fre
 	\label{tab:Wechselkosten}
 \end{table}
 
-Aus unserem Prototyp ergeben sich noch 3 Antwortzeiten. Einmal der Wechsel zwischen den Screens mit einer Zeit von 0,016 Sekunden. Um dem Nutzer beim Anwendungsbeispiel Telefon Feedback zu geben, wurde bei der Modalität Sprache nach dem Sprachbefehl "`Maria Müller"' eine Animation eingebaut, die die Liste scrollen lässt, bevor der Kontakt markiert wird. Diese Animation dauert 1,5 Sekunden. Bei der Spracheingabe zur Direktauswahl aus sichtbaren Elementen wurde 0,5 Sekunden gewartet, um die Markierungsfarbe zu sehen. 
-Solche konstanten Zeiten sind nicht übertragbar, sondern müssen für jedes neue Interface das getestet wird berechnet und in die Vorhersage miteinbezogen werden. Für die Evaluation benötigen wir diese Zeiten.
+Zu den Interaktionszeiten ergeben sich noch 3 Antwortzeiten. 
+Die Zeit, die für das Laden des nächsten Screens benötigt wird mit einer Antwortdauer von 0,016 Sekunden. 
+Um dem Nutzer beim Anwendungsbeispiel Telefon Feedback zu geben, wurde für die Modalität Sprache, nach dem Sprachbefehl "`Maria Müller"' eine Animation eingebaut, die die Liste scrollen lässt, bevor der Kontakt markiert wird. 
+Diese Animation dauert 1,5 Sekunden. 
+Bei der Spracheingabe zur Direktauswahl aus sichtbaren Elementen wurde eine Verzögerung einer halben Sekunden eingebaut, um die Markierungsfarbe zu sehen. 
+Solche konstanten Antwortzeiten (Response Time) sind nicht übertragbar, sondern müssen für jedes zu testende Interface berechnet und in die Vorhersage miteinbezogen werden. Für die Evaluation benötigen wir diese Zeiten.
 
 \section[Qualitative Auswertung]{Qualitative Auswertung der Studie}
-Diese Art der Auswertung kann nicht in Zahlen ausgedrückt werden, sondern beinhaltet Kommentare der Probanden, sowie Beobachtungen des Studienleiters während der Studie.
+Eine qualitative Auswertung kann nicht in Zahlen ausgedrückt werden, sondern beinhaltet Kommentare der Probanden, sowie Beobachtungen des Studienleiters während der Studie.
 
-Die Studiendauer von 1,5 Stunden war sehr lange. Es konnte beobachtet werden, dass die Konzentration mit der Zeit oft nach ließ. Hinzu kam, dass es Anfang Dezember teils sehr kalt in der Parkgarage war. Je nach Vorlieben konnte die Sitzheizung eingeschaltet werden, jedoch wurden bei einigen mit der Zeit die Hände kalt. 
+Eine Studiendauer von 1,5 Stunden pro Proband stellte sich als sehr lange heraus. 
+Es konnte beobachtet werden, dass die Konzentration einiger Probanden mit der Zeit nach ließ. 
+Hinzu kam, dass es Anfang Dezember sehr kalt in der Parkgarage war. 
+Je nach Vorlieben konnte zwar die Sitzheizung eingeschaltet werden, jedoch wurden bei einigen mit der Zeit die Hände kalt. 
 
-Die Verwendung von Gesten als Eingabemodalität erwies sich als sehr unterschiedlich bei den Probanden. Obwohl einige Schwierigkeiten bei der Gestenerkennung auftauchten, machte es den meisten sehr viel Spaß damit zu interagieren. Es fiel auf, dass Probanden, bei dem die Gesteninteraktion sehr gut funktionierte natürlich auch der Eindruck viel positiver war. Ein Grund weshalb die Gestenerkennung unterschiedlich gut funktioniert hat, war der festgelegt Interaktionsbereich zwischen Gangschaltung und Dashboard, siehe \fref{fig:GestenbereichSkizze}. 
+Die Verwendung von Gesten als Eingabemodalität erwies sich als sehr unterschiedlich bei den Probanden. 
+Obwohl einige Schwierigkeiten bei der Gestenerkennung auftauchten, machte es den meisten sehr viel Spaß damit zu interagieren. 
+Es fiel auf, dass Probanden, bei dem die Gesteninteraktion sehr gut funktionierte, auch der Eindruck über Gesteninteraktionen viel positiver war. 
+Ein Grund weshalb die Gestenerkennung unterschiedlich gut funktioniert hat, war der festgelegt Interaktionsbereich zwischen Gangschaltung und Dashboard, siehe \fref{fig:GestenbereichSkizze}. 
 \begin{figure}
 	\centering
 		\includegraphics[width=1\textwidth]{img/GestenbereichSkizze2.jpg}
-	\caption{Skizze des Interaktionsbereichs zur Gestenerkennung}
+	\caption[Skizze des Interaktionsbereichs zur Gestenerkennung]{Grobe Skizze des Interaktionsbereichs zur Gestenerkennung. Die gelben Markierungslinien bilden den groben Bereich ab, in dem Gesten erkannt wurden.}
 	\label{fig:GestenbereichSkizze}
 \end{figure}
 
-Je nach Einstellung des Sitzes und vor allem je nach Armlänge der Probanden befand sich die Hand mehr oder weniger bequem im Interaktionsbereich. Am besten erschien eine Variante, bei dem der Proband seinen Arm auf der Armlehne ablegen konnte. Ist der komplette Arm in der Luft, wird er schnell schwer und die Gesten sind schwieriger auszuführen. Befindet sich die Hand zu weit hinten kommen die Infrarotstrahlen der Leap nicht durch die Gangschaltung und die Gestenerkennung funktioniert nicht so gut oder gar nicht. Es ist wichtig, dass dieser Bereich individuell einstellbar sein sollte, um die Gestenerkennung so bequem und robust wie möglich zu gestalten.
+Die Einstellung des Sitzes und vor allem die Armlänge der Probanden, spielten eine Rolle, ob der Interaktionsbereich bequem erreicht werden konnte. 
+Probanden mit längeren Armen war es möglich diesen auf der Armlehne abzulegen und befanden sich trotzdem im Interaktionsbereich. 
+Unabhängig von der Armlänge zogen es manche Probanden vor, den Arm während der Gesteninteraktion frei in der Luft zu halten, was auch bei vielen eine gute Gestenerkennung ermöglichte. 
+Befindet sich die Hand jedoch zu weit hinten, kommen die Infrarotstrahlen des Leap Motion Controllers nicht durch die Gangschaltung und die Gestenerkennung funktioniert schlechter oder gar nicht. 
+Befindet sich der komplette Arm für eine Gesteninteraktion in der Luft, kann dieser bei längerer Dauer schwer werden, was das Ausführen der Gesten erschwert.  
 
-Bei der Toucheingabe ist aufgefallen, dass sie zwar keinerlei Schwierigkeiten bei der Interaktion machte, allerdings befand sich der Touchbereich etwas zu weit hinten. Einige der Probanden mussten sich etwas nach vorne lehnen, um ihn optimal zu erreichen. Das stellt für die Bedienung im stehenden Auto kein Problem dar, jedoch während Fahrt sollte das vermieden werden, um möglichst wenig abzulenken. Das Inputfeld im Screen der Texteingabe befand sich unter der Tastatur. Bei der Toucheingabe wurde es durch die Hand verdeckt. Es sollte sich besser über der Tastatur befinden. 
+Bei der Touch-Eingabe ist aufgefallen, dass sie zwar keinerlei Schwierigkeiten bei der Interaktion machte, allerdings befand sich der Touchbereich etwas zu weit hinten. 
+Einige der Probanden mussten sich etwas nach vorne lehnen, um ihn optimal zu erreichen. 
+Das stellt für die Bedienung im stehenden Auto kein Risiko dar, jedoch während der Fahrt sollte das vermieden werden, um möglichst wenig abzulenken. 
 
-Aus Kommentaren einiger Probanden kam heraus, dass sie einerseits die Sprachbedienung für während der Fahrt am geeignetsten halten. Andererseits wurde angemerkt, dass sie die Sprachbedienung eher allein im Auto nutzen würden als mit Mitfahrern. Das deutet wiederum auf die Vorteile von multimodale Interaktion hin, bei der eine beliebige Variante je nach Situation gewählt werden kann.
-
-Die multimodale Ausführung von Interaktionen kam insgesamt sehr gut an. Immer wieder wurde jedoch angemerkt, dass haptische Bedienelemente für die Inkrementation besser geeignet wären. 
+Aus Kommentaren einiger Probanden kam heraus, dass sie einerseits die Sprachbedienung für während der Fahrt am geeignetsten halten. Andererseits wurde angemerkt, dass sie die Sprachbedienung eher allein im Auto nutzen würden als mit Mitfahrern. 
+Die multimodale Ausführung von Interaktionen kam insgesamt sehr gut an. 
+Immer wieder wurde jedoch angemerkt, dass haptische Bedienelemente für die Inkrementation besser geeignet wären. 
 
 \section[Diskussion]{Diskussion zur Studie und Erstellung des Modells}
-Bei der Entwicklung des Prototypen und der Erhebung der Interaktionszeiten aus der Studie gab es einige Einschränkungen und Entscheidungen, die im Zusammenhang der Studienergebnisse im folgenden interpretiert werden sollen.
+Bei der Entwicklung des Prototypen und der Erhebung der Interaktionszeiten aus der Studie gab es einige Einschränkungen und Entscheidungen, die im Zusammenhang der Studienergebnisse im folgenden diskutiert und interpretiert werden sollen.
 
-Als erste Einschränkung haben wir die Interaktion mit klassischen haptischen Bedienelementen aus unserer Studie ausgeschlossen. Dies lag dem großen Mehraufwand zugrunde, der dabei entstanden wäre. Um haptische Bedienelemente befriedigend zu modelliere, müssten, um nur ein Beispiel zu nennen verschiedene Drehwinkel eines Drehrades gemessen werden \citep{schneegass_2009}. Allein durch unsere drei Modalitäten mit Touch, Sprache und Geste entstanden mit unseren Aktionen ein Studienumfang von 1,5 Stunden, in der alle Kombinationen der drei Modalitäten getestet wurden. Wir haben uns entschieden uns in dieser Arbeit auf neuere Modalitäten (Touch, Sprache und Geste) zu fokussieren. 
+Als erste Einschränkung haben wir die Interaktion mit klassischen haptischen Bedienelementen aus unserer Studie ausgeschlossen. 
+Dies lag dem großen Mehraufwand zugrunde, der dabei entstanden wäre. 
+Um haptische Bedienelemente befriedigend zu modelliere, müssten, um nur ein Beispiel zu nennen, verschiedene Drehwinkel eines Drehrades gemessen werden \citep{schneegass_2009}. 
+Allein durch unsere drei Modalitäten mit Touch, Sprache und Geste entstanden ein Studienumfang von 1,5 Stunden pro Teilnehmer, in der alle Kombinationen der drei Modalitäten getestet wurden. 
+Wir haben uns deshalb entschieden, uns in dieser Arbeit auf die Modalitäten Touch, Sprache und Geste zu fokussieren. 
 
-Die Bedienung im Auto durch haptische Knöpfe, Schalter und Regler ist und bleibt ein wichtiger Bestandteil, um Funktionen im Auto zu betätigen. Ein großer Vorteil ist, dass die Eingabe oft fast blind getätigt werden kann, ohne die Aufmerksamkeit zu viel von der Straße zu lenken. Jedoch wurde bereits in vorherigen Studien die Verwendung von haptischen Bedienelementen im Auto untersucht \citep{Pettitt_2007}, \citep{schneegass_2009} und \citep{SchneegaB_2011}. 
+Die Bedienung im Auto durch haptische Knöpfe, Schalter und Regler ist und bleibt ein wichtiger Bestandteil, um Funktionen im Auto zu betätigen. 
+Ein großer Vorteil ist, dass die Eingabe oft fast blind getätigt werden kann, ohne die Aufmerksamkeit zu viel von der Straße zu lenken. 
+Die Verwendung von haptischen Bedienelementen im Auto wurde bereits in vorherigen Studien untersucht (siehe \citep{Pettitt_2007,schneegass_2009,SchneegaB_2011}. 
 
-In unserer Studie zur Erhebung von multimodalen Interaktionszeiten verwenden wir keine Fahraufgabe. Stattdessen messen wir die Total Task Time, die in einem stehenden Auto benötigt wird um eine Aufgabe zu lösen \citep{green1999sae}. Um den Grad der visuellen Ablenkung, solcher multimodalen Interaktionen messen zu können, sollte unser Modell zusätzlich noch dahingehend erweitert werden, die visuelle Ablenkung miteinzuberechnen (siehe \citep{Pettitt_2007}.
-
-Unsere Aktionen des multimodalen Modells sind nicht so feingranular wie die Operatoren aus dem Keystroke-Level-Modell. Statt separate Zeiten für die mentale Vorbereitung, der Bewegung vom Lenkrad zum Interaktionsbereich und der Bewegung innerhalb eines Interaktionsbereichs zu modellieren, haben wir diese als durchschnittliche Vorbereitungszeit für 3 verschiedenen Aktionen je nach Modalität zusammengefasst. Bei der Modellierung des Keystroke-Level-Modell wird genau vorgegeben, wann der Experte welche Bewegung macht und wann er sich mental vorbereitet. 
-
-Diese Herangehensweise war uns für unser Modell zu genau und hätte per Videoanalyse ausgewertet werden müssen. Um die Akkudauer der Go Pro zu verlängern, haben wir die Auflösung verringert. Die Bildqualität reicht aus, um die Varianten nachzuvollziehen, für eine Videoanalyse zur Bestimmung von Operatoren ist sie eher ungeeignet. Es wurden über 22 Stunden Videomaterial aufgenommen.
-
-Für unser Modell wollten wir Zeiten, die ein geübter Nutzer im Durchschnitt benötigt, um eine bestimmte Aktion in einem bestimmten Modus auszuführen. Das Modell soll eine grobe Abschätzung der Interaktionszeiten in Abhängigkeit der Modalität darstellen. Das ist auch der Grund warum wir unser Modell bis zum jetzigen Stand aggregiert haben. Doch selbst diese grobe Abschätzung sollte Vergleiche zwischen verschiedenen Moduskombination der Aktionen zulassen. Es ist jedoch zu erwarten, dass die Vorhersage der Interaktionszeiten eventuell nicht ganz so genau sind wie die eines Keystroke-Level Modells.
-
-Um für alle Kombinationen ausreichend Zeiten erheben zu können musste jeder Nutzer im Within Subject Design alle 33 Kombinationen durchführen. Da wir in unserem Modell, wie bei dem Keystroke-Level-Modell \citep{Card_1980}, von Experten ausgehen wollen, mussten die Probanden der Studie vorher die Interaktion üben. 
-
+In der Studie zur Erhebung von multimodalen Interaktionszeiten verwenden wir keine Fahraufgabe. Stattdessen messen wir die Gesamtdauer (Total Task Time), die in einem stehenden Auto benötigt wird um eine Aufgabe zu lösen. Um den Grad der visuellen Ablenkung, solcher multimodalen Interaktionen messen zu können, sollte unser Modell zusätzlich noch dahingehend erweitert werden, die visuelle Ablenkung miteinzubeziehen (siehe \citep{Pettitt_2007}.
+ 
+Um für alle Kombinationen ausreichend Zeiten erheben zu können musste jeder Nutzer im Within Subject Design alle 33 Kombinationen in durchführen.
+Da wir in unserem Modell, wie bei dem Keystroke-Level-Modell \citep{Card_1980}, von Experten ausgehen wollen, mussten die Probanden vorher die Interaktion üben. 
 \citet{Jude:2014} zeigte in seinem Paper zu multimodaler Interaktion von Geste und Sprache, dass eine sehr schnelle Interaktionssteigerung mit relativ geringem Training zu beobachten ist. 
-Außerdem entschlossen wir uns von jedem Probanden zwei Messdurchgänge zu erheben, um somit die Durchschnittszeit beider Messdurchgänge verwenden zu können. Diese Vorkehrungen bedeuteten allerdings, dass die Studiendauer bis zu 1,5 Stunden dauerte (je nachdem wie viel geübt werden musste). Die Studiendauer von 1,5 Stunden ist sehr lange und es konnte beobachtet werden, dass die Konzentration bei einigen Probanden mit der Zeit abnahm. Durch unsere Permutation aller Modalitäten und Anwendungsbeispielen, sollten diese eventuellen negativen Effekte auf alle Varianten gleichermaßen verteilt sein.
+Außerdem entschlossen wir uns von jedem Probanden zwei Messdurchgänge zu erheben, um somit die Durchschnittszeit beider Messdurchgänge verwenden zu können. 
+Diese Vorkehrungen bedeuteten allerdings, dass die Studiendauer bis zu 1,5 Stunden pro Durchlauf dauerte (je nachdem wie viel geübt werden musste). 
+
+Durch unsere Permutation aller Modalitäten und Anwendungsbeispielen, sollten die eventuellen negativen Effekte auf alle Varianten gleichermaßen verteilt sein.
 
 Die Vorerfahrung von Sprache ergab im Durchschnitt 2,32, bei Touch 3,95 und bei Geste 1,86. Die große Erfahrung mit der Touchbedienung lässt sich auf die weitverbreitete Smartphonenutzung zurückführen. Mit der Gestensteuerung haben die Probanden wie erwartet am wenigsten Erfahrung. Acht der 22 Probanden hatten keine Erfahrungen mit der Gestensteuerung und keiner davon nutzt sie regelmäßig. Diese Erfahrungswerte liegen der wenig verbreiteten Anwendungen mit Gesteninteraktionen zu Grunde.
 
 Für die Sprachmodalität haben wir nicht alle Aktionen abgebildet. 
 Statt zum Beispiel in einer Liste aus Kontakten durch einen Sprachbefehl "`nächste Seite"' zu scrollen , erschien es uns geeigneter direkt den Kontakt "`Maria Müller"' auszuwählen. Ebenso beim Einstellen der Temperatur oder der Lautstärke wurde der gewünschte Wert direkt, ohne Inkrementation, gesagt.
 
-Bei unserem Modell konnten wir für die Modalität Sprache nur zwischen einsilbigen Wörtern und mehrsilbigen Wörtern, sowie einer Durchschnittszeit von zwei Wörtern unterscheiden. In den meisten gängigen IVIS mit Sprachbedienung können auch ganze Sätze gesprochen werden wie zum Beispiel "`navigiere in die Kirchengasse Nummer 17"'. Um die Dauer eines Satzes zu modellieren müsste unser Modell noch dahingehend erweitert werden. 
+In unserem multimodalen Modell unterscheiden wir für die Modalität Sprache nur zwischen einsilbigen und mehrsilbigen Wörtern, sowie einer Durchschnittszeit von zwei Wörtern. 
+Die Aktion "`2 Wörter"' wurde aus dem Sprachbefehl "`Maria Müller"' und "`80 Prozent"'
+gebildet, obwohl signifikante Unterschiede vorlagen. 
+Diese Entscheidung wurde getroffen, um eine übertragbare Aktion für andere Prototypen zu erhalten.
+In den meisten gängigen Informationssystemen im Auto, die Sprachbedienung verwenden, können ganze Sätze gesprochen werden (zum Beispiel "`navigiere in die Kirchengasse Nummer 17"'). 
+Um die Vorhersage einer Dauer eines Satzes zu modellieren müsste unser Modell noch dahingehend genauer untersucht und erweitert werden. 
 
-Die Zeit der Toucheingabe ab dem vierten Buchstaben nochmal deutlich ab (0,501 statt 0,642 Sekunden). Warum?
-die Dauer darstellt, die für 2 Wörter benötigt wird, wollen wir diese Zeiten trotz signifikanter Unterschiede zusammenfassen. Warum? Weitere Messungen notwendig?
-Wir haben mehr Aktionen als erwartet. Warum und warum machen diese Sinn?
+Die Zeit der Touch-Eingabe, ab dem vierten Buchstaben nimmt nochmal deutlich ab (0,501 statt 0,642 Sekunden), weshalb wir diese als eigene Aktionszeit definiert haben. 
+Zu diesem Zeitpunkt hat sich der Nutzer bereits mit der Tastatur vertraut gemacht und somit  verläuft die weitere Eingabe schneller. 
+Das Inputfeld im Screen der Texteingabe befand sich unter der Tastatur. 
+Bei einer Touch-Eingabe wurde es durch die Hand verdeckt. 
+Es sollte sich besser über der Tastatur befinden. 
 
-Die Aktion Direktauswahl aus sichtbaren Elementen sollte noch erweitert werden, dass sie auch nach einem Wechsel modelliert stattfinden kann. In unseren Anwendungsbeispielen kam diese Variante nicht vor und konnte somit nicht modelliert werden.
+Die Aktion Direktauswahl aus sichtbaren Elementen sollte noch erweitert werden, dass sie auch nach einem Wechsel modelliert stattfinden kann. 
+In unseren Anwendungsbeispielen kam diese Variante nicht vor und konnte somit nicht modelliert werden.
 
-Der Gesteninteraktionsbereich war nicht für alle Probanden optimal, je nach Armlänge konnten die Gesten der Probanden besser und schlechter ausgeführt werden. Probanden, bei denen sich der Interaktionsbereich zu weit weg befand, mussten sich mehr darauf konzentrieren die Geste richtig auszuführen, was die Interaktion verlangsamte und die potenzielle Ablenkung vergrößert. In der Studie von \citet{Riener:2013:SIG} wurde der Bereich für Gesten untersucht. 
+Der Gesteninteraktionsbereich war nicht für alle Probanden optimal, je nach Armlänge konnten die Gesten der Probanden besser und schlechter ausgeführt werden. 
+Probanden, bei denen sich der Interaktionsbereich zu weit weg befand, mussten sich mehr darauf konzentrieren die Geste richtig auszuführen, was die Interaktion verlangsamte und die potenzielle Ablenkung vergrößert. 
+In der Studie von \citet{Riener:2013:SIG} wurde der Bereich für Gesten untersucht. 
 Sie stellten fest, dass die häufigste Gesteninteraktion sich in dem Dreiecks-Bereich von Lenkrad, Rückspiegel und Gangschaltung befindet. 
-Unsere Gestenerkennung befand sich somit innerhalb dieses Bereichs.
+Unsere Gestenerkennung befand sich somit innerhalb dieses Bereichs. 
+Es wäre ein Vorteil, wenn dieser Interaktionsbereich Bereich individuell einstellbar wäre, um die Gestenerkennung so bequem und robust wie möglich zu gestalten.
 
-Auch der Touchdisplay war für einige Probanden zu weite vorne positioniert. Diese Aspekte sollten bei der Entwicklung von multimodalen Informationssystemen im Auto mehr berücksichtigt werden. Zur Optimierung der Interaktion mit großen Touchdisplays haben \citet{Rumelin:2013} Touchvarianten verglichen und zum Beispiel ein haptisches Element als Orientierungshilfe in den Screen eingebaut, mit dem die Interaktion eines Kuchenmenüs von diesem Punkt aus fast blind getätigt werden kann. Um visuelle Überlagerungen von Karten zu verbessern haben \citet{lee2013saliency} die Suche von Elementen durch die präattentive Wahrnehmung durch das Hervorheben von Elementen verbessert und konnten somit Ablenkung reduzieren. Es gibt also nicht nur für die Kombination von Modalitäten, sondern auch für jede einzelne Modalität noch Verbesserungspotenzial. 
+Auch der Touchdisplay war für einige Probanden zu weite vorne positioniert. Dieser sollte für den Fahrer ohne große Anstrengung erreichbar sein.
+Zur Optimierung der Interaktion mit großen Touchdisplays haben \citet{Rumelin:2013} Touchvarianten verglichen und zum Beispiel ein haptisches Element als Orientierungshilfe in den Screen eingebaut, mit dem die Interaktion eines Kuchenmenüs von diesem Punkt aus fast blind getätigt werden kann. 
+Um visuelle Überlagerungen von Karten zu verbessern haben \citet{lee2013saliency} die Suche von Elementen durch die präattentive Wahrnehmung durch das Hervorheben von Elementen verbessert und konnten somit Ablenkung reduzieren. 
+Es gibt also nicht nur für die Kombination von Modalitäten, sondern auch für jede einzelne Modalität noch Verbesserungspotenzial. 
 
-Grundsätzlich lässt sich sagen, dass die Sprachbedienung am beliebtesten bei den Probanden war. Jedoch wurde oft angemerkt, dass Sie diese Modalität nicht mit Mitfahrern verwenden würden. Das ist ein gutes Beispiel dafür, warum es sinnvoll ist bei einem IVIS mehrere Modalitäten anzubieten. Nach der reinen Sprachbedienung war die zweitbeliebteste Kombination Touch und Sprache, dicht gefolgt von Geste und Sprache. Das zeigt, dass multimodale Interaktionen durchaus bei den Probanden gewünscht sind. 
+Grundsätzlich lässt sich sagen, dass die Sprachbedienung am beliebtesten bei den Probanden war. 
+Jedoch wurde oft angemerkt, dass Sie diese Modalität nicht mit Mitfahrern verwenden würden. 
+Das ist ein gutes Beispiel dafür, warum es sinnvoll ist bei einem IVIS mehrere Modalitäten anzubieten. 
+Nach der reinen Sprachbedienung war die zweitbeliebteste Kombination Touch und Sprache, dicht gefolgt von Geste und Sprache. 
+Das zeigt, dass multimodale Interaktionen durchaus bei den Probanden gewünscht sind, was aus den Kommentaren auch bestätigt wurde.
+
+Die Aktionen unseres multimodalen Modells sind nicht so feingranular wie die Operatoren aus dem Keystroke-Level-Modell, sondern befinden sich eine Ebene höher. 
+Statt separate Zeiten für die mentale Vorbereitung, der Bewegung vom Lenkrad zum Interaktionsbereich und der Bewegung innerhalb eines Interaktionsbereichs zu modellieren, haben wir diese als durchschnittliche Vorbereitungszeit für 3 verschiedenen Aktionen je nach Modalität zusammengefasst. 
+Für der Modellierung des Keystroke-Level-Modell wird genau vorgegeben, wann der Experte welche Bewegung macht und wann er sich mental vorbereitet. 
+
+Diese Herangehensweise war uns für unser Modell zu genau und hätte per Videoanalyse ausgewertet werden müssen. 
+Um die Akkudauer der Go Pro-Kamera zu verlängern, haben wir die Auflösung verringert. 
+Die Bildqualität reichte aus, um die Varianten nachzuvollziehen, für eine Videoanalyse zur Bestimmung von Operatoren ist sie allerdings ungeeignet. 
+Es wurden über 22 Stunden Videomaterial aufgenommen.
+
+Unser multimodales Modell enthält Aktionszeiten, die ein geübter Nutzer im Durchschnitt benötigt, um eine bestimmte Aktion in einer bestimmten Modalität auszuführen. 
+Das Modell soll eine grobe Abschätzung der Interaktionszeiten in Abhängigkeit der Modalität mit Berücksichtigung der Wechselkosten berechnen. 
+Diese Vorhersage einer multimodalen Interaktionsdauer soll Vergleiche zwischen verschiedenen Moduskombination der Aktionen ermöglichen. 
+Es ist jedoch zu erwarten, dass die Vorhersage der Interaktionszeiten eventuell nicht ganz so präzise sind, wie die eines Keystroke-Level Modells.
