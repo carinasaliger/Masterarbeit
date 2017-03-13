@@ -1,10 +1,11 @@
+\clearpage
 \section[Herleitung des Modells]{Ableitung des multimodalen Modells aus den gewonnen Interaktionszeiten}\label{sec:Herleitung}
-Aus unserer Studie haben wir Zeiten für verschiedene Aktionen in den jeweiligen Moduskombinationen erhoben.
-Die Zeiten in den folgenden Tabellen sind Durchschnittszeiten für eine Aktion, der in einer bestimmten Moduskombination ausgeführt wurde.
+Aus unserer Studie haben wir Zeiten für verschiedene Aktionen in den jeweiligen Kombinationen der Modalitäten erhoben.
+Die Zeiten in den folgenden Tabellen sind Durchschnittszeiten für eine Aktion, der in einer bestimmten Kombinationen von Modalitäten ausgeführt wurde.
 Wird eine Aktion in der Modalität Touch (T) ausgeführt gibt es drei mögliche Modalitäten, die nach einem Wechsel kommen können.
 Entweder ebenfalls Touch und somit Touch\&Touch (TT) oder es folgt eine Moudswechsel zu Geste oder Sprache.
 Die weiteren Kombinationen sind somit Touch\&Geste (TG) und Touch\&Sprache (TS).
-Analog dazu haben wir Kombinationen bei denen Geste oder Sprache der erste Modus ist.
+Analog dazu haben wir Kombinationen bei denen Geste oder Sprache die erste Modalität ist.
 
 Aus unseren Anwendungsbeispielen haben sich verschiedene Aktionen ergeben, die wir nun analysieren wollen, um daraus unser Modell abzuleiten.
 In der folgenden Liste werden die einzelnen Aktionen der Anwendungsbeispiele erläutert (siehe auch Anwendungsbeispiele in \fref{fig:UseCases}):
@@ -16,7 +17,7 @@ In der folgenden Liste werden die einzelnen Aktionen der Anwendungsbeispiele erl
 	\item \textbf{DA (L):} Direktauswahl aus sichtbaren Elementen, nachdem im Anwendungsbeispiel Telefon bereits drei mal geswiped wurde und "`Maria Müller"' aus vier Elementen ausgewählt werden muss.
 	\item \textbf{Inkr. (s)$_1$, Inkr. (s)$_2$ und Inkr. (s)$_3$:} Der erste (zweite oder dritte) Swipe der Wertinkrementation aus dem Anwendungsbeispiel Temperatur.
 	\item \textbf{Inkr. (d)} Verschiebung des Sliders im Anwendungsbeispiel Medien.
-	Im Modus Sprache entspricht dies dem Sprachbefehl "`achzig Prozent"'.
+	In der Modalität Sprache, entspricht dies dem Sprachbefehl "`achzig Prozent"'.
 	\item \textbf{Popup:} Bestätigung des Popups, das nach dem Slider angezeigt wird.
 	\item \textbf{1. Bu., 2. Bu., 3. Bu.:} Der Touch des ersten (zweiten oder dritten) Buchstaben im Anwendungsbeispiel Navigation.
 	\item \textbf{Bu. >3:} Alle weiteren Buchstaben im Anwendungsbeispiel Navigation.
@@ -27,14 +28,14 @@ In der folgenden Liste werden die einzelnen Aktionen der Anwendungsbeispiele erl
 	\item \textbf{OK:} Bestätigung der Zieleingabe im Anwendungsbeispiel Navigation.
 	\item \textbf{R(Screen):} Konstante Zeit, die vom System benötigt wird von einem Screen auf den Nächsten zu wechseln.
 	Ein Screenwechsel dauert 0,016 Sekunden.
-	\item \textbf{R(Swipe):} Beim Modus Sprache wird nach dem Sprachbefehl: "`Maria Müller"' die Liste mit einer Animation zur richtigen Seite geswiped bevor der gewünschte Kontakt ausgewählt wird. Die Zeit dieser Animation nennen wir R(Swipe). Sie dauert in unserem Prototypen 1,5 Sekunden.
-	\item \textbf{R(DA):} Im Modus Sprache wurde bei der DA nach jedem Sprachbefehl 0,5 Sekunden gewartet um die gelbe Markierung als Feedback zu geben. Diese 0,5 Sekunden müssen also bei DA$_1$ und DA$_2$ zur Gesamtzeit hinzugefügt werden.
+	\item \textbf{R(Swipe):} Beim der Sprachmodalität wird nach dem Sprachbefehl: "`Maria Müller"' die Liste mit einer Animation zur richtigen Seite geswiped bevor der gewünschte Kontakt ausgewählt wird. Die Zeit dieser Animation nennen wir R(Swipe). Sie dauert in unserem Prototypen 1,5 Sekunden.
+	\item \textbf{R(DA):} In der Modalität Sprache, wurde bei der DA nach jedem Sprachbefehl 0,5 Sekunden gewartet um die gelbe Markierung als Feedback zu geben. Diese 0,5 Sekunden müssen also bei DA$_1$ und DA$_2$ zur Gesamtzeit hinzugefügt werden.
 \end{itemize}
 Diese Einzelaktionen wollen wir in diesem Kapitel im Hinblick der Modalitätsunterschiede untersuchen und diese so weit es sinnvoll ist aggregieren, um ein übertragbares Modell zu bekommen.
 
 Für die Sprachbefehle modellieren wir die Zeiten von verschiedenen Wortlängen.
 
-Für uns am interessantesten in diesem Modell ist es, ob ein vorheriger Modus Einfluss auf den nachfolgenden Modus hat und ob und wie sich die Interaktionszeiten dadurch unterscheiden.
+Für uns am interessantesten in diesem Modell ist es, ob eine vorherige Modalität Einfluss auf die nachfolgende Modalität hat und ob und wie sich die Interaktionszeiten dadurch unterscheiden.
 Die Zeiten wurden als Durchschnitt der Zeiten der 22 Probanden ermittelt.
 Die Durchschnittszeiten aller Aktionen sind aus der \fref{tab:OperatorzeitenVorWechsel1}, \fref{tab:OperatorzeitenNachWechsel_TouchGeste} und \fref{tab:OperatorzeitenNachWechsel_Sprache} zu entnehmen.
 \begin{table}[ht]
@@ -52,7 +53,7 @@ Die Durchschnittszeiten aller Aktionen sind aus der \fref{tab:OperatorzeitenVorW
 					&  			& \small{$(TS)^{**}$}				&	\small{$(TG)^{**}$}			&				&				&				&		&	& \\
 		\hline
   \end{tabular}
-	\caption[Durchschnittszeiten der Aktionen vor dem Moduswechsel]{Durchschnittszeiten in Sekunden der Aktionen vor dem Moduswechsel. Signifikanz wurde gemessen innerhalb einer Modalität vor dem Wechsel (zum Beispiel TT, TG und TS). Fettgedruckte Zeiten sind signifikant. Unter der Zahl steht zu welcher Kombination diese Zeit signifikant ist. Dabei gilt zusätzlich: * $\text{Signifikanz} \leq 0,05$, ** $\text{Signifikanz} \leq 0,01$ und *** $\text{Signifikanz} \leq 0,001$}
+	\caption[Durchschnittszeiten der Aktionen vor dem Wechsel einer Modalität]{Durchschnittszeiten in Sekunden der Aktionen vor dem Wechsel einer Modalität. Signifikanz wurde gemessen innerhalb einer Modalität vor dem Wechsel (zum Beispiel TT, TG und TS). Fettgedruckte Zeiten sind signifikant. Unter der Zahl steht zu welcher Kombination diese Zeit signifikant ist. Dabei gilt zusätzlich: * $\text{Signifikanz} \leq 0,05$, ** $\text{Signifikanz} \leq 0,01$ und *** $\text{Signifikanz} \leq 0,001$}
 \label{tab:OperatorzeitenVorWechsel1}
 \end{table}
 
@@ -98,7 +99,7 @@ Die Durchschnittszeiten aller Aktionen sind aus der \fref{tab:OperatorzeitenVorW
 		OK  					& 0,838 & 0,892 &	0,856 & 			& 			&  		\\
 		\hline
   \end{tabular}
-	\caption[Durchschnittszeiten der Aktionen nach dem Moduswechsel]{Durchschnittszeiten von Touch und Geste in Sekunden der Aktionen nach dem Moduswechsel. Signifikanz wurde gemessen innerhalb einer Modalität nach dem Wechsel (zum Beispiel TT, GT und ST). Fettgedruckte Zeiten sind signifikant. Unter der Zahl steht zu welcher Kombination diese Zeit signifikant ist. Dabei gilt zusätzlich: * Signifikanzniveau $\alpha \leq 0,05$, ** $\alpha \leq 0,01$ und *** $\alpha \leq 0,001$}
+	\caption[Durchschnittszeiten der Aktionen nach dem Wechsel einer Modalität]{Durchschnittszeiten von Touch und Geste in Sekunden der Aktionen nach dem Wechsel einer Modalität. Signifikanz wurde gemessen innerhalb einer Modalität nach dem Wechsel (zum Beispiel TT, GT und ST). Fettgedruckte Zeiten sind signifikant. Unter der Zahl steht zu welcher Kombination diese Zeit signifikant ist. Dabei gilt zusätzlich: * Signifikanzniveau $\alpha \leq 0,05$, ** $\alpha \leq 0,01$ und *** $\alpha \leq 0,001$}
 	\label{tab:OperatorzeitenNachWechsel_TouchGeste}
 \end{table}
 
@@ -131,24 +132,24 @@ Die Durchschnittszeiten aller Aktionen sind aus der \fref{tab:OperatorzeitenVorW
 		OK  					&	1,933	& 1,964	& 1,988\\
 		\hline
   \end{tabular}
-	\caption[Erste Vereinfachung der Durchschnittszeiten der Aktionen nach dem Moduswechsel]{Durchschnittszeiten von Sprachbefehlen in Sekunden der Aktionen nach dem Moduswechsel. Signifikanz wurde gemessen innerhalb einer Modalität nach dem Wechsel (zum Beispiel TT, GT und ST). Fettgedruckte Zeiten sind signifikant. Unter der Zahl steht zu welcher Kombination diese Zeit signifikant ist. Dabei gilt zusätzlich: * Signifikanzniveau $\alpha \leq 0,05$, ** $\alpha \leq 0,01$ und *** $\alpha \leq 0,001$}
+	\caption[Erste Vereinfachung der Durchschnittszeiten der Aktionen nach dem Wechsel einer Modalität]{Durchschnittszeiten von Sprachbefehlen in Sekunden der Aktionen nach dem Wechsel einer Modalität. Signifikanz wurde gemessen innerhalb einer Modalität nach dem Wechsel (zum Beispiel TT, GT und ST). Fettgedruckte Zeiten sind signifikant. Unter der Zahl steht zu welcher Kombination diese Zeit signifikant ist. Dabei gilt zusätzlich: * Signifikanzniveau $\alpha \leq 0,05$, ** $\alpha \leq 0,01$ und *** $\alpha \leq 0,001$}
 	\label{tab:OperatorzeitenNachWechsel_Sprache}
 \end{table}
 
 Um das Modell zu verallgemeinern, fassen wir einige der Zeiten zusammen.
-Alle Aktionen, die nicht unmittelbar nach einem Moduswechsel stattfinden, sollen zusammengefasst werden.
-Die Aktionen unmittelbar nach einem Moduswechsel sind L$_1$ (der erste Swipe aus den Kontakten), Inkr. (s)$_1$ (der erste Swipe, um die Temperatur zu inkrementieren), Inkr. (d) (Einstellung des Sliders) und 1. Bu. (der erste Touch des ersten Buchstaben).
+Alle Aktionen, die nicht unmittelbar nach einem Wechsel einer Modalität stattfinden, sollen zusammengefasst werden.
+Die Aktionen unmittelbar nach einem Wechsel von Modalitäten sind L$_1$ (der erste Swipe aus den Kontakten), Inkr. (s)$_1$ (der erste Swipe, um die Temperatur zu inkrementieren), Inkr. (d) (Einstellung des Sliders) und 1. Bu. (der erste Touch des ersten Buchstaben).
 All diese Aktionen weisen auch signifikante Unterschiede untereinander auf (siehe \fref{tab:OperatorzeitenNachWechsel_TouchGeste}, \fref{tab:OperatorzeitenNachWechsel_Sprache}).
 Die Signifikanz wurde gemessen innerhalb einer Modalität nach einem potentiellen Wechsel.
-Das heißt, die Interaktionszeiten der Modalität Sprache werden auf signifikante Unterschiede zum vorherigen Modus untersucht (TS, GS und SS).
+Das heißt, die Interaktionszeiten der Modalität Sprache werden auf signifikante Unterschiede zur vorherigen Modalität untersucht (TS, GS und SS).
 Fettgedruckte Zeiten sind signifikant.
 Unter der Interaktionszeit steht, zu welcher Kombination diese Zeit signifikant ist.
 Dabei gilt zusätzlich: * entspricht einem Signifikanzniveau von $\leq 0,05$, ** einem Signifikanzniveau von $\leq 0,01$ und *** einem Signifikanzniveau von $\leq 0,001$.
 
-Als ersten fassen wir die Zeiten der direkten Auswahl (DA) zusammen, die vor einem Moduswechsel stattfinden und somit keinen Einfluss eines Wechsel haben können.
+Als ersten fassen wir die Zeiten der direkten Auswahl (DA) zusammen, die vor einem Modalitätswechsel stattfinden und somit keinen Einfluss eines Wechsel haben können.
 Für die Aktion DA$_1$ sehen wir signifikante Unterschiede zwischen der unimodalen Variante Geste (GG) und der multimodalen Variante Geste und Sprache (GS).
 Im zweiten Screen gibt es ebenfalls einen signifikanten Unterschied in der Aktion DA$_2$ für Touch zwischen TS und TG (siehe \fref{tab:OperatorzeitenVorWechsel1}).
-Wir werden die Interaktionszeiten trotzdem für jede Modalität zusammenfassen, da wir den möglichen Einfluss eines bevorstehenden Moduswechsels nicht berücksichtigen wollen.
+Wir werden die Interaktionszeiten trotzdem für jede Modalität zusammenfassen, da wir den möglichen Einfluss eines bevorstehenden Modalitätswechsels nicht berücksichtigen wollen.
 Jetzt haben wir noch sechs verschiedene Durchschnittszeiten (jeweils Touch, Geste und Sprache für DA$_1$ und DA$_2$).
 
 Die Zeiten von DA$_1$ und DA$_2$ unterscheiden sich.
@@ -165,18 +166,18 @@ Außerdem sind im Hauptscreen Icons und Texte dargestellt, während auf dem zwei
 Wir wollen aber einheitliche Durchschnittszeit der drei Modalitäten für die Aktion Direktauswahl aus sichtbaren Elementen (DA), also die durchschnittliche Zeit, die für eine Auswahl von drei oder vier Kacheln der Größe 3,5cm x 4,5cm mit Text oder Icons benötigt wird.
 Deshalb haben wir uns entschlossen die Zeiten zusammenzufassen (siehe \fref{tab:OperatorzeitenZusammengefasst1}).
 
-Als nächstes fassen wir Aktionen zusammen, bei denen der Moduswechsel bereits stattgefunden hat.
-Der erste Swipe findet beispielsweise unmittelbar nach einem potenziellen Moduswechsel statt.
-Ein Moduswechsel beinhaltet meist einen Homing Operator wie im ursprüngliche Keystroke-Level-Modell.
+Als nächstes fassen wir Aktionen zusammen, bei denen der Modalitätswechsel bereits stattgefunden hat.
+Der erste Swipe findet beispielsweise unmittelbar nach einem potenziellen Modalitätswechsel statt.
+Ein Modalitätswechsel beinhaltet meist einen Homing Operator wie im ursprüngliche Keystroke-Level-Modell.
 Wechselt die Modalität zum Beispiel von Sprache zu Touch, muss die Hand vom Lenkrad genommen werden und sich zum Touchbereich bewegen.
-Nach \citet{Green_2002} würde dies dem Operator $R_f$ (Reach Far Operator) entsprechen.
-Eine Aktion unmittelbar nach einem Moduswechsel dauert also länger, was sich durch die von uns ermittelten Zeiten auch bestätigen lässt.
+Nach \citet{Green_2002} würde dies dem Operator $R_f$ (Reach Far) entsprechen.
+Eine Aktion unmittelbar nach einem Modalitätswechsel dauert also länger, was sich durch die von uns ermittelten Zeiten auch bestätigen lässt.
 
-Deshalb fassen wir für den zweiten und dritten Swipe der Liste (L$_2$), (L$_3$) die Modalität vor dem Moduswechsel zusammen.
+Deshalb fassen wir für den zweiten und dritten Swipe der Liste (L$_2$), (L$_3$) die Modalität vor dem Modalitätswechsel zusammen.
 Wir subtrahieren die Durchschnittszeit, die für einen zweiten oder dritten Swipe benötigt wird von (L$_1$) und bekommen damit die Vorbereitungszeit.
 Diese Vorbereitungszeit enthält zum Beispiel eine Umpositionierung der Hand und eine mentale Vorbereitung auf die Aufgabe.
 Es entsteht damit die einheitliche Aktion (L) für alle seitenweise Swipes und zusätzlich eine Vorbereitungszeit, die stets zum ersten Swipe addiert werden muss.
-Die Vorbereitungszeit unterscheiden wir für jede Modalität und somit entsteht die Aktion V(L), siehe \fref{tab:OperatorzeitenNachWechsel3_TouchGeste}.
+Die Vorbereitungszeit unterscheiden wir für jede Modalität und somit entsteht die Aktion V(L), siehe \ref{tab:OperatorzeitenNachWechsel3_TouchGeste}.
  
 Dieses Vorgehen wenden wir analog für die Aktion Inkr. (s) an.
 Auch hier ist der erste Swipe im Schnitt ca. eine Sekunde langsamer als die folgenden.
@@ -199,7 +200,7 @@ Sowohl bei Touch, als auch bei Sprache gibt es keine signifikanten Unterschiede 
 
 Als letztes fassen wir die Wortlängen M ("`Dorfweg"') und L ("`Kirchengasse"') zusammen.
 Diese sind beide signifikant unterschiedlich zur Wortlänge S ("`Rom"'), weisen aber untereinander keine signifikanten Unterschiede auf.
-Die Unterscheidung der Modalitäten wird erhalten, da unmittelbar davor der Moduswechsel statt gefunden hat.
+Die Unterscheidung der Modalitäten wird erhalten, da unmittelbar davor der Modalitätswechsel statt gefunden hat.
 Bei diesen Aktionen wird somit lediglich unterschieden, ob sie einsilbig oder mehrsilbig sind.
 Diese Aktionen kürzen wir daher ab mit Wort(e) für ein einsilbiges Wort und Wort(m) für ein mehrsilbiges Wort (siehe \fref{tab:OperatorzeitenNachWechsel3_Sprache}).
 
@@ -214,7 +215,7 @@ Diese Aktionen kürzen wir daher ab mit Wort(e) für ein einsilbiges Wort und Wo
 		DA 	& \multicolumn{3}{|c|}{1,710} &	\multicolumn{3}{|c|}{2,436} 	&	\multicolumn{3}{|c|}{2,795} \\
 		\hline
   \end{tabular}
-	\caption{Zusammengefasste Zeiten der Operatoren vor dem Moduswechsel}
+	\caption{Zusammengefasste Zeiten der Operatoren vor dem Modalitätswechsel}
 \label{tab:OperatorzeitenZusammengefasst1}
 \end{table}
 \begin{table}[ht]
@@ -251,7 +252,7 @@ Diese Aktionen kürzen wir daher ab mit Wort(e) für ein einsilbiges Wort und Wo
 		Bu. >3 					& \multicolumn{3}{|c|}{0,501} &				& 		&  		\\
 		\hline
   \end{tabular}
-	\caption[Zweite Vereinfachung der Durchschnittszeiten von Touch und Geste nach dem Moduswechsel]{Durchschnittszeiten von Touch und Geste in Sekunden der Aktionen nach dem Moduswechsel. Signifikanz wurde gemessen innerhalb einer Modalität nach dem Wechsel (zum Beispiel TT, GT und ST). Fettgedruckte Zeiten sind signifikant. Unter der Zahl steht zu welcher Kombination diese Zeit signifikant ist. Dabei gilt zusätzlich: * Signifikanzniveau $\alpha \leq 0,05$, ** $\alpha \leq 0,01$ und *** $\alpha \leq 0,001$}
+	\caption[Zweite Vereinfachung der Durchschnittszeiten von Touch und Geste nach dem Modalitätswechsel]{Durchschnittszeiten von Touch und Geste in Sekunden der Aktionen nach dem Modalitätswechsel. Signifikanz wurde gemessen innerhalb einer Modalität nach dem Wechsel (zum Beispiel TT, GT und ST). Fettgedruckte Zeiten sind signifikant. Unter der Zahl steht zu welcher Kombination diese Zeit signifikant ist. Dabei gilt zusätzlich: * Signifikanzniveau $\alpha \leq 0,05$, ** $\alpha \leq 0,01$ und *** $\alpha \leq 0,001$}
 	\label{tab:OperatorzeitenNachWechsel3_TouchGeste}
 \end{table}
 \begin{table}[ht]
@@ -274,25 +275,25 @@ Diese Aktionen kürzen wir daher ab mit Wort(e) für ein einsilbiges Wort und Wo
 		(m)						& 			& \small{$(SS)^{*}$} & \small{$(GS)^{*}$} \\
 		\hline
   \end{tabular}
-	\caption[Zweite Vereinfachung der Durchschnittszeiten von Sprache nach dem Moduswechsel]{Durchschnittszeiten von Sprachbefehlen in Sekunden der Aktionen nach dem Moduswechsel. Signifikanz wurde gemessen innerhalb einer Modalität nach dem Wechsel (zum Beispiel TT, GT und ST). Fettgedruckte Zeiten sind signifikant. Unter der Zahl steht zu welcher Kombination diese Zeit signifikant ist. Dabei gilt zusätzlich: * Signifikanzniveau $\alpha \leq 0,05$, ** $\alpha \leq 0,01$ und *** $\alpha \leq 0,001$}
+	\caption[Zweite Vereinfachung der Durchschnittszeiten von Sprache nach dem Modalitätswechsel]{Durchschnittszeiten von Sprachbefehlen in Sekunden der Aktionen nach dem Modalitätswechsel. Signifikanz wurde gemessen innerhalb einer Modalität nach dem Wechsel (zum Beispiel TT, GT und ST). Fettgedruckte Zeiten sind signifikant. Unter der Zahl steht zu welcher Kombination diese Zeit signifikant ist. Dabei gilt zusätzlich: * Signifikanzniveau $\alpha \leq 0,05$, ** $\alpha \leq 0,01$ und *** $\alpha \leq 0,001$}
 	\label{tab:OperatorzeitenNachWechsel3_Sprache}
 \end{table}
-
+\clearpage
 \section[Multimodales Modell]{Multimodales Modell mit Wechselkosten}
 In den vorherigen Schritten haben wir die gesammelten Durchschnittszeiten gruppiert und zusammengefasst.
-Um die verschiedenen Aktionen mit ihren Interaktionszeiten übersichtlich zu einem Modell zusammenzufassen, betrachten wir ab jetzt die Aktionen vorerst unimodal (TT, GG und SS) und addieren je nach Moduswechsel die entsprechenden Wechselkosten hinzu.
+Um die verschiedenen Aktionen mit ihren Interaktionszeiten übersichtlich zu einem Modell zusammenzufassen, betrachten wir ab jetzt die Aktionen vorerst unimodal (TT, GG und SS) und addieren je nach Modalitätswechsel die entsprechenden Wechselkosten hinzu.
 
 Die unimodalen Interaktionszeiten waren stets schneller als die multimodalen Interaktionszeiten.
 Wir verwenden diese als unsere Ausgangszeiten, indem wir sie von den Multimodalen Varianten subtrahieren.
 Dadurch entstehen die sogenannten zusätzlichen Wechselkosten.
-Zum Beispiel dauert die Aktion V(L) im unimodalen Touch Modus (TT) $0,705$ Sekunden und in der multimodale Variante Geste und anschließend Touch (GT) 1,116 Sekunden.
+Zum Beispiel dauert die Aktion V(L) mit unimodaler Touch-Eingabe (TT) $0,705$ Sekunden und in der multimodale Variante Geste und anschließend Touch (GT) 1,116 Sekunden.
 Ziehen wir die unimodale Zeit von der multimodalen ab, erhalten wir die Wechselkosten von $0,411$ Sekunden, die bei einem Wechsel von Geste zu Touch (W$_{GT}$) anfallen.
 
-Wir haben die Aktion (DA) vor einem Moduswechsel für jede Modalität (ergibt 3 Aktionszeiten) und 13 Aktionen nach einem möglichen Moduswechsel für Touch und Geste (ergibt 17 Aktionszeiten) und 4 Aktionen nach einem möglichen Moduswechsel für Sprache identifiziert.
+Wir haben die Aktion (DA) vor einem Modalitätswechsel für jede Modalität (ergibt 3 Aktionszeiten) und 13 Aktionen nach einem möglichen Modalitätswechsel für Touch und Geste (ergibt 17 Aktionszeiten) und 4 Aktionen nach einem möglichen Modalitätswechsel für Sprache identifiziert.
 Dies ergibt 24 Aktionen und 20 verschiedene Arten von Wechselkosten.
 Insgesamt kommen wir auf 44 verschiedene Interaktionszeiten für unser Modell.
 
-In \fref{tab:DA} sind die zusammengefassten Zeiten der Aktion DA, die vor dem Moduswechsel stattfinden zu shene.
+In \fref{tab:DA} sind die zusammengefassten Zeiten der Aktion DA, die vor dem Modalitätswechsel stattfinden zu shene.
 \fref{tab:AktionenUnimodal} listet alle Aktionen mit ihren Interaktionszeiten auf.
 Wird eine dieser Aktionen mit einer anderen Modalität ausgeführt als die vorhergegangene DA müssen die Wechselkosten addiert werden.
 Die dazugehörigen Wechselkosten für multimodale Interaktionen können aus \fref{tab:Wechselkosten} entnommen werden.
@@ -308,7 +309,7 @@ Die dazugehörigen Wechselkosten für multimodale Interaktionen können aus \fre
 		DA 	& \multicolumn{3}{|c|}{1,710} &	\multicolumn{3}{|c|}{2,436} 	&	\multicolumn{3}{|c|}{2,795} \\
 		\hline
   \end{tabular}
-	\caption{Zusammengefasste Zeiten der Operatoren vor dem Moduswechsel}
+	\caption{Zusammengefasste Zeiten der Operatoren vor dem Modalitätswechsel}
 \label{tab:DA}
 \end{table}
 \begin{table}[ht]
@@ -374,7 +375,7 @@ Die dazugehörigen Wechselkosten für multimodale Interaktionen können aus \fre
 				2 Wörter 				& \multicolumn{2}{|c|}{}	& \multicolumn{2}{|c|}{}				& ${+0,185}$ 		& ${+0,347}$\\
 				\hline
 			\end{tabular}
-	\caption[Wechselkosten eines Moduswechsels]{Zusatzkosten (Wechselkosten) in Sekunden bei einem Moduswechsel. Diese Wechselkosten betreffen nur Aktionen direkt nach dem Moduswechsel. Wechselkosten müssen bei einem Moduswechsel dementsprechend aufaddiert werden.}
+	\caption[Wechselkosten eines Modalitätswechsels]{Zusatzkosten (Wechselkosten) in Sekunden bei einem Modalitätswechsel. Diese Wechselkosten betreffen nur Aktionen direkt nach dem Modalitätswechsel. Wechselkosten müssen bei einem Modalitätswechsel dementsprechend aufaddiert werden.}
 	\label{tab:Wechselkosten}
 \end{table}
 
@@ -387,7 +388,7 @@ Diese Animation dauert 1,5 Sekunden.
 \end{itemize}
 Solche konstanten Antwortzeiten (Response Time) sind nicht übertragbar, und müssen für jedes zu testende Interface berechnet und in die Vorhersage miteinbezogen werden.
 Für die Evaluation benötigen wir diese Zeiten.
-
+\clearpage
 \section[Qualitative Auswertung]{Qualitative Auswertung der Studie}
 Eine qualitative Auswertung kann nicht in Zahlen ausgedrückt werden, sondern beinhaltet Kommentare der Probanden, sowie Beobachtungen des Studienleiters während der Studie.
 
@@ -438,7 +439,7 @@ Die Verwendung von haptischen Bedienelementen im Auto wurde bereits in vorherige
 
 In der Studie zur Erhebung von multimodalen Interaktionszeiten verwenden wir keine Fahraufgabe.
 Stattdessen messen wir die Gesamtdauer (Total Task Time), die in einem stehenden Auto benötigt wird um eine Aufgabe zu lösen.
-Um den Grad der visuellen Ablenkung, solcher multimodalen Interaktionen messen zu können, sollte unser Modell zusätzlich noch dahingehend erweitert werden, die visuelle Ablenkung miteinzubeziehen \citep{Pettitt_2007.
+Um den Grad der visuellen Ablenkung, solcher multimodalen Interaktionen messen zu können, sollte unser Modell zusätzlich noch dahingehend erweitert werden, die visuelle Ablenkung miteinzubeziehen \citep{Pettitt_2007}.
  
 Um für alle Kombinationen ausreichend Zeiten erheben zu können musste jeder Nutzer im within-subject Design alle 33 Kombinationen durchführen.
 Da wir in unserem Modell, wie bei dem Keystroke-Level-Modell \citep{Card_1980}, von Experten ausgehen wollen, mussten die Probanden vorher die Interaktion üben.
@@ -503,5 +504,5 @@ Es wurden über 22 Stunden Videomaterial aufgenommen.
 
 Unser multimodales Modell enthält Aktionszeiten, die ein geübter Nutzer im Durchschnitt benötigt, um eine bestimmte Aktion in einer bestimmten Modalität auszuführen.
 Das Modell soll eine grobe Abschätzung der Interaktionszeiten in Abhängigkeit der Modalität mit Berücksichtigung der Wechselkosten berechnen.
-Diese Vorhersage einer multimodalen Interaktionsdauer soll Vergleiche zwischen verschiedenen Moduskombination der Aktionen ermöglichen.
+Diese Vorhersage einer multimodalen Interaktionsdauer soll Vergleiche zwischen verschiedenen Kombinationen von Modalitäten der Aktionen ermöglichen.
 Es ist jedoch zu erwarten, dass die Vorhersagen der Interaktionszeiten eventuell nicht so präzise sind, wie die eines Keystroke-Level-Modells.

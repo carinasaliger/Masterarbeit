@@ -3,23 +3,20 @@ Aus gewonnen Interaktionszeiten aus Studie modellierten wir ein multimodales ein
 Außerdem können verschiedene Kombinationen aus Modalitäten auf ihre Gesamtdauer vergleichen werden. 
 
 Im nächsten Schritt soll das erstellte multimodale Modell validiert werden. 
-Dazu wollen wir in einer zweiten Studie die Gesamtdauer (Total Task Time) von multimodalen Interaktionen messen, um diese mit den Vorsagen des Modells zu vergleichen.
-\citet{Teo:2006} erklärt, dass es zwei Nachteile bei der Verwendung der gesamten Aufgabendauer gibt. 
-Zum einen inkorrekte Messungen und falsch gesetzte Operatoren. 
+Dazu wollen wir in einer zweiten Studie die Gesamtdauer (Total Task Time) von multimodalen Interaktionen messen, um diese mit den Vorsagen des Modells vergleichen zu können. 
 
-In unserem Modell haben wir verschiedene Aktionen je nach Modalität und deren Wechselkosten modelliert. 
-Eine Aktion enthält allerdings, anders als bei den bisherigen Keystroke-Level Modellen auch mehrere Operatoren. 
-Dies macht unser Modell etwas gröber, allerdings ist die Platzierung der Aktionen einfacher. 
-Nimmt ein Nutzer die Hand zum Beispiel einmal mehr zurück zum Lenkrad, ist dies kein Fehler, sondern hängt von der Situation ab. 
-Diese Unterschiede in der Ausführung der Aktionen steckt in unseren Zeiten mit drinnen. 
-Deshalb halten wir die gesamte Dauer der Interaktion für ein geeignetes Maß für den Vergleich. 
-\section[Studiendesign]{Studiendesign zur Validierung}
-Genau wie in der ersten Studie zur Erhebung von Interaktionszeiten verwenden wir ein Within Subject Design. 
-Zuerst wird mit Übungsbeispielen geübt und dann kommen unsere Anwendungsbeispiele. 
+\section[Studie zur Validierung]{Studie zur Validierung des entwickelten Modells}
+Wir haben die Studie aufgeteilt in einen Übungsteil und den Anwendungsbeispielen, deren Gesamtdauer wir messen wollen. 
+Der Übungsteil, enthält ausgewählte Anwendungsbeispiele aus Kombinationen von Modalitäten, die für den zweiten Teil benötigt werden. 
+Mit diesen Übungen sollen sich die Probanden mit dem Modalitäten vertraut machen. 
+Im zweiten Teil sollen insgesamt fünf Anwendungsbeispiele getestet werden. Für jedes Anwendungsbeispiel wurde eine Kombination von Modalitäten festgelegt. 
 
-Die fünf Anwendungsbeispiele haben wir in ihrer Moduskombination explizit so gewählt, dass sie in ihrer Eignung besonders gut waren siehe \fref{fig:Uebersicht_Eignung} oder deren Kombination uns interessiert hat. Die Texteingabe zum Beispiel schnitt für die Sprache deutlich besser ab, als Touch, weshalb wir diese nur mit der Modalität Sprache verwendeten. Außerdem testen wir auch Beispiele mit mehr als einem Moduswechsel, um die Übertragbarkeit unseres Modells zu testen. 
+Für die Auswahl der fünf Anwendungsbeispiele haben wir die Kombination von Modalitäten explizit so gewählt, dass sie in ihrer Eignung besonders gut waren siehe \ref{fig:Uebersicht_Eignung} oder deren Kombination uns interessiert hat. Die Texteingabe zum Beispiel schnitt für die Sprache deutlich besser ab, als Touch, weshalb wir diese nur mit der Modalität Sprache verwendeten. Außerdem wollen wir auch Beispiele mit mehr als einem Modalitätswechsel testen. 
 
-Wir testen in der Evaluation das Modell also nur stichprobenartig (nicht alle Kombinationen), um auch die Studie in kürzerem Rahmen zu halten. Die 5 Anwendungsbeispiele wurden mit dem Latin Square permutiert, um auch in dieser Studie mögliche Lerneffekte zu eliminieren. Die Übungsbeispiele am Anfang waren jedoch immer in gleicher Reihenfolge. 
+Das Modell wird nur stichprobenartig validiert, um die Studie in kürzerem Rahmen zu halten. 
+Das heißt, in den Anwendungsbeispielen, die wir in der zweiten Studie testen wollen kommen nicht alle modellierten Aktionen vor. 
+  
+In den filgenden Unterabschnitten werden die Übungsbeispiele und die Anwendungsbeispiele erläutert.  	
 \subsection[Übungsbeispiele]{Übungsbeispiele der Validierungsstudie}
 Dafür bauen wir den Prototypen etwas um und testen in einer weiteren Studie mit 10 Teilnehmern. Bevor wir mit den Anwendungsbeispielen für die Evaluation beginnen, soll in der Evaluationsstudie erst geübt werden. Dafür verwenden wir die Variante des Prototypen aus der ersten Studie. Die Anwendungsbeispiele sind dort  kürzer und so können sich die Probanden mit den Interaktionen vertraut machen.
 Wir haben folgende Übungsvarianten aus der ersten Studie gewählt (siehe \fref{fig:UseCases}):
@@ -131,9 +128,17 @@ Auch hier berechnen wir mit unserem erstellten Modell die potenzielle Interaktio
 + 0,642\text{s} + 0,218\text{s} + 2,839\text{s} + 0,079\text{s} + 0,642\text{s} + 1,123\text{s} + 0,218\text{s} + 3*0,016 = 15,035\text{s}
 \]
 
-Diese Vorhersage der Interaktionsdauer für unsere 5 Anwendungsbeispiele wird die Grundlage unserer Evaluation sein. Wir werden die Anwendungsbeispiel beobachten und mit unseren Vorhersagen vergleichen. 
 
-\section[Durchführung der Studie]{Durchführung der Studie}
+\subsection[Studiendesign]{Studiendesign}
+Wie in der ersten Studie zur Erhebung von Interaktionszeiten, verwenden wir in der Validierungsstudie ebenfalls ein Within Subject Design, indem jeder Proband alle fünf Anwendungsbeispiele durchführen wird. 
+Von jedem der Anwendungsbeispiele werden erneut zwei Messdurchgänge vorgenommen. 
+Nach jedem Messdurchgang wurde die Eignung des Anwendungsbeispiel abgefragt und ob das Anwendungsbeispiel dem Probanden gefallen hat.
+
+Die 5 Anwendungsbeispiele wurden mit dem Latin Square permutiert, um auch in dieser Studie mögliche Lerneffekte zu eliminieren. Die Übungsbeispiele zu Beginn eines Studiendurchlaufs wurden jedoch in gleicher Reihenfolge durchlaufen. 
+
+Diese Vorhersage der Interaktionsdauer für unsere 5 Anwendungsbeispiele wird die Grundlage unserer Validierung sein. Wir werden die Anwendungsbeispiel beobachten und mit unseren Vorhersagen vergleichen. 
+
+\subsection[Durchführung der Studie]{Durchführung der Studie}
 Die Studie fand unter gleichen Bedingungen wieder bei BMW in Garching-Hochbrück am Parkring 19 in der Parkgarage im gleichen Auto statt. Die Studie dauerte ca. 45 Minuten und wurde in einem Zeitraum von zwei Tagen durchgeführt. Die Einstellungen, der Aufbau sowie die Protokollierung wurde genau wie in der ersten Studie vorgenommen. 
 
 Die Einverständniserklärung, sowie den demographischen Fragebogen verwendeten wir gleichermaßen wie in der ersten Studie. Um dieses mal zusätzlich die Beanspruchung der Interaktionen zu messen wurde nach dem zweiten Messdurchgang jedes Anwendungsbeispiels der NASA TLX abgefragt \ref{cha:Anhang}. Nach den 5 Anwendungsbeispielen wurde der zweite Teil des NASA TLX abgefragt. Hier werden alle 6 Beanspruchungsvarianten gegeneinander verglichen. Die 15 Vergleiche wurden für jeden Probanden geshuffelt, um keinen Einfluss der Reihenfolge zu haben. Außerdem wurde der INTUI Fragebogen abgefragt, um die Usability des Prototypen einzuschätzen. sowie und noch 3 weitere Fragen siehe \ref{cha:Anhang}. 
@@ -283,6 +288,15 @@ Die Evaluierung unseres multimodalen Modells soll nun mit Hinblick auf die Ergeb
 
 \subsection[Modell]{Multimodales Modell}
 Die fünf evaluierten Anwendungsbeispiele ließen sich mit unserem Modell mit einem durchschnittlichen RMSE von 14,746\% vorhersagen. Dieser durchschnittliche RMSE befindet sich sowohl im Bereich von 20-30\% den \citet{Card_1980} als maximalen Fehler empfiehlt, als auch im Bereich von 5-20\% \citep{Luo_2005}, \citep{Teo:2006}. \citet{Card_1980}, \citet{Luo_2005} und \citet{Teo:2006} bewerten allerdings ein Keystroke-Level-Modell oder deren Erweiterung auf Operatorebene. Davon ausgehend, dass unser Modell wesentlich grobgranularer aufgebaut ist als das Keystroke-Level-Modell, stellt sich unser Modell zur Vorhersage von multimodalen Interaktionen als vielversprechend heraus. 
+
+\citet{Teo:2006} erklärt, dass es zwei Nachteile bei der Verwendung der gesamten Aufgabendauer gibt. 
+Zum einen inkorrekte Messungen und falsch gesetzte Operatoren. 
+In unserem Modell haben wir verschiedene Aktionen je nach Modalität und deren Wechselkosten modelliert. 
+Eine Aktion enthält allerdings, anders als bei den bisherigen Keystroke-Level Modellen auch mehrere Operatoren. 
+Dies macht unser Modell etwas gröber, allerdings ist die Platzierung der Aktionen einfacher. 
+Nimmt ein Nutzer die Hand zum Beispiel einmal mehr zurück zum Lenkrad, ist dies kein Fehler, sondern hängt von der Situation ab. 
+Diese Unterschiede in der Ausführung der Aktionen steckt in unseren Zeiten mit drinnen. 
+Deshalb halten wir die gesamte Dauer der Interaktion für ein geeignetes Maß für den Vergleich. 
 
 Die subjektive Bewertung der Nutzer durch den NASA TLX Ihrer Beanspruchung während der multimodalen Interaktion lag zwischen 25,6 und 37,533 auf einer Skala von 0-100. Den durchschnittlichen Beanspruchungswert von 25,6 hatte das Anwendungsbeispiel Lüftung mit den Modalitäten Sprache und Touch mit einem Moduswechsel. Es lässt sich erkennen, dass die Beanspruchung mit der vorhergesagten Interaktionsdauer zunahm bis zum Wert von 37,533 im Anwendungsbeispiel Navi Nummer. Dieses Anwenungsbeispiel stellte sich mit insgesamt 4 Moduswechseln der Modalitäten Touch und Sprache als das mit der größten Beanspruchung heraus. (Paper mit vergleichbaren Ergebnissen). 
 
