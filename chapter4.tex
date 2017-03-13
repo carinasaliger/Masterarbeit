@@ -42,7 +42,7 @@ Jetzt muss durch eine horizontale Liste von Kontakten navigiert werden.
 Die Liste lässt sich seitenweise scrollen. 
 Auf der dritten Seite befindet sich auf der linken Kachel der gewünschte Kontakt "`Maria Müller"', der auszuwählen ist. 
 Dieses Anwendungsbeispiel besteht aus einer zweifachen Direktauswahl aus sichtbaren Elementen, einer Listennavigation bestehend aus drei Swipes gefolgt von einer Direktauswahl aus sichtbaren Elementen. 
-Unsere Aktionen sind:
+Die Aktionen sind:
 $$\textbf{2* \text{DA} + 3 * \text{L} + \text{DA}}$$
 
 In der zweiten Anwendung soll zu einem von drei verschiedenen Zielen navigiert werden. 
@@ -50,24 +50,24 @@ Dazu wird im Hauptmenü die Navigationskachel ausgewählt und anschließend im n
 Um das Ziel einzugeben ist eine vereinfachte Tastatur abgebildet, die im Touchmodus verwendet werden kann. 
 Mit dem "`OK"' Button soll die Zieleingabe bestätigt werden. 
 Hier bestehen die Aktionen aus zwei Direktauswahlen aus sichtbaren Elementen, einer Texteingabe und der Bestätigung. 
-Unsere Aktionen sind:
+Die Aktionen sind:
 $$\textbf{2 * \text{DA} + \text{Xmal Buchst.} + \text{B}}$$
 
 In der dritten Anwendung soll die Lautstärke von 50\% auf 80\% erhöht werden. 
 Dazu wird im Hauptmenü die Kachel "`Medien"' selektiert. 
 Im darauf folgenden Untermenü ist die Kachel "`Lautstärke"' auszuwählen. 
 Die Lautstärke muss mit einem horizontalen Slider auf einen Wert zwischen 75\% und 85\% gestellt werden. 
-Dann erscheint ein Warnung als Popup, dass bestätigt werden muss. 
+Dann erscheint eine Warnung als Popup, dass bestätigt werden muss. 
 Auch hier setzt sich die Interaktion aus einer zweimaligen Direktauswahl aus sichtbaren Elementen, einer direkten Inkrementation des Sliders und einer Bestätigung zusammen.
-Unsere Aktionen sind:
+Die Aktionen sind:
 $$\textbf{2 * \text{DA} + \text{Inkr. (d)} + \text{B}}$$
 
 Das letzte Anwendungsbeispiel hat zum Ziel die Temperatur von 17 auf 20 Grad zu erhöhen. 
 Dazu muss im Hauptmenü die Kachel "`Temperatur"' selektiert werden. 
 Die aktuelle Temperatur wird angezeigt und kann durch schrittweise Inkrementation einer horizontalen Liste erhöht werden.
-Es is jeweils nur ein Element der Liste, das heißt eine Temperatur, sichtbar.
+Es ist jeweils nur ein Element der Liste, das heißt eine Temperatur, sichtbar.
 Dieses Anwendungsbeispiel ergibt sich aus einer Direktauswahl aus sichtbaren Elementen und einer dreifachen Inkrementation des Wertes. 
-Unsere Aktionen sind:
+Die Aktionen sind:
 $$\textbf{\text{DA} + 3 * \text{Inkr. (s)}}$$
 
 Das Anwendungsbeispiel "`Einen Song aus einer Liste auszuwählen"' wurde nicht umgesetzt, da ein weiteres  Anwendungsbeispiele die Studiendauer deutlich erhöht hätte. 
@@ -129,12 +129,12 @@ Sollter dieser haptische Knopfdruck verwendet werden, müsste die Zeit für dies
 \subsection[Touch]{Realisierung der Toucheingabe} 
 \citet{Wobbrock:2009} untersucht von Nutzern definierte Touchgesten auf einem Surface. 
 Sie fanden heraus, dass die Anzahl der Finger für eine Touchgeste für die meisten Nutzer irrelevant ist und das einhändige Touchgesten bevorzugt werden. 
-Bei unseren Touchgesten entschieden wir uns für drei verschiedene Touchgesten:
+Bei unseren Touchgesten entschieden wir uns für drei verschiedene Touchgesten (siehe \fref{fig:TouchGestures}):
 \begin{itemize}
 \item Einen direkten Touch (Tap), um einen Button auszuwählen. 
 Die Selektion geschieht erst wenn der Finger den Touchscreen verlässt. 
 \item Eine Swipegeste, um eine Liste seitenweise zu scrollen oder einen Wert zu inkrementieren.
-\item Eine kontrollierte Slidegeste, um einen Slider zu verstellen.
+\item Eine direkte Inkrementation des Slides, um den Wert des Sliders zu verstellen (Slidegeste).
 Hierbei wird der Regler des Slider ähnlich wie bei Drag and Drop direkt verschoben, allerdings nur entlang des Achse des Sliders.
 Der Finger bleibt während der Verschiebung auf der Touchfläche.
 \end{itemize}
@@ -142,7 +142,7 @@ In der \ref{fig:TouchGestures} sind die 3 Varianten veranschaulicht.
 \begin{figure}
 	\centering
 		\includegraphics[width=1\textwidth]{img/TouchGestures.jpg}
-	\caption{Touchgesten: Tap, Slide und Swipe}
+	\caption{Touchgesten: Tap, Slidegeste und Swipegeste für die Toucheingabe}
 	\label{fig:TouchGestures}
 \end{figure}
 
