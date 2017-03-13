@@ -43,14 +43,20 @@ Wir haben folgende Übungsvarianten aus der ersten Studie gewählt (siehe \fref{
 	\item Telefon (Modalität: Touch und Sprache)
 	\item Telefon (Modalität: Geste und Touch)
 \end{enumerate}
-Mit diesen Übungsbeispielen wurde die Direktauswahl aus sichtbaren Elementen (DA) mit Geste, Sprache und Touch geübt. Die Listennavigation (L) mit Sprache und Touch. Die direkte Inkrementation (Inkr. (d)) des Sliders mit Touch und Geste und zuletzt die schrittweise Inkrementation (Inkr.(s)) der Temperatureinstellung mit Touch. Das sind alle Interaktionen, die wir evaluieren wollen. 
+Mit diesen Übungsbeispielen wurde die Direktauswahl aus sichtbaren Elementen (DA) mit Geste, Sprache und Touch geübt. 
+Die Listennavigation (L) mit Sprache und Touch. 
+Die direkte Inkrementation (Inkr. (d)) des Sliders mit Touch und Geste und zuletzt die schrittweise Inkrementation (Inkr.(s)) der Temperatureinstellung mit Touch. 
+Das sind alle Interaktionen, die wir evaluieren werden. 
 \subsection[Anwendungsbeispiele]{Anwendungsbeispiele der Validierungsstudie}
-Nach diesem Übungsdurchgang sollen fünf Anwendungsbeispiele getestet werden. 
-Dafür passen wir den multimodalen Prototypen etwas an.
+Nach dem Übungsdurchgang werden fünf Anwendungsbeispiele getestet werden. 
+Dafür haben wir den multimodalen Prototypen etwas angepasst. 
+Er wird allerdings mit den gleichen Arten von Interaktionen bedient. 
+Im folgenden beschreiben wir die Anwendungsbeispiele und berechnen die multimodalen Interaktionszeiten, die mit Hilfe unseres Modell bestimmt werden.
  
-Im Anwendungsbeispiel "`Lüftung"' soll die Lüftung auf Stufe 3 gestellt werden (siehe \fref{fig:UseCasesEvalLuft}). Dafür muss zuerst die Lüftungskachel mit dem Sprachbefehl "`Lüftung"' selektiert werden. 
-Anschließend wird mit drei Swipe-Touchgesten die Lüftung von null auf drei gestellt. 
-Der Wert wird nach einer kurzen Pause von selbst eingeloggt, es muss also nicht bestätigt werden.  
+Im Anwendungsbeispiel "`Lüftung"' soll die Lüftung auf Stufe 3 gestellt werden (siehe \fref{fig:UseCasesEvalLuft}). 
+Dafür muss zuerst die Lüftungskachel mit dem Sprachbefehl "`Lüftung"' selektiert werden. 
+Anschließend wird auf dem nächsten Screen mit drei Swipe-Touchgesten die Lüftung von null auf drei gestellt. 
+Der Wert wird nach einer kurzen Pause von selbst eingeloggt.  
 \begin{figure}
 	\centering
 		\includegraphics[width=1\textwidth]{img/UseCases_Eval_Luft.jpg}
@@ -66,7 +72,7 @@ Die Vorhersage der Interaktionsdauer mit dem multimodalen Modell wird folgenderm
 \]
 
 Das Anwendungsbeispiel "`Lautstärke"' kennen wir bereits aus der ersten Studie. 
-Es soll die Lautstärke von 50\% auf 80\% erhöht werden, mit den Modalitäten Sprache und Geste, siehe \fref{fig:UseCasesEvalMedienS}. 
+Hierbei soll die Lautstärke von 50\% auf 80\% erhöht werden, mit den Modalitäten Sprache und Geste, siehe \fref{fig:UseCasesEvalMedienS}. 
 Zuerst wird mit den Sprachbefehlen "`Medien"' und "`Lautstärke"' zweimal die Aktion Direktauswahl aus sichtbaren Elementen ausgeführt. 
 Anschließend wird mit der direkten Inkrementation die Lautstärke verstellt. 
 \begin{figure}
@@ -141,7 +147,9 @@ Die Aktionsdauer dieses Anwendungsbeispiels wird folgendermaßen zusammengesetzt
 = + 0,705\text{s} + 2*0,813\text{s} + 1,495\text{s} + 0,375\text{s} + 1,047\text{s} + 4*0,016= 13,605\text{s}
 \]
 
-Im Anwendungsbeispiel "`Navigation Nummer"' soll zum Parkring 19 navigiert werden. Hier werden 2 Modalitäten (Touch und Sprache) mit insgesamt vier Moduswechseln verwendet. Per Touch werden die Kacheln Navigation und Zieleingabe gedrückt. 
+Im Anwendungsbeispiel "`Navigation Nummer"' soll zum Parkring 19 navigiert werden. 
+Hier werden 2 Modalitäten (Touch und Sprache) mit insgesamt vier Moduswechseln verwendet. 
+Per Touch werden die Kacheln Navigation und Zieleingabe gedrückt. 
 Es wird das Texteingabefeld mit zwei Inputfeldern (Straße und Nummer) geladen. 
 Um das Inputfeld "`Straße"' zu aktivieren, muss auf das Straße-Inputfeld getapt werden. 
 Mit dem Sprachbefehl "`Parkring"' wird die Straße in das Inputfeld eingetragen. 
@@ -169,14 +177,13 @@ Auch hier berechnen wir mit dem erstellten Modell die Interaktionsdauer. Sie set
 \]
 
 \section[Studiendesign]{Studiendesign}
-Wie in der ersten Studie zur Erhebung von Interaktionszeiten, verwenden wir in der Validierungsstudie ebenfalls ein Within Subject Design, indem jeder Proband alle fünf Anwendungsbeispiele durchführen wird. 
-Von jedem der Anwendungsbeispiele werden erneut zwei Messdurchgänge vorgenommen. 
-Nach jedem Messdurchgang wurde die Eignung des Anwendungsbeispiel abgefragt und ob das Anwendungsbeispiel dem Probanden gefallen hat.
+Auch in dieser Studie verwenden wir ein Within Subject Design, indem jeder Proband alle fünf Anwendungsbeispiele durchführen wird. Unsere unabhängigen Variablen sind die 5 verschiedenen Anwendungsbeispiele, die unterschiedliche Aktionen in unterschiedlichen Modalitäten enthalten. 
+Die abhängige Variable, die wir messen ist die Gesamtdauer in Sekunden, die ein Proband für jedes Anwendungsbeispiel benötigt. 
 
 Die 5 Anwendungsbeispiele wurden mit dem Latin Square permutiert, um auch in dieser Studie mögliche Lerneffekte zu eliminieren. Die Übungsbeispiele zu Beginn eines Studiendurchlaufs wurden jedoch in gleicher Reihenfolge durchlaufen. 
 
-Diese Vorhersage der Interaktionsdauer für unsere 5 Anwendungsbeispiele wird die Grundlage unserer Validierung sein. 
-Wir werden die Zeiten Anwendungsbeispiele messen und mit unseren Vorhersagen vergleichen. 
+Die Vorhersage der Interaktionsdauer für unsere 5 Anwendungsbeispiele wird die Grundlage unserer Validierung sein. 
+Wir werden die Zeiten Anwendungsbeispiele messen, um diese mit unseren Vorhersagen vergleichen zu können. 
 
 \section[Studienteilnehmer]{Studienteilnehmer}
 Die Studiendauer eines Durchgangs betrug ca. 45 Minuten. In einem Zeitraum von zwei Tagen nahmen an der Evaluationsstudie insgesamt 10 Teilnehmer (8 männlich und 2 weiblich) teil. Das Alter erstreckte sich von 19-33 Jahren und betrug im Durchschnitt 23,8 mit einen Median von 22 Jahren, also etwas jünger als in unserer ersten Studie (Durchschnitt: 30,55 und Median: 25 Jahre). Alle 10 Teilnehmer sind Rechtshänder und sprechen deutsch als Muttersprache. 
@@ -202,27 +209,70 @@ Nach jedem Messdurchgang wurde auch in dieser Studie auf einer 5-stufigen Likert
 Traten während eines Messdurchgangs Fehler auf, wurde das vom Versuchsleiter notiert, um den Protokolleintrag im Nachhinein als fehlgeschlagen markieren zu können. 
 Dieser Messdurchgang wurde dann wiederholt. 
 Als fehlerhaft wurde ein Messdurchgang gewertet wenn zum Beispiel die Touch-, Gesten- oder Spracherkennung nicht richtig funktionierte oder wenn der Proband vergaß was er tun muss. 
-
+\clearpage
 \section[Auswertung der Studienergebnissen]{Auswertung der Studienergebnissen}
 Im folgenden werden nun die Ergebnisse der Evaluationsstudie präsentiert und diskutiert. 
 
+\subsection[User Experience]{User Experience}
+Im Vergleich zu Touch und Sprache war für die Teilnehmer die Gestensteuerung am ungewohntesten. 
+Die Einschätzung der Eignung der Anwendungsbeispiele mit Geste schnitt nicht so gut ab wie die Anwendungsbeispiele ohne Geste. Allerdings bekam im Anwendungsbeispiel Lautstärke, indem der Lautstärkeslider mit einer Geste verstellt werden sollte, sehr positives Feedback siehe \ref{fig:Smiley_Eignung_Gefallen}. Es wurde auf die Frage, ob Ihnen die Interaktion gefallen würde nur eine negative Antwort gegeben. Nach jedem Messdurchgang (also 2 pro Anwendungsbeispiel) sollten die Probanden auf einer Likertskala mit 5 Unterscheidungen angeben wie geeignet sie die Anwendung fanden und ob es Ihnen gefallen hat.
+\begin{figure}
+	\centering
+		\includegraphics[width=1\textwidth]{img/Smiley_Eignung_Gefallen.jpg}
+	\caption[Eignung und Gefallen der 5 Aufgaben]{Eignung und Gefallen der 20 Messdurchgänge der 5 Aufgaben. Die Balkendiagramme zur Darstellung von Likert-Skalen wurde mit http://likertplot.com/ generiert.}
+	\label{fig:Smiley_Eignung_Gefallen}
+\end{figure}
+ 
+9 von 10 Teilnehmern können sich eine multimodale Interaktion während dem Fahren vorstellen. Begründungen waren die intuitive Bedienung, sowie vor allem der Vorteil sich je nach Situation die passende Modalität frei wählen zu können.
 
-\subsection{Ergebnisse des Modells}
-Um unsere vorhergesagten Zeiten mit den beobachteten Zeiten vergleichen zu können berechnen wir mit dem Root Mean Square Error (RMSE). Er wird wie folgt berechnet, wobei r unsere beobachteten Zeiten pro Proband (residuals) sind und p die vorhergesagten Zeiten.
+Im INTUI Fragebogen (siehe Anhang im Kapitel \ref{cha:Anhang}) werden verschiedene Komponenten der intuitiven Nutzung auf einer Skala von 1-7 abgefragt \citep{diefenbach2010handbuch}, \citep{ullrich2010intui}. Die Probanden wurden hierfür darauf hingewiesen, dass sie sich dafür unseren Prototypen fehlerfrei vorstellen sollten. Denn unsere Umsetzung des Prototypen ist natürlich kein vollständig ausgearbeitetes Produkt.  
+Die 17 Fragen mit verschiedenen Gegenüberstellungen werden vier Hauptbereichen zugewiesen (siehe \citep[Seite 24]{diefenbach2010handbuch}):
+\begin{itemize}
+	\item \textbf{Mühelosigkeit (M):} Je höher der Wert, um so müheloser wird die Interaktion erlebt und desto weniger Aufmerksamkeit wird erfordert.  Diese Komponente kann am ehesten mit der klassischen Usability verglichen werden.
+\item \textbf{Bauchgefühl (G):} Je höher der Wert, um so weniger wird die Interaktion vom Verstand, sondern vom Gefühl geleitet. Diese Komponente ist "`eines der wichtigsten Merkmale intuitiver Entscheidungen in der Entscheidungspsychologie sowie im alltäglichen Sprachgebrauch"'\citep[Seite 24]{diefenbach2010handbuch}.
+\item \textbf{Magisches Erleben (X):} Je faszinierender und außergewöhnlicher die Interaktion empfunden wurde desto höher ist der Wert. 
+\item \textbf{Verbalisierungsfähigkeit (V):} Je höher der Wert, desto besser kann die Interaktion beschrieben werden. 
+\end{itemize}
+Die Ergebnisse des INTUI Fragebogens können aus \fref{fig:INTUI} entnommen werden.
+\begin{figure}
+	\centering
+		\includegraphics[width=1\textwidth]{img/INTUI_Grafik.jpg}
+	\caption{Mittelwerte der 4 Komponenten des INTUI Fragebogens}
+	\label{fig:INTUI}
+\end{figure}
+Der extremste Wert ist mit 5,72 bei der Mühelosigkeit. Das deutet auf eine gute Usability unseres Prototypen hin. Beim Bauchgefühl zeigt der Wert eine minimale Tendenz zu einer gefühlsgeleitenden Interaktion hin. Der Wert des Magischen Erlebens mit 5,025 deutet auf eine außergewöhnliche Interaktion hin. Die Abfolge unserer Bedienschritt schien unseren Probanden als einleuchtend, zumindest befindet sich der Wert der Verbalisierungsfähigkeit mit 5,533 im oberen Bereich.
+
+\subsection{subjektive Belastung}
+Beim NASA Task Load Index mussten 6 Beanspruchungskriterien auf einer Skala von 1-20 subjektiv von den Probanden bewertet werden. Diese Werte werden alle mit 5 multipliziert, um eine Abstufung von 1-100 zu erhalten. 
+
+Im zweiten Teil werden alle Kriterien miteinander verglichen und mit diesen 15 Vergleichen werden jetzt die Kriterien gewichtet. Wurde die Frustration 4 mal vorgezogen erhält die Frustration eine Gewichtung (G) von 4. Die Bewertung wird also mit 5 und dann mit deren Gewichtung multipliziert. All diese Werte aufsummiert durch 15 geteilt ergeben den gesamten NASA TLX. Diese Gewichtung führt dazu, dass für den Nutzer unwichtige Kriterien weniger bis gar nicht miteinbezogen werden und dafür wichtige um so mehr. 
+
+Sei $B$ die Menge der Beanspruchungen, im speziellen Geistige Anforderung, Körperliche Anforderung, Zeitliche Anforderung, Leistung, Anstrengung und Frustration, dann sieht die Berechnung wie folgt aus:
+\[
+\textbf{NASA TLX} =\frac{1}{15}\sum_{i \in B}A_{i}G_{i}
+\]
+wobei $A_i$ der Wert der Beanspruchung ist und $G_i$ die Gewichtung.
+
+Der durchschnittliche NASA TLX jedes Anwendungsbeispiels ist aus der \fref{tab:PredictedVsObserved} zu entnehmen. Das Anwendungsbeispiel Lüftung verursachte mit einem Wert von 25,6 die geringste Beanspruchung. Am meisten beanspruchte das Anwendungsbeispiel Navi Nummer mit den 4 Moduswechseln mit einem Wert von 37,533.
+Wir stellen fest, dass mit Dauer der vorhergesagten Interaktionzeiten auch die durchschnittliche Beanspruchung zunimmt.
+\subsection[Ergebnisse der Interaktionszeiten]{Interaktionszeiten im Vergleich zum multimodalen Modell}
+Um unsere vorhergesagten Zeiten mit den beobachteten Zeiten vergleichen zu können berechnen wir den Root Mean Square Error (RMSE). 
+Der RMSE gibt uns an wie viele Sekunden die beobachteten Zeiten durchschnittlich von unserer Vorhersage abweichen.
+Er wird wie folgt berechnet, wobei r unsere beobachteten Zeiten pro Proband (residuals) sind und p die vorhergesagten Zeiten.
 \[
 RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(r_i - p_i)^2}
 \]
-Der RMSE gibt uns an wie viele Sekunden die beobachteten Zeiten durchschnittlich von unserer Vorhersage abweichen. Uns interessiert der prozentuale Fehler, also wird der RMSE noch durch unsere vorhergesagte Zeit geteilt. Wir verwenden eine logarithmische Skala, um die vorhergesagten Zeiten unseres Modells mit den beobachteten Zeiten aus der Evaluation darzustellen, da der Fehler proportional zur Dauer sein soll \citep{Card_1980} und \citep{schneegass_2009}. 
+Uns interessiert der prozentuale Fehler, also wird der RMSE noch durch unsere vorhergesagte Zeit geteilt. Wir verwenden eine logarithmische Skala, um die vorhergesagten Zeiten unseres Modells mit den beobachteten Zeiten aus der Evaluation darzustellen, da der Fehler proportional zur Dauer der Interaktion sein soll \citep{Card_1980} und \citep{schneegass_2009}. 
 
 Die \fref{fig:predictedVsObserveredData} zeigt, dass sich unsere vorhergesagten Zeiten sehr gut mit den beobachteten Zeiten decken. 
-\begin{figure}
+\begin{figure}[ht]
 	\centering
 		\includegraphics[width=1\textwidth]{img/predictedVsObserveredData.jpg}
 	\caption[Übersicht der 5 Aufgaben im Vergleich zu den vorhergesagten und beobachteten Zeiten]{Übersicht der 5 Aufgaben im Vergleich zu den vorhergesagten und beobachteten Zeiten. Die Rauten sind Aufgaben mit nur einem Moduswechsel im Stil der ersten Studie. Die Dreiecke sind die Anwendungsbeispiele mit 2 und 4 Moduswechseln.}
 	\label{fig:predictedVsObserveredData}
 \end{figure}
 
-Der Durchschnittliche RMSE der 5 Anwendungsbeispiele beträgt 14,746\%, was deutlich geringer ist als die maximale Erwartung von 20-30\% \citep{Card_1980} und generell ganz gut im Bereich von 5\% -20\% liegt \citep{Luo_2005}, \citep{Teo:2006}. Da unser Modell nicht ganz so feingranulare Unterscheidungen macht wie beim KLM und deren Erweiterungen war auch ein größerer Vorhersagefehler zu erwarten. Deshalb ist der durchschnittliche Vorhersagefehler von 14,746\% eine ziemlich gute Annäherung der multimodalen Interaktionszeit. 
+Der Durchschnittliche RMSE der 5 Anwendungsbeispiele beträgt 14,746\%, was deutlich geringer ist als die maximale Erwartung von 20-30\% \citep{Card_1980} und generell ganz gut im Bereich von 5\% -20\% liegt \citep{Luo_2005}, \citep{Teo:2006}. 
 
 In der \fref{tab:PredictedVsObserved} können die vorhergesagten Zeiten, der beobachteten Durchschnittszeiten, der RMSE in Sekunden und prozentual, sowie der durchschnittlichen Belastung des NASA TLX entnommen werden. 
 \begin{table}[ht]
@@ -259,13 +309,13 @@ Die kompletten Ergebnisse aller 10 Probanden dieser beiden Anwendungsbeispiele s
 Bei dem Anwendungsbeispiel Medien liegt die Durchschnittszeit der Probanden über der vorhergesagten Zeit. Ein Grund dafür kann sein, dass für die Erhebung der Aktion Inkr. (d) eine Verschiebung von 50\% auf das Interval 75-85\% gemessen wurde. In dem Evaluationsbeispiel sollte die Lautstärke von 20\% auf das Interval von 75-85\% gestellt werden. Da hier die Spanne größer ist, könnte dieser Teil etwas länger gedauert haben. 
 
 Auch beim Anwendungsbeispiel Navi POI lag die vorhergesagte Zeit unter dem Durchschnitt. 
-\begin{figure}
+\begin{figure}[ht]
 			\centering
 			\includegraphics[width=1\textwidth]{img/Medien_Times.jpg}
 			\caption[Zeiten der Probanden für das Anwendungsbeispiel Medien.]{Zeiten der Probanden für das Anwendungsbeispiel Medien. Enthält Modalitäten Geste, Sprache und Touch. Die rote durchgehende Linie stellt die vorhergesagte Zeit dar, die grüne gepunktete die Durchschnittszeit aller Probanden.}
 			\label{fig:Medien_Times}
 \end{figure}
-\begin{figure}
+\begin{figure}[ht]
 			\centering
 			\includegraphics[width=1\textwidth]{img/Navi_POI_Times.jpg}
 			\caption[Zeiten der Probanden für das Anwendungsbeispiel Navigation zu POI.]{Zeiten der Probanden für das Anwendungsbeispiel Navigation zu POI. Enthält Modalitäten Geste, Sprache und Touch. Die rote durchgehende Linie stellt die vorhergesagte Zeit dar, die grüne gepunktete die Durchschnittszeit aller Probanden.}
@@ -275,102 +325,85 @@ Auch beim Anwendungsbeispiel Navi POI lag die vorhergesagte Zeit unter dem Durch
 Die Anwendungsbeispiele Lüftung und Lautstärke waren fast identisch zu Beispielen aus der ersten Studie. Die hatten beide nur einen Moduswechsel. Beim Anwendungsbeispiel Lüftung liegt unsere Vorhersage unter dem Durchschnitt. Das Anwedungsbeispiel Lautstärke liegt allerdings unsere Vorhersage über dem Durchschnitt. 
 Das ist eventuell der Tatsache zu schulden, dass die Probanden der Evaluationsstudie insgesamt besser mit der Slidegeste für die Einstellung des Lautstärkesliders zurecht kamen. 
 Die kompletten Ergebnisse aller 10 Probanden dieser beiden Anwendungsbeispiele sind in den \ref{fig:Luft_Times} und \ref{fig:MedienS_Times} zu entnehmen. 
-\begin{figure}
+\begin{figure}[ht]
 			\centering
 			\includegraphics[width=1\textwidth]{img/Luft_Times.jpg}
 			\caption[Zeiten der Probanden für das Anwendungsbeispiel Lüftung.]{Zeiten der Probanden für das Anwendungsbeispiel Lüftung. Enthält Modalitäten Sprache und Touch. Die rote durchgehende Linie stellt die vorhergesagte Zeit dar, die grüne gepunktete die Durchschnittszeit aller Probanden.}
 			\label{fig:Luft_Times}
 \end{figure}
-\begin{figure}
+\begin{figure}[ht]
 			\centering
 			\includegraphics[width=1\textwidth]{img/Medien_S_Times.jpg}
 			\caption[Zeiten der Probanden für das Anwendungsbeispiel Lautstärke.]{Zeiten der Probanden für das Anwendungsbeispiel Lautstärke. Enthält Modalitäten Sprache und Geste. Die rote durchgehende Linie stellt die vorhergesagte Zeit dar, die grüne gepunktete die Durchschnittszeit aller Probanden.}
 			\label{fig:MedienS_Times}		
 \end{figure}
 
-Das Anwendungsbeispiel Navi schnitt am schlechtesten ab mit einem prozentualen RMSE von 20,654\%. Mit zwei verschiedenen Modalitäten und vier Moduswechseln ist dies das aufwändigste Beispiel. Für die Aktivierung der Inputfelder verwendeten wir in unserem Modell zur Vorhersage die Zeit den ersten Buchstaben zu drücken. Im Beispiel ist die Touchfläche allerdings deutlich größer als die Touchfläche der Buchstaben aus unserer ersten Studie. Nach Fitts` Law \citep{fitts1954information}, \citep{sasangohar2009evaluation}
+Das Anwendungsbeispiel Navi schnitt am schlechtesten ab mit einem prozentualen RMSE von 20,654\%. Mit zwei verschiedenen Modalitäten und vier Modalitätswechseln ist dies das aufwändigste Beispiel. Für die Aktivierung der Inputfelder verwendeten wir in unserem Modell zur Vorhersage die Zeit den ersten Buchstaben zu drücken. Im Beispiel ist die Touchfläche allerdings deutlich größer als die Touchfläche der Buchstaben aus unserer ersten Studie. Nach Fitts` Law \citep{fitts1954information}, \citep{sasangohar2009evaluation}
 beeinflusst die Größe der Touchfläche W die Interaktionszeit positiv. Es erschien es uns besser die Interaktionszeit zu überschätzen, als zu unterschätzen. Es lässt sich in diesem Beispiel gut erkennen, das unsere Vorhersage für alle Probanden zu groß waren siehe \fref{fig:Navi_Times}.
-\begin{figure}
+\begin{figure}[ht]
 	\centering
 		\includegraphics[width=1\textwidth]{img/Navi_Times.jpg}
 	\caption[Zeiten der Probanden für das Anwendungsbeispiel Navigation.]{Zeiten der Probanden für das Anwendungsbeispiel Navigation. Enthält Modalitäten Touch, Sprache, Touch, Sprache und Touch. Die rote durchgehende Linie stellt die vorhergesagte Zeit dar, die grüne gepunktete die Durchschnittszeit aller Probanden.}
 	\label{fig:Navi_Times}
 \end{figure}
+
 \subsection{Vergleich des Modells ohne Wechselkosten}
-
-\subsection[User Experience]{User Experience}
-Im Vergleich zu Touch und Sprache war für die Teilnehmer die Gestensteuerung am ungewohntesten. 
-Die Einschätzung der Eignung der Anwendungsbeispiele mit Geste schnitt nicht so gut ab wie die Anwendungsbeispiele ohne Geste. Allerdings bekam im Anwendungsbeispiel Lautstärke, indem der Lautstärkeslider mit einer Geste verstellt werden sollte, sehr positives Feedback siehe \ref{fig:Smiley_Eignung_Gefallen}. Es wurde auf die Frage, ob Ihnen die Interaktion gefallen würde nur eine negative Antwort gegeben. Nach jedem Messdurchgang (also 2 pro Anwendungsbeispiel) sollten die Probanden auf einer Likertskala mit 5 Unterscheidungen angeben wie geeignet sie die Anwendung fanden und ob es Ihnen gefallen hat.
-\begin{figure}
+In dem multimodalen Modell zur Vorhersage von Interaktionszeiten, sind die Wechselkosten zwischen zwei Modalitäten ein wichtiger Bestandteil. 
+Uns interessiert, welchen Einfluss diese Wechselkosten für die Vorhersage von multimodalen Interaktionszeiten hat. 
+Dafür vergleichen wir die Interaktionszeiten des erstellten multimodalen Modells mit den Interaktionszeiten, die ohne die Berücksichtigung von Wechselkosten entstehen.
+Der durchschnittliche RMSE für alle 5 Anwendungsbeispiele, ohne Berücksichtigung der Wechselkosten, liegt bei 15,561\%. Der durchschnittliche RMSE von dem multimodalen Modell mit Wechselkosten ist 14,746\%. 
+\begin{figure}[ht]
 	\centering
-		\includegraphics[width=1\textwidth]{img/Smiley_Eignung_Gefallen.jpg}
-	\caption[Eignung und Gefallen der 5 Aufgaben]{Eignung und Gefallen der 20 Messdurchgänge der 5 Aufgaben. Die Balkendiagramme zur Darstellung von Likert-Skalen wurde mit http://likertplot.com/ generiert.}
-	\label{fig:Smiley_Eignung_Gefallen}
+		\includegraphics[width=1\textwidth]{img/Vorhersagezeit_ohne_Wechselkosten.jpg}
+	\caption[Interaktionszeiten ohne Wechselkosten]{Vorhersage ohne Wechselkosten im Vergleich}
+	\label{fig:Vorhersagezeit_ohne_Wechselkosten}
 \end{figure}
+In \fref{fig:Vorhersagezeit_ohne_Wechselkosten} sind die Unterschiede der beiden Modelle zu sehen. 
+Die Anwendungsbeispiele, die über dem der Vorhersage lagen, nähern sich jetzt näher an die Vorhersage an, da die Zeiten kürzer werden. In den drei Anwendungsbeispielen, die unter der geschätzten Zeit lagen entfernen sich weiter weg. 
+Obwohl sich der durchschnittliche RMSE ohne Berücksichtigung der Wechselkosten auf 15,561\% verschlechtert hat, gibt es keine signifikanten Unterschiede.
  
-9 von 10 Teilnehmern können sich eine multimodale Interaktion während dem Fahren vorstellen. Begründungen waren die intuitive Bedienung, sowie vor allem der Vorteil sich je nach Situation die passende Modalität frei wählen zu können.
-
-Im INTUI Fragebogen (siehe Anhang im Kapitel \ref{cha:Anhang}) werden verschiedene Komponenten der intuitiven Nutzung auf einer Skala von 1-7 abgefragt \citep{diefenbach2010handbuch}, \citep{ullrich2010intui}. Die Probanden wurden hierfür darauf hingewiesen, dass sie sich dafür unseren Prototypen fehlerfrei vorstellen sollten. Denn unsere Umsetzung des Prototypen ist natürlich kein vollständig ausgearbeitetes Produkt.  
-Die 17 Fragen mit verschiedenen Gegenüberstellungen werden vier Hauptbereichen zugewiesen (siehe \citep[Seite 24]{diefenbach2010handbuch}):
-\begin{itemize}
-	\item \textbf{Mühelosigkeit (M):} Je höher der Wert, um so müheloser wird die Interaktion erlebt und desto weniger Aufmerksamkeit wird erfordert.  Diese Komponente kann am ehesten mit der klassischen Usability verglichen werden.
-\item \textbf{Bauchgefühl (G):} Je höher der Wert, um so weniger wird die Interaktion vom Verstand, sondern vom Gefühl geleitet. Diese Komponente ist "`eines der wichtigsten Merkmale intuitiver Entscheidungen in der Entscheidungspsychologie sowie im alltäglichen Sprachgebrauch"'\citep[Seite 24]{diefenbach2010handbuch}.
-\item \textbf{Magisches Erleben (X):} Je faszinierender und außergewöhnlicher die Interaktion empfunden wurde desto höher ist der Wert. 
-\item \textbf{Verbalisierungsfähigkeit (V):} Je höher der Wert, desto besser kann die Interaktion beschrieben werden. 
-\end{itemize}
-Die Ergebnisse des INTUI Fragebogens können aus \fref{fig:INTUI} entnommen werden.
-\begin{figure}
-	\centering
-		\includegraphics[width=1\textwidth]{img/INTUI_Grafik.jpg}
-	\caption{Mittelwerte der 4 Komponenten des INTUI Fragebogens}
-	\label{fig:INTUI}
-\end{figure}
-Der extremste Wert ist mit 5,72 bei der Mühelosigkeit. Das deutet auf eine gute Usability unseres Prototypen hin. Beim Bauchgefühl zeigt der Wert eine minimale Tendenz zu einer gefühlsgeleitenden Interaktion hin. Der Wert des Magischen Erlebens mit 5,025 deutet  auf eine außergewöhnliche Interaktion hin. Die Abfolge unserer Bedienschritt schien unseren Probanden als einleuchtend, zumindest befindet sich der Wert der Verbalisierungsfähigkeit mit 5,533 im oberen Bereich.
-
-\subsection{subjektive Belastung}
-Beim NASA Task Load Index mussten 6 Beanspruchungskriterien auf einer Skala von 1-20 subjektiv von den Probanden bewertet werden. Diese Werte werden alle mit 5 multipliziert, um eine Abstufung von 1-100 zu erhalten. 
-
-Im zweiten Teil werden alle Kriterien miteinander verglichen und mit diesen 15 Vergleichen werden jetzt die Kriterien gewichtet. Wurde die Frustration 4 mal vorgezogen erhält die Frustration eine Gewichtung (G) von 4. Die Bewertung wird also mit 5 und dann mit deren Gewichtung multipliziert. All diese Werte aufsummiert durch 15 geteilt ergeben den gesamten NASA TLX. Diese Gewichtung führt dazu, dass für den Nutzer unwichtige Kriterien weniger bis gar nicht miteinbezogen werden und dafür wichtige um so mehr. 
-
-Sei $B$ die Menge der Beanspruchungen, im speziellen Geistige Anforderung, Körperliche Anforderung, Zeitliche Anforderung, Leistung, Anstrengung und Frustration, dann sieht die Berechnung wie folgt aus:
-\[
-\textbf{NASA TLX} =\frac{1}{15}\sum_{i \in B}A_{i}G_{i}
-\]
-wobei $A_i$ der Wert der Beanspruchung ist und $G_i$ die Gewichtung.
-
-Der durchschnittliche NASA TLX jedes Anwendungsbeispiels ist aus der \fref{tab:PredictedVsObserved} zu entnehmen. Das Anwendungsbeispiel Lüftung verursachte mit einem Wert von 25,6 die geringste Beanspruchung. Am meisten beanspruchte das Anwendungsbeispiel Navi Nummer mit den 4 Moduswechseln mit einem Wert von 37,533.
-Wir stellen fest, dass mit Dauer der vorhergesagten Interaktionzeiten auch die durchschnittliche Beanspruchung zunimmt.
+\clearpage
 \section[Diskussion]{Diskussion}
 Die Evaluierung unseres multimodalen Modells soll nun mit Hinblick auf die Ergebnisse diskutiert und mit Ergebnissen aus anderen Arbeiten verglichen werden. Des Weiteren gehen wir auf qualitative Erkenntnisse ein, die sich aus beiden Studien durch Kommentare und Beobachtungen ergeben haben.
 
 \subsection[Modell]{Multimodales Modell}
-Die fünf evaluierten Anwendungsbeispiele ließen sich mit unserem Modell mit einem durchschnittlichen RMSE von 14,746\% vorhersagen. Dieser durchschnittliche RMSE befindet sich sowohl im Bereich von 20-30\% den \citet{Card_1980} als maximalen Fehler empfiehlt, als auch im Bereich von 5-20\% \citep{Luo_2005}, \citep{Teo:2006}. \citet{Card_1980}, \citet{Luo_2005} und \citet{Teo:2006} bewerten allerdings ein Keystroke-Level-Modell oder deren Erweiterung auf Operatorebene. Davon ausgehend, dass unser Modell wesentlich grobgranularer aufgebaut ist als das Keystroke-Level-Modell, stellt sich unser Modell zur Vorhersage von multimodalen Interaktionen als vielversprechend heraus. 
+Die fünf evaluierten Anwendungsbeispiele ließen sich mit unserem Modell mit einem durchschnittlichen RMSE von 14,746\% vorhersagen. Dieser durchschnittliche RMSE befindet sich sowohl im Bereich von 20-30\% den \citet{Card_1980} als maximalen Fehler empfiehlt, als auch im Bereich von 5-20\% \citep{Luo_2005,Teo:2006}. 
+In diesen Arbeiten werden die Interaktionszeiten allerdings auf der Grundlage eines Keystroke-Level-Modells oder deren Erweiterung auf Operatorebene berechnen. 
+Davon ausgehend, dass unser Modell grobgranularer aufgebaut ist als das Keystroke-Level-Modell, stellt sich unser Modell zur Vorhersage von multimodalen Interaktionen als vielversprechend Methode heraus. 
 
-\citet{Teo:2006} erklärt, dass es zwei Nachteile bei der Verwendung der gesamten Aufgabendauer gibt. 
-Zum einen inkorrekte Messungen und falsch gesetzte Operatoren. 
-In unserem Modell haben wir verschiedene Aktionen je nach Modalität und deren Wechselkosten modelliert. 
-Eine Aktion enthält allerdings, anders als bei den bisherigen Keystroke-Level Modellen auch mehrere Operatoren. 
-Dies macht unser Modell etwas gröber, allerdings ist die Platzierung der Aktionen einfacher. 
-Nimmt ein Nutzer die Hand zum Beispiel einmal mehr zurück zum Lenkrad, ist dies kein Fehler, sondern hängt von der Situation ab. 
-Diese Unterschiede in der Ausführung der Aktionen steckt in unseren Zeiten mit drinnen. 
-Deshalb halten wir die gesamte Dauer der Interaktion für ein geeignetes Maß für den Vergleich. 
+Die subjektive Bewertung der Nutzer durch den NASA TLX Ihrer Beanspruchung während der multimodalen Interaktion lag zwischen 25,6 und 37,533 auf einer Skala von 0-100. 
+Den durchschnittlichen Beanspruchungswert von 25,6 hatte das Anwendungsbeispiel Lüftung mit den Modalitäten Sprache und Touch mit einem Moduswechsel. 
+Es lässt sich erkennen, dass die Beanspruchung mit der vorhergesagten Interaktionsdauer zunahm bis zum Wert von 37,533 im Anwendungsbeispiel Navi Nummer. 
+Dieses Anwendungsbeispiel stellte sich, mit insgesamt 4 Modalitätswechseln zwischen Touch und Sprache, als das mit der größten Beanspruchung heraus.  
 
-Die subjektive Bewertung der Nutzer durch den NASA TLX Ihrer Beanspruchung während der multimodalen Interaktion lag zwischen 25,6 und 37,533 auf einer Skala von 0-100. Den durchschnittlichen Beanspruchungswert von 25,6 hatte das Anwendungsbeispiel Lüftung mit den Modalitäten Sprache und Touch mit einem Moduswechsel. Es lässt sich erkennen, dass die Beanspruchung mit der vorhergesagten Interaktionsdauer zunahm bis zum Wert von 37,533 im Anwendungsbeispiel Navi Nummer. Dieses Anwenungsbeispiel stellte sich mit insgesamt 4 Moduswechseln der Modalitäten Touch und Sprache als das mit der größten Beanspruchung heraus. (Paper mit vergleichbaren Ergebnissen). 
+Die beliebtesten Kombinationen von Modalitäten der 22 Nutzer aus der ersten Studie waren die unimodale Variante mit Sprache. 
+Am zweit beliebtesten war die Kombination von Touch und Sprache. 
+Die dritt beliebteste Variante war die Kombination von Geste und Sprache. 
+Das deutet darauf hin, dass multimodale Interaktionen von den Nutzern akzeptiert und sogar gern benutzt wird. 
+Aus dem Fragebogen der zweiten Studie kam heraus, dass 9 von 10 Teilnehmern sich eine multimodale Interaktion, im Stile unserer Evaluationsstudie, während dem Fahren vorstellen. 
+Die intuitive Bedienung, sowie dem Vorteil sich je nach Situation die passende Modalität frei wählen zu können kommt bei den Nutzern gut an. 
+Jedoch bleibt in diesem Feld der multimodalen Interaktion noch viel zu forschen und verbessern, bis die Erwartungen und Vorteile vollends ausgeschöpft werden können.
 
-Diese Beanspruchungswerte scheinen in Ordnung zu sein, denn 9 von 10 Teilnehmern können sich eine multimodale Interaktion im Stile unserer Evaluationsstudie während dem Fahren vorstellen. Die intuitive Bedienung, sowie dem Vorteil sich je nach Situation die passende Modalität frei wählen zu können kommt bei den Nutzern gut an. Jedoch bleibt in diesem Feld der multimodalen Interaktion noch viel zu forschen und entwickeln bis die Erwartungen und Vorteile vollends ausgeschöpft werden können.
+Das Design unseres Prototypen wurde Anhand der im Workshop (Connected Minds) gewonnenen Informationen über Interaktionen im Auto modelliert. 
+Wir mussten uns auf bestimmte Gesten einigen, die uns am sinnvollsten für unsere Aktionen erschienen. 
+Es gibt jedoch andere Varianten, die ebenfalls als Aktionen in Frage kommen. 
+Zum Beispiel die kreisförmige Geste mit dem Zeigefinger nach links oder rechts, um die Lautstärke zu verringern oder zu erhöhen. 
+Eine Geste dieser Art ist bereits im BMW 7 Series eingebaut. 
+Die Implementierung mit der Leap Motion dieser Geste war mit der neuen Version von Unity nicht so einfach umsetzbar, weshalb wir uns dort eine andere Variante überlegten.
 
-Beispielsweise haben wir in unserer Evaluation nicht alle Aktionen mit allen Modalitäten evaluiert. Mit 1,5 Stunden dauerte die erste Studie sehr lange und es konnte beobachtet werden, dass die Konzentration mit der Zeit etwas nach ließ. Die Evaluationsstudie wollten wir dementsprechend kürzer gestalten. 
+Ein weiterer Mangel unseres Modell sind, wie schon erwähnt, die fehlenden haptischen Bedienelemente. 
+Diese sind natürlich ein wichtiger Bestandteil und sollte als weitere Modalität in unser Modell miteinbezogen werden. 
 
-Außerdem haben wir uns speziell Anwendungsbeispiele für die Evaluationsstudie herausgesucht, die uns möglichst realistisch in der Anwendung erschienen. Die Bewertung der Nutzer auf die Eignung der Interaktionen und wie gut sie Ihnen gefallen hat schnitt ganz gut. Das lässt darauf hindeuten, dass unsere Wahl zutreffend war, siehe \fref{fig:Smiley_Eignung_Gefallen}.
-Die Texteingabe per Touch wurde nicht evaluiert, da die Spracheignung deutlich besser eingeschätzt wurde. Ebenso die Aktion Inkr. (d) und Inkr. (s) wurde für die Gesteninteraktion nicht evaluiert. 
+Bei der Aktion Inkr. (d) wurde in der ersten Studie zur Erhebung der Interaktionszeiten lediglich der Slider von 50\% auf 75-85\% verstellt. Für unsere grobe Betrachtung erschien uns diese Einstellung als ausreichend zur Bestimmung dieser Interaktionszeit. 
+Da in dem Anwendungsbeispiel der Evaluation jedoch die Zeiten für eine Verstellung von 20 auf 75-85\% länger dauerte, sollte diese Aktion eventuell genauer untersucht werden. 
 
-Die beliebtesten Moduskombinationen der 22 Nutzer aus der ersten Studie waren die unimodale Variante mit Sprache. Am zweit beliebtesten war die Kombination von Touch und Sprache. Die dritt beliebteste Variante war die Kombination von Geste und Sprache. 
-
-Das Design unseres Prototypen wurde Anhand der im Workshop (Connected Minds) gewonnenen Informationen über Interaktionen im Auto modelliert. Wir mussten uns auf bestimmte Gesten einigen, die uns am sinnvollsten erschienen für unsere Aktionen erschienen. Es gibt jedoch andere Varianten, die ebenfalls als Aktionen in Frage kommen. Zum Beispiel die kreisförmige Geste mit dem Zeigefinger nach links oder rechts, um die Lautstärke zu verringern oder zu erhöhen. Eine Geste dieser Art ist bereits im BMW 7 Series eingebaut. Die Implementierung mit der Leap Motion dieser Geste war mit der neuen Version von Unity nicht so einfach umsetzbar, weshalb wir uns dort eine andere Variante überlegten.
-
-Ein weiterer Mangel unseres Modell sind, wie schon erwähnt, die fehlenden haptischen Bedienelemente. Diese sind natürlich ein wichtiger Bestandteil und sollte als weitere Modalität in unser Modell miteinbezogen werden. 
-
-Bei der Aktion Inkr. (d) wurde in der ersten Studie zur Erhebung der Interaktionszeiten lediglich der Slider von 50\% auf 75-85\% verstellt. Für unsere grobe Betrachtung erschien uns diese Einstellung als ausreichend zur Bestimmung dieser Interaktionszeit. Da in dem Anwendungsbeispiel der Evaluation jedoch die Zeiten für eine Verstellung von 20 auf 75-85\% länger dauerte, sollte diese Aktion eventuell genauer untersucht werden. 
+Die Ergebnisse des INTUI Fragebogens für die Mühelosigkeit, deuten auf eine gute Usability unseres Prototypen hin. 
+Ein Grund dafür kann an dem vereinfachten und abstrakten Design liegen, das gewählt wurde um nicht unnötig abzulenken.
+Der multimodale Prototyp wurde nur zur Erhebung der Interaktionszeiten entwickelt und bildetet kein komplettes Informationssystem im Fahrzeug ab. 
+Deshalb konnte auf viel Informationsinhalt verzichtet werden, was den Prototypen übersichtlicher macht und sich leichter bedienen lässt.
+Auch der durchschnittliche Wert des Magischen Erlebens mit 5,025 von 7 deutet auf eine außergewöhnliche Interaktion hin. 
+Das liegt wahrscheinlich an der multimodalen Interaktion und vor allem an der Gesteninteraktion, die für viele neu waren. 
+Die Abfolge unserer Bedienschritt schien unseren Probanden als einleuchtend, zumindest befindet sich der Wert der Verbalisierungsfähigkeit mit 5,533 im oberen Bereich.
 
 \subsection[Qualitative Erkenntnisse]{Qualitative Erkenntnisse}
 Während beider Studien zur Bedienung eines multimodalen Interface im Auto ist aufgefallen, dass der Bereich von Gesteninteraktionen sehr individuell von der Sitzeinstellung und Armlänge abhängt. Am ergonomisch geeignetsten hatten es die Nutzer, die ihren Arm an der Armlehne ablegen konnten und sich trotzdem mit der Hand im gewünschten Interaktionsbereich befanden. 
