@@ -26,18 +26,20 @@ Jeder Proband kann sich in einem Probedurchgang mit der Aufgabe vertraut machen.
 Anschließend folgen zwei Messdurchgänge, in denen die Interaktionszeiten erhoben werden. 
 
 In \fref{fig:UseCases} werden die vier umgesetzten Anwendungsbeispiele in einer Übersicht horizontal dargestellt. 
-Hier wird auch deutlich, ab welchen Screens ein Moduswechsel stattfinden soll. 
-Der Moduswechsel wurde festgelegt und ist immer mit einem Screenwechsel verbunden. 
+Hier wird auch deutlich, ab welchen Screens ein Modalitätswechsel stattfinden soll. 
+Der Modalitätswechsel wurde festgelegt und ist immer mit einem Screenwechsel verbunden. 
 Durch diese Vorgabe ist unser Prototyp exklusiv redundant, da nur innerhalb eines Screens die Modalität gewechselt werden soll. 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=1\textwidth]{img/UseCases2.jpg}
-  \caption[Übersicht der Screenabfolge, der 4 Anwendungsbeispiele.]{Übersicht der Screenabfolge, der 4 Anwendungsbeispiele. Ein Anwendungsbeispiel besteht aus den horizontal abgebildeten Screens. Vertikal werden die Anwendungsbeispiele in ersten Modus und zweiten Modus geteilt. Dazwischen findet der Moduswechsel statt. Referenz zu den Icons siehe Kapitel \ref{cha:Danksagung}}
+  \caption[Übersicht der Screenabfolge, der 4 Anwendungsbeispiele.]{Übersicht der Screenabfolge, der 4 Anwendungsbeispiele. Ein Anwendungsbeispiel besteht aus den horizontal abgebildeten Screens. Vertikal werden die Anwendungsbeispiele in die erste Modalität und zweite Modalität geteilt. Dazwischen findet der Modalitätswechsel statt. Referenz zu den Icons siehe Kapitel \ref{cha:Danksagung}}
   \label{fig:UseCases}
 \end{figure}
+Die großen Buttons der ersten beiden Screens, für die Menüstruktur, sowie die Buttons der Liste werden im folgenden Kachel genannt. 
+Sie enthalten trotzdem die Funktionalität von Buttons. 
 
 Im ersten Anwendungsbeispiel soll "`Maria Müller"' angerufen werden. Dafür muss im Hauptmenü die Kachel "`Telefon"' auf der linken Seite ausgewählt werden. 
-Sobald diese Kachel mit einem Modus aktiviert wurde, wechselt der Screen in ein Untermenü mit drei Optionen, von denen die Kachel Kontakte auszuwählen ist. 
+Sobald diese Kachel aktiviert wurde, wechselt der Screen in ein Untermenü mit drei Optionen, von denen die Kachel Kontakte auszuwählen ist. 
 Jetzt muss durch eine horizontale Liste von Kontakten navigiert werden. 
 Die Liste lässt sich seitenweise scrollen. 
 Auf der dritten Seite befindet sich auf der linken Kachel der gewünschte Kontakt "`Maria Müller"', der auszuwählen ist. 
@@ -47,7 +49,7 @@ $$\textbf{2* \text{DA} + 3 * \text{L} + \text{DA}}$$
 
 In der zweiten Anwendung soll zu einem von drei verschiedenen Zielen navigiert werden. 
 Dazu wird im Hauptmenü die Navigationskachel ausgewählt und anschließend im nächsten Untermenü die Kachel Zieleingabe. 
-Um das Ziel einzugeben ist eine vereinfachte Tastatur abgebildet, die im Touchmodus verwendet werden kann. 
+Um das Ziel einzugeben ist eine vereinfachte Tastatur abgebildet, die per Touch-Eingabe verwendet werden kann. 
 Mit dem "`OK"' Button soll die Zieleingabe bestätigt werden. 
 Hier bestehen die Aktionen aus zwei Direktauswahlen aus sichtbaren Elementen, einer Texteingabe und der Bestätigung. 
 Die Aktionen sind:
@@ -74,15 +76,16 @@ Das Anwendungsbeispiel "`Einen Song aus einer Liste auszuwählen"' wurde nicht u
 Außerdem ähnelt diese Interaktion sehr dem Anwendungsbeispiel einen Kontakt aus einem Liste zu wählen und hätte somit keinen wesentlichen Mehrwert. 
 Wir werden dieses Anwendungsbeispiel für die Evaluation verwenden.
 
-Die Direktauswahl aus sichtbaren Elementen wurde immer im ersten Modus ausgeführt.
-Anschließend folgt ein Moduswechsel. 
+Die Direktauswahl aus sichtbaren Elementen wurde immer als erste Modalität verwendet.
+Anschließend folgt ein Modalitätswechsel. 
 Die drei möglichen Modalitäten wurden mit kleinen schwarzen Symbolen für Touch, Sprache und Geste in jedem Screen angezeigt. 
-Der Modus, den der Proband verwenden soll wurde grün hervorgehoben. 
-In \fref{fig:ModusAktiv} soll beispielsweise mit dem Modus Touch interagiert werden. 
+Die Modalität, die der Proband verwenden soll, wurde grün hervorgehoben. 
+In \fref{fig:ModusAktiv} soll beispielsweise mit der Modalität Touch interagiert werden. 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.5\textwidth]{img/ModusAktiv.jpg}
-  \caption[Symbolische Anzeige des aktiven Modus]{Symbolische Anzeige des aktiven Modus, der von den Probanden ausgeführt werden soll. Referenz zu den Icons siehe Kapitel \ref{cha:Danksagung}}
+  \caption[Symbolische Anzeige der aktiven Modalität]{Symbolische Anzeige der aktiven Modalität, die von den Probanden ausgeführt werden soll. Diese Symbole sind in jedem Screen eingebaut und dienen als Hilfe, welche Modalität verwendet werden soll.
+	Referenz zu den Icons siehe Kapitel \ref{cha:Danksagung}}
   \label{fig:ModusAktiv}
 \end{figure}
 

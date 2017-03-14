@@ -115,10 +115,10 @@ Zusätzlich sollte ein kurzer Fragebogen zu demografischen Daten und den Vorerfa
 In der Zwischenzeit startete der Studienleiter das Programm, stellte die richtige ID ein und überprüfte die neu geladene Permutation.
 
 Jetzt wurde das Vorgehen der Studie anhand des ersten Anwendungsbeispiel mit Hilfe der ausgedruckten Übersicht der Anwendungsbeispiele \ref{fig:UseCases} erläutert.
-Sobald das erste Anwendungsbeispiel und die Vorgehensweise klar war, wurde die GoPro gestartet und der Proband konnte mit dem ersten Probedurchlauf beginnen. Dazu hatte der Proband seine Hände am Lenkrad und der Studienleiter startete die Anwendung mitels einer externen Tastatur. 
+Sobald das erste Anwendungsbeispiel und die Vorgehensweise klar war, wurde die GoPro gestartet und der Proband konnte mit dem ersten Probedurchlauf beginnen. Dazu hatte der Proband seine Hände am Lenkrad und der Studienleiter startete die Anwendung mittels einer externen Tastatur. 
 Der Screen wird nach dem Start zuerst für drei Sekunden schwarz bis dann der Hauptscreen zu sehen ist und die Interaktion beginnen kann.
 Insgesamt wurden 33 verschiedene Durchläufe von jedem Proband getestet.
-Zu jedem dieser Varianten, bestehend aus den vier Anwendungsbeispielen und deren Moduskombinationen, sollte mindestens ein Probedurchlauf gemacht werden.
+Zu jedem dieser Varianten, bestehend aus den vier Anwendungsbeispielen und deren Kombinationen von Modalitäten, sollte mindestens ein Probedurchlauf gemacht werden.
 
 Der Probedurchlauf diente dazu den Probanden mit der Aufgabe vertraut zu machen und sich an die möglicherweise neue Interaktionsmethode zu gewöhnen.
 Die Probedurchläufe wurden so oft wiederholt, bis die Aufgabe klar verstanden und fehlerfrei ausgeführt wurde. 
@@ -215,7 +215,7 @@ Um daraus die Dauer einer Aktion zu berechnen wurde die Differenz der Zeitpunkte
 ([@[Endzeit Spalte]]-[@[Startzeit Spalte]])/1000;0)
 \end{lstlisting}
 
-Mit Berechnungen dieser Art wurden alle Zeiten ermittelt. Die Tabelle kann nach Anwendungsbeispiel, Moduskombination und Event sortiert werden, um die gewünschten Zeiten für die Auswertung zu verwendet. 
+Mit Berechnungen dieser Art wurden alle Zeiten ermittelt. Die Tabelle kann nach Anwendungsbeispiel, Kombination und Event sortiert werden, um die gewünschten Zeiten für die Auswertung zu verwendet. 
 Anzumerken ist, dass diese Art der Berechnung auch Antwortzeiten des Systems beinhalten. 
 Wir werden uns relevante Größen separat anschauen, um diese später als konstanten Wert im Modell zu berücksichtigen. 
 Zum Beispiel haben wir eine Animation einer scrollenden Liste eingebaut, um für den Nutzer ein besseres Feedback zu gewährleisten. 
@@ -234,35 +234,36 @@ Es wurden alle 4 verschiedene Button einmal verwendet, siehe \fref{fig:UseCases}
 \begin{figure}[ht]
   \centering
   \includegraphics[width=1\textwidth]{img/DA_Screen12.JPG}
-  \caption[Durchschnittszeiten in Sekunden der Direktauswahl]{Durchschnittszeiten und Medianwerten in Sekunden der Direktauswahl beider Screens für alle Moduskombinationen. T steht für Touch, S für Sprache und G für Geste.}
+  \caption[Durchschnittszeiten in Sekunden der Direktauswahl]{Durchschnittszeiten und Medianwerten in Sekunden der Direktauswahl beider Screens für alle Modalitätskombinationen. T steht für Touch, S für Sprache und G für Geste.}
   \label{fig:DA_Screen12}
 \end{figure}
 
-In \fref{fig:DA_Screen12} werden die Durchschnittszeiten von allen Moduskombinationen der beiden Screens abgebildet. 
-Für die erste Aktion spielt auch nur der erste Modus eine Rolle, da der Moduswechsel erst anschließend statt findet. 
+In \fref{fig:DA_Screen12} werden die Durchschnittszeiten von allen Modalitätskombinationen der ersten beiden Screens abgebildet. 
+Für die erste Aktion spielt auch nur die erste Modalität eine Rolle, da ein Wechsel der Modalitäten erst anschließend statt findet. 
 Die Auswahl der Kachel per Touch ist auf beiden Screens am schnellsten. 
 Im ersten Screen liegen die Interaktionszeiten für Geste und Sprache sehr nah zusammen. 
 Im zweiten Screen dauert die Spracheingabe deutlich länger als per Gestensteuerung.
-Wie zu erwarten scheint der nachfolgende Modus keinen großen Einfluss auf die Interaktionszeit zu nehmen. 
+Wie zu erwarten scheint die nachfolgende Modalität keinen großen Einfluss auf die Interaktionszeit zu nehmen. 
 Uns interessiert im speziellen der Einfluss nach einem Wechsel. 
 
-Als nächstes stellen wir Aktionen vor, die nach einem potentiellen Moduswechsel statt finden. 
+Als nächstes stellen wir Aktionen vor, die nach einem potentiellen Modalitätswechsel statt finden. 
 Die Modalität, die in dieser Aktion ausgeführt wird ist somit die jeweils zweite Modalität. 
-Im Falle der unimodalen Variante findet kein Moduswechsel statt. 
-Findet ein Moduswechsel statt, bezeichnen wir im folgenden die zusätzliche Zeit als Wechselkosten. 
-Sie beinhalten einen mentalen Operator und den Homing Operator, da bei einem Moduswechsel zu Geste oder Touch die Position der Hand geändert wird.
+Im Falle der unimodalen Variante findet kein Modalitätswechsel statt. 
 
-Die erste Aktion, die wir uns nach einem Moduswechsel ansehen, ist die Aktion Listen-Navigation (L). 
+Findet ein Modalitätswechsel statt, bezeichnen wir im folgenden die zusätzliche Zeit als Vorbereitungskosten. 
+Sie beinhalten einen mentalen Operator und den Homing Operator, da bei einem Modalitätswechsel zu Geste oder Touch die Position der Hand geändert wird.
+
+Die erste Aktion, die wir uns nach einem Modalitätswechsel ansehen, ist die Aktion Listen-Navigation (L). 
 Die Probanden mussten im Anwendungsbeispiel Telefon die Liste um drei Seiten inkrementieren und schließlich den Kontakt "`Maria Müller"' durch eine Direktauswahl anrufen. 
-Der erste Swipe beinhaltet die Wechselkosten, weswegen dieser auch deutlich länger dauert, als die anderen beiden Swipes siehe \fref{fig:Swipe13Phone}. 
+Der erste Swipe beinhaltet die Vorbereitungskosten, weswegen dieser auch deutlich länger dauert, als die anderen beiden Swipes siehe \fref{fig:Swipe13Phone}. 
 Der Startpunkt des ersten Swipes ist der Zeitpunkt, sobald der Screen mit der Liste geladen wurde. 
-Wurde die Liste um eine Seite gescrollt, ist dies die Entzeit des ersten Swipes und gleichzeitig die Startzeit des zweiten Swipes.
+Wurde die Liste um eine Seite gescrollt, ist dies die Endzeit des ersten Swipes und gleichzeitig die Startzeit des zweiten Swipes.
 Das selbe gilt für den dritten Swipe.
 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=1\textwidth]{img/Swipe1-3_Phone.JPG}
-  \caption{Durchschnittszeiten für Swipe 1, 2 und 3 in Sekunden der Liste für die Moduskombinationen von Touch und Geste}
+  \caption{Durchschnittszeiten für Swipe 1, 2 und 3 in Sekunden der Liste für die Modalitätskombinationen von Touch und Geste}
   \label{fig:Swipe13Phone}
 \end{figure}
 
@@ -285,7 +286,7 @@ Die Touchzeiten der Texteingabe durch Buchstaben, der drei verschiedenen Ziele k
 Der Start der Texteingabe beginnt wieder mit dem Laden der Szene des Texteingabescreens.
 Jeder Buttonklick eines Buchstaben ist die Endzeit des vorherigen Buchstaben und die Startzeit des nächsten Buchstabens.
 Auch hier ist ein deutliches Muster zu erkennen. 
-Der erste Buchstabe dauert am längsten, da hier erneut die Wechselkosten hinzukommen. 
+Der erste Buchstabe dauert am längsten, da hier erneut die Vorbereitungskosten hinzukommen. 
 Auch bei dieser Aktion ist die unimodale Variante mit 1,765 Sekunden (Touch-Touch) im Durchschnitt schneller als die Multimodalen Varianten mit 1,990 Sekunden (Geste-Touch) und 1,983 Sekunden (Sprache-Touch).
 Der zweite und dritte Buchstabe ist schon deutlich schneller und alle weiteren Buchstaben nähern sich dem Wert einer halben Sekunde an. 
 \begin{figure}[ht]
@@ -302,8 +303,8 @@ Der zweite und dritte Buchstabe ist schon deutlich schneller und alle weiteren B
 \end{figure} 
 
 In \ref{fig:TouchzeitenB_Ges} lässt sich deutlich erkennen, dass sich der zweite und dritte Buchstaben nicht deutlich unterscheiden und die restlichen Buchstaben nochmals schneller eingegeben wurden. 
-Wir haben uns deshalb entschlossen beim ersten Buchstaben den vorherigen Modus zu unterscheiden. 
-Den zweiten und dritten Buchstaben zusammenzufassen und für alle weiteren Buchstaben den Durchschnitt dieser zu verwenden. 
+Wir haben uns deshalb entschlossen beim ersten Buchstaben die vorherige Modalität zu unterscheiden. 
+Den zweiten und dritten Buchstaben fassen wir zusammen und für alle weiteren Buchstaben berechnen wir den Durchschnitt dieser. 
 Wir haben somit drei Kategorien.
 Der erste Buchstabe mit Unterscheidung der vorherigen Modalität, eine gemeinsame Zeit für den zweiten und dritten Buchstaben und als letztes, eine Zeit für alle weiteren Buchstaben \ref{fig:Kategorien}.
 
@@ -320,7 +321,7 @@ Auch hier ist das Laden der Szene die Startzeit und die Endzeit ist die Zeit, zu
 
 Nach dem Touch und den Spracheingaben der Ziele wird noch die Bestätigung des "`Ok"'-Buttons gemessen. 
 Die Aktion startet mit dem letzten Buchstaben der Touch-Eingabe oder dem Aktualisieren des Inputfeld durch die Spracheingabe. 
-Der Moduswechsel fand bereits statt und wie zu erwarten sind die Abweichungen zum vorherigen Modus sowohl bei Touch, als auch bei der Spracheingabe sehr gering (siehe \ref{fig:Bestaetigung_OK}).
+Der Modalitätswechsel fand bereits statt und wie zu erwarten sind die Abweichungen zur vorherigen Modalität sowohl bei Touch, als auch bei der Spracheingabe sehr gering (siehe \ref{fig:Bestaetigung_OK}).
 \begin{figure}[ht]
   \centering
   \includegraphics[width=1\textwidth]{img/B_OK.jpg}
@@ -336,17 +337,17 @@ Diese wiederum endet mit der Selektion des Popups.
 \begin{figure}[ht]
   \centering
   \includegraphics[width=1\textwidth]{img/Slider.JPG}
-  \caption[Durchschnittszeiten für Inkr. (d)]{Durchschnittszeiten in Sekunden für die Aktion Slider von 50 auf 75 bis 85 Prozent für alle Moduskombinationen}
+  \caption[Durchschnittszeiten für Inkr. (d)]{Durchschnittszeiten in Sekunden für die Aktion Inkr. (d) des Sliders, der von 50 auf 75 bis 85 Prozent für alle Kombinationen eingestellt werden soll.}
   \label{fig:Slider}
 \end{figure} 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=1\textwidth]{img/PopupBestaetigung.JPG}
-  \caption[Durchschnittszeiten für die Bestätigung des Popups]{Durchschnittszeiten in Sekunden für die Bestätigung des Popups für alle Moduskombinationen}
+  \caption[Durchschnittszeiten für die Bestätigung des Popups]{Durchschnittszeiten in Sekunden für die Bestätigung des Popups, für alle Kombinationen der Modalitäten}
   \label{fig:Popup}
 \end{figure} 
 Auch bei den Zeiten für (Inkr. (d)) bestätigt sich erneut, dass die unimodalen Varianten schneller sind als die multimodalen Varianten. 
-Bei dem anschließenden Popup hat der Moduswechsel bereits stattgefunden und es ist zu erkennen, dass die Zeiten hier vom vorherigen Modus wieder unabhängig sind.
+Bei dem anschließenden Popup hat der Modalitätswechsel bereits stattgefunden und es ist zu erkennen, dass die Zeiten hier von der vorherigen Modalität nicht abhängen.
 
 Als letzte Aktion bleibt noch die stufenweise Inkrementation Inkr. (s) im Anwendungsbeispiel Temperatur (siehe \fref{fig:SwipeKlima}). 
 Die Aktion beginnt mit dem Laden der Szene für die Einstellung der Temperatur. 
@@ -360,7 +361,7 @@ Beim ersten Swipe sind die unimodalen Varianten ebenfalls schneller als die mult
 \begin{figure}[ht]
   \centering
   \includegraphics[width=1\textwidth]{img/Swipe1-3_Klima.JPG}
-  \caption[Durchschnittszeiten für Inkr. (s)]{Durchschnittszeiten für Swipe 1, 2 und 3 in Sekunden der Wertinkrementation für die Moduskombinationen von Touch und Geste}
+  \caption[Durchschnittszeiten für Inkr. (s)]{Durchschnittszeiten für Swipe 1, 2 und 3 in Sekunden der Wertinkrementation für die Kombinationen der Modalitäten Touch und Geste}
   \label{fig:SwipeKlima}
 \end{figure} 
 
@@ -368,8 +369,8 @@ Wir haben jetzt unsere Aktionen ausgewertet und einen Blick auf die verschiedene
 Im Folgenden werden die Zeiten auf statistisch signifikante Unterschiede untersucht. 
 
 \subsection[Statistische Tests]{Statistische Tests der Aktionszeiten}
-Mit einer One-Way Repeated Measures ANOVA wurde mit Hilfe von SPSS für jede Aktion geprüft, ob der zweite Modus einen signifikanten Einfluss auf den ersten Modus hat und vor allem, ob der erste Modus einen signifikanten Einfluss auf den zweiten Modus hat. 
-Die anhängige Variable war dabei der Modus (Touch, Geste und Sprache) und es wurden die wiederholten Messungen der Zeiten verglichen. 
+Mit einer One-Way Repeated Measures ANOVA wurde mit Hilfe von SPSS für jede Aktion geprüft, ob die zweite Modalität einen signifikanten Einfluss auf die erste hat und vor allem, ob die erste Modalität einen signifikanten Einfluss auf die zweiten Modalität hat. 
+Die abhängigen Variablen waren dabei die Modalitäten (Touch, Geste und Sprache) und es wurden die wiederholten Messungen der Zeiten verglichen. 
 
 Bei diesem Test muss beachtet werden, dass die Sphärizität nicht verletzt wird. 
 \citet{field2002design} erklärt in seinem Buch "`How to Design and Report Experiments"' wie dies in SPSS berücksichtigt wird. 
