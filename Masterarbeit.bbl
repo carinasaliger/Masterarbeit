@@ -1,4 +1,4 @@
-\begin{thebibliography}{59}
+\begin{thebibliography}{57}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -173,6 +173,12 @@ Paul Holleis, Friederike Otto, Heinrich Hussmann, and Albrecht Schmidt.
 \newblock \doi{10.1145/1240624.1240851}.
 \newblock URL \url{http://doi.acm.org/10.1145/1240624.1240851}.
 
+\bibitem[How and Kan(2005)]{how2005optimizing}
+Yijue How and Min-Yen Kan.
+\newblock Optimizing predictive text entry for short message service on mobile
+  phones.
+\newblock In \emph{Proceedings of HCII}, volume~5, 2005.
+
 \bibitem[John et~al.(2004)John, Prevas, Salvucci, and Koedinger]{John_2004}
 Bonnie~E. John, Konstantine Prevas, Dario~D. Salvucci, and Ken Koedinger.
 \newblock Predictive human performance modeling made easy.
@@ -254,11 +260,6 @@ Stefan Mattes.
 \newblock The lane-change-task as a tool for driver distraction evaluation.
 \newblock \emph{Quality of Work and Products in Enterprises of the Future},
   2003:\penalty0 57, 2003.
-
-\bibitem[Motion()]{Leap}
-Leap Motion.
-\newblock Unity - game engine kernel description.
-\newblock URL \url{https://www.leapmotion.com/}.
 
 \bibitem[Muller and Weinberg(2011)]{Muller_2011}
 Christian Muller and Garrett Weinberg.
@@ -446,16 +447,6 @@ Tobias Stracke.
 \newblock Touch-screen-interaktion auf der mittelkonsole zur steuerung von
   funktionen im fahrzeug.
 \newblock Master's thesis, Universit{\"a}t Stuttgart, 2014.
-
-\bibitem[Technologies({\natexlab{a}})]{OrionBeta}
-Unity Technologies.
-\newblock Leap motion sdk, orion beta, {\natexlab{a}}.
-\newblock URL \url{https://developer.leapmotion.com/unity#100}.
-
-\bibitem[Technologies({\natexlab{b}})]{Unity}
-Unity Technologies.
-\newblock Unity - game engine kernel description, {\natexlab{b}}.
-\newblock URL \url{https://unity3d.com/de}.
 
 \bibitem[Teo and John(2006)]{Teo:2006}
 Leonghwee Teo and Bonnie~E. John.

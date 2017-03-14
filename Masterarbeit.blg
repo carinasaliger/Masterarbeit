@@ -1,18 +1,9 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: Masterarbeit.aux
 The style file: plainnat.bst
 Database file #1: Masterarbeit.bib
-Warning--entry type for "OrionBeta" isn't style-file defined
---line 677 of file Masterarbeit.bib
-Warning--entry type for "Unity" isn't style-file defined
---line 684 of file Masterarbeit.bib
-Warning--entry type for "Leap" isn't style-file defined
---line 691 of file Masterarbeit.bib
 Warning--empty journal in card1983psychology
 Warning--can't use both volume and number fields in hart2006nasa
 Warning--can't use both volume and number fields in lee2013saliency
-Warning--empty year in Leap
 Warning--can't use both volume and number fields in pettitt2006assessment
 Warning--can't use both volume and number fields in sasangohar2009evaluation
-Warning--empty year in OrionBeta
-Warning--empty year in Unity
-(There were 11 warnings)
+(There were 5 warnings)

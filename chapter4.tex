@@ -14,65 +14,122 @@ Natürlich gibt es Hilfen, wie das Setzen von Markierungspunkten oder zusätzlic
 
 Stattdessen soll ein multimodaler Prototyp entwickelt werden. 
 Mit einem vollständig funktionsfähigem Prototypen können Events mit Zeitstempeln protokolliert werden, um später Interaktionszeiten und deren Wechselkosten berechnen zu können. 
+\clearpage
+\section[Anwendungsbeispiele]{Beschreibung und Umsetzung der Anwendungsbeispiele}
+Im folgenden werden die Anwendungsbeispiele und deren Implementation erläutert.
+Die im Workshop erarbeiteten Anwendungsbeispiele werden in vereinfachter und abstrakter Darstellung im Prototypen umgesetzt (siehe \fref{fig:UseCases}). 
+Es werden lediglich Inhalte umgesetzt, die für die Anwendungsbeispiele benötigt werden. 
+Der Prototyp enthält nicht alle Funktionalitäten, die in einem Informationssystem vorhanden sind. 
+Die Struktur ist somit vereinfacht und weniger Überladen. 
+Eine abstrakte Darstellung bedeutet, dass ein schlichtes Design, ohne grelle Farben und unnötige Animationen gewählt wurde.
+Damit soll vermieden werden, dass ein auffälliges Design den Nutzer ablenkt. 
+Es sollen lediglich die Interaktionszeiten untersucht werden und nicht eine bestimmte Umsetzung eines Interfacedesigns. 
 
-\section[Aufbau und Implementation]{Aufbau und Implementation des multimodalen Prototypen}
+Die \fref{fig:UseCases} zeigt horizontal die vier verschiedenen Anwendungsbeispiele, sowie die Gestaltung der verschiedenen Screentypen.  
+Im Folgenden werden die Anwendungsbeispiele allgemein beschrieben, ohne auf die Verwendung der Modalitäten einzugehen. 
+Diese vier Anwendungsbeispiele sollen in der Studie sowohl unimodal, als auch mit allen multimodalen Kombinationen getestet werden. 
+Der Wechsel einer Modalität wurde festgelegt und erfolgte immer nach der Direktauswahl aus sichtbaren Elementen und ist immer mit einem Screenwechsel verbunden. Für die multimodalen Kombinationen findet ein Wechsel im dritten, beziehungsweise einmal im zweiten Schritt, statt.
+Durch diese Vorgabe ist unser Prototyp exklusiv redundant, da nur innerhalb eines Screens die Modalität gewechselt werden soll. 
 
-\subsection{Hardwarekomponenten}
-Der multimodale Prototyp wurde in Unity (Version 5.4 \citep{Unity}) auf einem Surface umgesetzt, was die Touch Interaktion ermöglicht. 
-Für die Gestenerkennung wird ein Leap Motionen Controller \citep{Leap} verwendet. 
-In Unity wurde ein Software Developer Kit namens Orion \citep{OrionBeta} verwendet, welches in die Unity Szene eingebunden wird. 
-Um die Spracherkennung zu gewährleisten wurde in Unity ein Skript eingebunden, dass auf die Windows integrierte Spracherkennung zugreift. 
-Die Skripte wurden mit Visual Studio in C\# geschrieben.
-
-Das Surface wurde vor dem ursprünglichen Display im oberen Bereich der Mittelkonsole angebracht. 
-Der Interaktionsbereich befand sich somit auf gleicher Höhe (siehe \fref{fig:AnbringungSurface}), jedoch etwas näher am Fahrer
-Dies ist für die Touchbedienung geeigneter. 
-Die Auflösung des Surface musste auf 1240x800 Pixel reduziert werden, damit die Darstellung groß genug war. 
-Die Kacheln auf dem ersten und zweiten Screen hatten somit eine Größe von 3,5 mal 4,5 cm. 
-
-Der Leap Motion Controller, zur Erkennung der Gesten, wurde zwischen Gangschaltung und Mittelkonsole angebracht. 
-Somit konnte die Hand bereits am Lenkrad erkannt werden, befand sich allerdings noch nicht im Interaktionsbereich, um Gesten auszuführen. 
+\begin{landscape}
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=1\textwidth]{img/AutoSetting2.jpg}
+\includegraphics[height=0.9\textheight]{img/UseCases2.jpg}
+  \caption[Übersicht der Screenabfolge, der 4 Anwendungsbeispiele.]{Übersicht der Screenabfolge, der 4 Anwendungsbeispiele. Ein Anwendungsbeispiel besteht aus den 2-3 horizontal abgebildeten Screens. Vertikal werden die Anwendungsbeispiele in die erste Modalität und zweite Modalität geteilt. Dazwischen findet der Modalitätswechsel statt.}
+  \label{fig:UseCases}
+	\end{figure}
+\end{landscape}
+Die großen Buttons der ersten beiden Screens, für die Menüstruktur, sowie die Buttons der Liste werden im Folgenden als Kachel bezeichnet. 
+Sie enthalten trotzdem die Funktionalität von Buttons. 
+
+Im Anwendungsbeispiel "`Kontakt anrufen"' soll "`Maria Müller"' angerufen werden. Dafür muss im Hauptmenü die Kachel "`Telefon"' auf der linken Seite ausgewählt werden. 
+Sobald diese Kachel aktiviert wurde, wechselt der Screen in ein Untermenü mit drei Optionen, von denen die Kachel "`Kontakte"' auszuwählen ist. 
+Jetzt muss durch eine horizontale Liste von Kontakten navigiert werden. 
+Die Liste lässt sich seitenweise scrollen. 
+Auf der dritten Seite befindet sich auf der linken Kachel der gewünschte Kontakt "`Maria Müller"', der auszuwählen ist. 
+Dieses Anwendungsbeispiel besteht aus einer zweifachen Direktauswahl aus sichtbaren Elementen, einer Listennavigation bestehend aus drei Swipes gefolgt von einer Direktauswahl aus sichtbaren Elementen. 
+Die Aktionen sind:
+$$\textbf{2* \text{DA} + 3 * \text{L} + \text{DA}}$$
+
+Zu einem von drei verschiedenen Zielen soll im Anwendungsbeispiel "`Navigation nach..."' navigiert werden. 
+Dazu wird im Hauptmenü die Navigationskachel ausgewählt und anschließend im nächsten Untermenü die Kachel "`Zieleingabe"'. 
+Um das Ziel einzugeben ist eine vereinfachte Tastatur abgebildet, die per Touch-Eingabe verwendet werden kann. 
+Mit dem OK-Button soll die Zieleingabe bestätigt werden. 
+Hier bestehen die Aktionen aus zwei Direktauswahlen aus sichtbaren Elementen, einer Texteingabe und der Bestätigung. 
+Die Aktionen sind:
+$$\textbf{2 * \text{DA} + \text{x*Buchst.} + \text{B}}$$
+
+Als nächstes stellen wir das Anwendungsbeispiel "`Lautstärke erhöhen"' vor. Hier ist das Ziel, die Lautstärke von 50\% auf 80\% zu erhöhen. 
+Dazu wird im Hauptmenü die Kachel "`Medien"' selektiert. 
+Im darauf folgenden Untermenü ist die Kachel "`Lautstärke"' auszuwählen. 
+Die Lautstärke soll mit einem horizontalen Slider auf einen Wert zwischen 75\% und 85\% gestellt werden. 
+Wird er innerhalb dieses Bereichs losgelassen, erscheint eine Warnung als Popup, dass bestätigt werden muss. 
+Auch hier setzt sich die Interaktion aus einer zweimaligen Direktauswahl aus sichtbaren Elementen, einer direkten Inkrementation des Sliders und einer Bestätigung zusammen.
+Die Aktionen sind:
+$$\textbf{2 * \text{DA} + \text{Inkr. (d)} + \text{B}}$$
+
+Das Anwendungsbeispiel "`Temperatur einstellen"' hat zum Ziel, die Temperatur von 17 auf 20 Grad zu erhöhen. 
+Dazu muss im Hauptmenü die Kachel "`Temperatur"' selektiert werden. 
+Die aktuelle Temperatur von 17 Grad wird angezeigt und kann durch eine schrittweise Inkrementation einer horizontalen Liste erhöht werden.
+Es ist jeweils nur ein Element der Liste, das heißt eine Temperatur, sichtbar.
+Dieses Anwendungsbeispiel ergibt sich aus einer Direktauswahl aus sichtbaren Elementen und einer dreifachen Inkrementation des Wertes. 
+Die Aktionen sind:
+$$\textbf{\text{DA} + 3 * \text{Inkr. (s)}}$$
+
+Das Anwendungsbeispiel "`Einen Song aus einer Liste auszuwählen"' wurde nicht umgesetzt, da ein weiteres  Anwendungsbeispiele die Studiendauer deutlich erhöht hätte. 
+\section[Aufbau und Implementierung]{Aufbau und Implementierung des multimodalen Prototypen}
+Ausgehend von dem in Kapitel \ref{cha:Workshop} abgeleiteten Konzeptidee und den eben vorgestellten Anwendungsbeispielen, wird im Folgenden der Aufbau, sowie die Implementierung des multimodalen Prototypen vorgestellt.
+\subsection{Hardware- und Softwarekomponenten}
+Der multimodale Prototyp wurde in Unity Version 5.4, \footnote{https://unity3d.com/de, letzte Überprüfung 07.10.2016} auf einem Surface umgesetzt, was die Touch Interaktion ermöglicht. Unity ist eine Laufzeit- und Entwicklungsumgebung, mit der meist 3-dimensionale Spiele entwickelt werden. Wir benötigten lediglich eine 2-dimensionale Darstellung unserer Screens des Prototypen.
+
+Für die Gestenerkennung wird ein Leap Motionen Controller verwendet \footnote{https://www.leapmotion.com/, letzte Überprüfung 14.03.2017}. 
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.9\textwidth]{img/GestenbereichSkizze2.jpg}
+  \caption[Grobe Skizze des Interaktionsbereichs zur Gestenerkennung]{Grobe Skizze des Interaktionsbereichs zur Gestenerkennung. Die gelben Markierungslinien bilden den groben Bereich ab, in dem Gesten von unserem Prototypen erkannt werden. Der Leap Motion Controller hat allerdings einen größeren Erkennungsbereich. Die rechte Hand am Lenkrad kann noch erkannt werden.}
+  \label{fig:Interaktionsbereich_Leap}
+\end{figure} 
+Der Leap Motion Controller (8x3cm groß) kann per USB am Computer angeschlossen werden. 
+Mit Hilfe von Infrarotstrahlen kann der Leap Motion Controller Handbewegungen erkennen und wandelt diese in Aktionen, die vom Computer ausgewertet werden können. 
+Um diese Aktionen abzugreifen, wurde in Unity das Software Developer Kit Orion\footnote{https://developer.leapmotion.com/unity, letzte Überprüfung 14.03.2017} installiert.
+Der Interaktionsbereich erstreckt sich bis einen Meter über dem Controller. 
+Da unser Leap Motion Controller sich zwischen Gangschaltung und Mittelkonsole befindet, wurde eine Mindesthöhe für die Gesteninteraktion eingestellt. 
+Der Interaktionsbereich zur Ausführung von Gesten befindet sich über der Gangschaltung (siehe \fref{fig:Interaktionsbereich_Leap}). Die gelben Markierungslinien bilden den groben Bereich ab, in dem Gesten von unserem Prototypen erkannt werden. Der Leap Motion Controller hat allerdings einen größeren Erkennungsbereich. Die rechte Hand kann am Lenkrad erkannt werden, befindet sich allerdings noch nicht im Interaktionsbereich, um Gesten auszuführen.
+ 
+Um die Spracherkennung zu gewährleisten wurde in Unity ein Skript eingebunden, dass auf die Windows integrierte Spracherkennung zugreift. 
+Die Skripte des gesamten Prototypen wurden mit Visual Studio in C\# geschrieben.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=1\textwidth]{img/AutoSetting3.jpg}
   \caption{Physischer Aufbau des Prototyps: Im oberen Bereich der Mittelkonsole wurde ein
 Surface als Touch-Screen angebracht. Zwischen Gangschaltung und Mittelkonsole wurde der Leap Motion Controller zur Erkennung der Gesten befestigt.}
   \label{fig:AnbringungSurface}
 \end{figure} 
+Das Surface wurde vor dem ursprünglichen Display im oberen Bereich der Mittelkonsole angebracht. 
+Der Interaktionsbereich befand sich somit auf gleicher Höhe (siehe \fref{fig:AnbringungSurface}), jedoch etwas näher am Fahrer.
+Dies ist für die Touchbedienung geeigneter. 
+Die Auflösung des Surface musste auf 1240x800 Pixel reduziert werden, damit die Darstellung so groß wie möglich war. 
+Die Kacheln auf dem ersten und zweiten Screen hatten eine Größe von 3,5 mal 4,5 cm.  
 
 Das Surface wurde wie oben beschrieben angebracht und der Leap Motion Controller, sowie die externe Tastatur über einen Hub angeschlossen. 
 Der Verteiler war ebenfalls am Stromnetz angeschlossen und wurde auf der Beifahrerseite zwischen Gurt und Mittelkonsole eingeklemmt siehe \fref{fig:Hub}. 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.5\textwidth]{img/Hub.jpg}
-  \caption{Anschluss für die Leap Motion und der externen Tastatur}
+  \caption[Anschluss für den Leap Motion Controller und die externe Tastatur]{Anschluss für den Leap Motion Controller und die externe Tastatur. Der Hub wurde über den Kofferraum mit Strom versorgt und an das Surface angeschlossen. }
   \label{fig:Hub}
 \end{figure} 
 
-\subsection[Implementation]{Implementation des multimodalen Prototypen}
-Jeder Screen wurde in Unity in eine eigene Szene eingebaut.
+\subsection[Implementierung]{Implementierung des multimodalen Prototypen}
+Jeder Screen wurde in Unity in eine eigene Szene eingebaut. Für den Prototypen wurden verschiedene Icons von www.flaticon.com verwendet. 
+Für eine genaue Auflistung der Icons und ihrer Autoren siehe Kapitel \ref{cha:Danksagung}.
+
 Die Selektion eines Buttons durch ein Touch-Event, eine Selektionsgeste oder durch einen Sprachbefehl, lädt die nächste Szene. 
-Im ersten Screen wird vom Versuchsleiter die Proband ID eingetragen und die passende Permutation geladen (mehr zur Permutation siehe Kapitel \ref{cha:Studie}). 
-In der Permutation steckt das aktuelle Anwendungsbeispiel, sowie die zu verwendenden Modalitäten. 
-Die permutierte Reihenfolge der Kombinationen verhindert das eventuell entstandene Lerneffekte unsere Messungen beeinflussen. 
-
-Nach jedem durchgeführten Messdurchgang eines Anwendungsbeispiels wurde innerhalb der Anwendung eine Bewertung abgefragt, wie geeignet die Probanden die eben ausgeführte Aufgabe fanden und wie sehr ihnen die Aufgabe gefallen hat. 
-Mit Touch als Eingabemodalität soll eines der fünf Symbole gewählt werden (siehe \fref{fig:Smileys}).
-\begin{figure}[ht]
-	\centering
-		\includegraphics[width=0.7\textwidth]{img/Smileys.JPG}
-	\caption[Eignung und Gefallen eines Anwendungsbeispiels]{Eignung und Gefallen eines Anwendungsbeispiels. Verwendung der Icons siehe Kapitel \ref{cha:Danksagung}.
-}
-	\label{fig:Smileys}
-\end{figure}
-
-Der Versuchsleiter kann mit den Pfeiltasten einer externen Tastatur das nächste Anwendungsbeispiel laden, einen Messdurchgang aktiviert und den Durchgang gestartet.  
-Zur Vorbereitung wird als erstes ein schwarzer Screen für drei Sekunden gezeigt.
-Anschließend wird der Hauptscreen geladen, mit dem die Interaktion beginnt.
+Im ersten Screen kann vom Versuchsleiter die Proband ID eingetragen und die passende Permutation geladen werden (mehr zur Permutation siehe Kapitel \ref{cha:Studie}).
 
 Um Fehler zu reduzieren ist es mit den Modalitäten Geste und Sprache nicht möglich eine falsche Auswahl zu tätigen. 
-Wir haben uns entschieden für die Sprache keinen Push To Talk Button zu verwenden, da wir Aktionszeiten messen wollen und wir uns auf die Modalitäten Touch, Geste und Sprache fokussieren. 
-Sollter dieser haptische Knopfdruck verwendet werden, müsste die Zeit für diese Aktion hinzugefügt werden.  
+Wir haben uns entschieden für die Sprache keinen Push To Talk Button zu verwenden, da haptischen Bedienelemente für unsere Arbeit ausgeschlossen wurden. 
 
 Die Direktauswahl aus sichtbaren Elementen wurde immer als erste Modalität verwendet.
 Anschließend folgt ein Modalitätswechsel. 
@@ -82,29 +139,38 @@ In \fref{fig:ModusAktiv} soll beispielsweise mit der Modalität Touch interagier
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.5\textwidth]{img/ModusAktiv.jpg}
-  \caption[Symbolische Anzeige der aktiven Modalität]{Symbolische Anzeige der aktiven Modalität, die von den Probanden ausgeführt werden soll. Diese Symbole sind in jedem Screen eingebaut und dienen als Hilfe, welche Modalität verwendet werden soll.
-	Referenz zu den Icons siehe Kapitel \ref{cha:Danksagung}}
+  \caption[Symbolische Anzeige der aktiven Modalität]{Symbolische Anzeige der aktiven Modalität, die von den Probanden ausgeführt werden soll. Diese Symbole sind in jedem Screen eingebaut und dienen als Hilfe, welche Modalität verwendet werden soll.}
   \label{fig:ModusAktiv}
 \end{figure}
 
-Ist die Modalität Geste aktiv, haben wir eine zusätzliche Information in die Gestensymbolik eingebaut. 
+Ist die Modalität "`Geste"' aktiv, haben wir eine zusätzliche Information in die Gestensymbolik eingebaut. 
 In der aktiven grünen Hand ist ein Punkt zu sehen, der wie bei einer Ampel entweder rot, gelb oder grün ist. 
 Dieser Punkt dient dazu besser erkennen zu können, ob und wo die rechte Hand vom Leap Motion Controller erkannt wird. 
 Wie in \fref{fig:Ampeldarstellung} zu sehen ist, ist der Punkt rot, wenn die Hand von dem Controller nicht erkannt wird. 
 Wird die Hand vom Controller erkannt, befindet sich aber nicht im Interaktionsbereich, indem Gesten ausgeführt werden können, ist der Punkt gelb.
-Grün wird der Punkt, sobald die Hand erkannt wurde und sich im Interaktionsbereich befindet.
+Grün wird der Punkt, sobald die Hand erkannt wurde und sich im Interaktionsbereich befindet (siehe \fref{fig:Interaktionsbereich_Leap}).
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.5\textwidth]{img/Gestenerkennung.jpg}
   \caption[Ampeldarstellung zur Gestenerkennung]{Ampeldarstellung zur Gestenerkennung. Der rote Punkt bedeutet, das die rechte Hand vom Leap Motion Controller nicht erkannt wurde. 
 	Gelb wird der Punkt, wenn die Hand erkannt wurde, sich aber nicht im Interaktionsbereich befindet. 
-	Grün ist der Punkt wenn sich die Hand im Interaktionsbereich befindet. Referenz zu den Icons siehe Kapitel \ref{cha:Danksagung}}
-  \label{fig:Ampeldarstellung}
+	Grün ist der Punkt wenn sich die Hand im Interaktionsbereich befindet.}
+	\label{fig:Ampeldarstellung}
 \end{figure} 
 Mit dieser Visualisierung soll für den Beobachter veranschaulicht werden, falls Gesten nicht erkannt wurden. 
 
 Wird ein Button angewählt bekommt dieser eine gelbe Markierungsfarbe. 
-Bei einer Selektion bekommt der Nutzer ein zusätzliches Audio Feedback eines Klickgeräuschs.
+Bei einer Selektion bekommt der Nutzer ein zusätzliches Audio-Feedback eines Klickgeräuschs.
+
+Nach jedem durchgeführten Anwendungsbeispiels wurde innerhalb der Anwendung eine Bewertung abgefragt, wie geeignet die Probanden die eben ausgeführte Aufgabe fanden und wie sehr ihnen die Aufgabe gefallen hat. 
+Mit Touch als Eingabemodalität soll eines der fünf Symbole gewählt werden (siehe \fref{fig:Smileys}).
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.7\textwidth]{img/Smileys.JPG}
+	\caption[Eignung und Gefallen eines Anwendungsbeispiels]{Eignung und Gefallen eines Anwendungsbeispiels. 
+}
+	\label{fig:Smileys}
+\end{figure}
 
 \subsubsection[Touch]{Realisierung der Toucheingabe} 
 \citet{Wobbrock:2009} untersucht von Nutzern definierte Touchgesten auf einem Surface. 
@@ -183,7 +249,7 @@ Die Logdatei wurde hier bereits angepasst und in Excel als Tabelle formatiert (m
 
 Sobald ein Anwendungsbeispiel startet werden die Einstellungsinformationen siehe \fref{fig:ProbandenSettings} protokolliert. 
 Diese enthalten die ID des Probanden, das aktuelle Anwendungsbeispiel, die zu verwendenden Modalitäten und ob es sich um einen Probe- oder um einen Messdurchgang handelt. 
-Nach jedem Messdurchgang werden die Antworten protokolliert, die die Probanden über Eignung und Gefallen der gerade ausgeführten Moduskombination eingaben. TODO(smileys erwähnen bzw. Erläuterung hier einbauen)
+Nach jedem Messdurchgang werden die Antworten protokolliert, die die Probanden über Eignung und Gefallen der gerade ausgeführten Moduskombination eingaben.
 Nach jedem Durchgang erscheint wieder der Einstellungsscreen, indem der Versuchsleiter das nächste Anwendungsbeispiel laden oder den Messdurchgang aktiviert kann. 
 Für jede Runde werden die entsprechenden Infos vom Setting protokolliert.
 \begin{figure}[ht]
@@ -199,67 +265,3 @@ Außerdem wird bei Listen die aktuelle Seite und beim Slider die Start- und Endw
 Bei jedem Button wird der Name des Buttons protokolliert, sobald der Button ausgelöst wurde. 
 Mit diesen Logzeiten sollen nach der Studie die Zeiten der Operatoren berechnet werden. 
 Dazu mehr in Kapitel \ref{cha:Studie}.  
-
-Im folgenden werden die Anwendungsbeispiele und deren Implementation erläutert.
-
-\section[Anwendungsbeispiele]{Beschreibung und Umsetzung der Anwendungsbeispiele}
-Die im Workshop erarbeiteten Anwendungsbeispiele werden in vereinfachter und abstrakter Darstellung im Prototypen umgesetzt. 
-Damit wollen wir vermeiden, dass ein auffälliges Design den Nutzer ablenkt. 
-Es sollen lediglich die Interaktionszeiten untersucht werden und nicht eine bestimmte Umsetzung eines Interfacedesigns. 
-In \fref{fig:UseCases} werden die Anwendungsbeispiele gezeigt welche im Folgenden beschrieben werden, ohne auf die Verwendung der Modalitäten einzugehen. 
-Auf die Modalitäten gehen wir im Abschnitt Implementation unter der jeweiligen Modalität ein. 
-
-Diese vier Anwendungsbeispiele sollen in der Studie sowohl unimodal, als auch mit allen multimodalen Kombinationen getestet werden. 
-Jeder Proband kann sich in einem Probedurchgang mit der Aufgabe vertraut machen.
-Anschließend folgen zwei Messdurchgänge, in denen die Interaktionszeiten erhoben werden. 
-
-In \fref{fig:UseCases} werden die vier umgesetzten Anwendungsbeispiele in einer Übersicht horizontal dargestellt. 
-Hier wird auch deutlich, ab welchen Screens ein Modalitätswechsel stattfinden soll. 
-Der Modalitätswechsel wurde festgelegt und ist immer mit einem Screenwechsel verbunden. 
-Durch diese Vorgabe ist unser Prototyp exklusiv redundant, da nur innerhalb eines Screens die Modalität gewechselt werden soll. 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=1\textwidth]{img/UseCases2.jpg}
-  \caption[Übersicht der Screenabfolge, der 4 Anwendungsbeispiele.]{Übersicht der Screenabfolge, der 4 Anwendungsbeispiele. Ein Anwendungsbeispiel besteht aus den horizontal abgebildeten Screens. Vertikal werden die Anwendungsbeispiele in die erste Modalität und zweite Modalität geteilt. Dazwischen findet der Modalitätswechsel statt. Referenz zu den Icons siehe Kapitel \ref{cha:Danksagung}}
-  \label{fig:UseCases}
-\end{figure}
-Die großen Buttons der ersten beiden Screens, für die Menüstruktur, sowie die Buttons der Liste werden im folgenden Kachel genannt. 
-Sie enthalten trotzdem die Funktionalität von Buttons. 
-
-Im ersten Anwendungsbeispiel soll "`Maria Müller"' angerufen werden. Dafür muss im Hauptmenü die Kachel "`Telefon"' auf der linken Seite ausgewählt werden. 
-Sobald diese Kachel aktiviert wurde, wechselt der Screen in ein Untermenü mit drei Optionen, von denen die Kachel Kontakte auszuwählen ist. 
-Jetzt muss durch eine horizontale Liste von Kontakten navigiert werden. 
-Die Liste lässt sich seitenweise scrollen. 
-Auf der dritten Seite befindet sich auf der linken Kachel der gewünschte Kontakt "`Maria Müller"', der auszuwählen ist. 
-Dieses Anwendungsbeispiel besteht aus einer zweifachen Direktauswahl aus sichtbaren Elementen, einer Listennavigation bestehend aus drei Swipes gefolgt von einer Direktauswahl aus sichtbaren Elementen. 
-Die Aktionen sind:
-$$\textbf{2* \text{DA} + 3 * \text{L} + \text{DA}}$$
-
-In der zweiten Anwendung soll zu einem von drei verschiedenen Zielen navigiert werden. 
-Dazu wird im Hauptmenü die Navigationskachel ausgewählt und anschließend im nächsten Untermenü die Kachel Zieleingabe. 
-Um das Ziel einzugeben ist eine vereinfachte Tastatur abgebildet, die per Touch-Eingabe verwendet werden kann. 
-Mit dem "`OK"' Button soll die Zieleingabe bestätigt werden. 
-Hier bestehen die Aktionen aus zwei Direktauswahlen aus sichtbaren Elementen, einer Texteingabe und der Bestätigung. 
-Die Aktionen sind:
-$$\textbf{2 * \text{DA} + \text{Xmal Buchst.} + \text{B}}$$
-
-In der dritten Anwendung soll die Lautstärke von 50\% auf 80\% erhöht werden. 
-Dazu wird im Hauptmenü die Kachel "`Medien"' selektiert. 
-Im darauf folgenden Untermenü ist die Kachel "`Lautstärke"' auszuwählen. 
-Die Lautstärke muss mit einem horizontalen Slider auf einen Wert zwischen 75\% und 85\% gestellt werden. 
-Dann erscheint eine Warnung als Popup, dass bestätigt werden muss. 
-Auch hier setzt sich die Interaktion aus einer zweimaligen Direktauswahl aus sichtbaren Elementen, einer direkten Inkrementation des Sliders und einer Bestätigung zusammen.
-Die Aktionen sind:
-$$\textbf{2 * \text{DA} + \text{Inkr. (d)} + \text{B}}$$
-
-Das letzte Anwendungsbeispiel hat zum Ziel die Temperatur von 17 auf 20 Grad zu erhöhen. 
-Dazu muss im Hauptmenü die Kachel "`Temperatur"' selektiert werden. 
-Die aktuelle Temperatur wird angezeigt und kann durch schrittweise Inkrementation einer horizontalen Liste erhöht werden.
-Es ist jeweils nur ein Element der Liste, das heißt eine Temperatur, sichtbar.
-Dieses Anwendungsbeispiel ergibt sich aus einer Direktauswahl aus sichtbaren Elementen und einer dreifachen Inkrementation des Wertes. 
-Die Aktionen sind:
-$$\textbf{\text{DA} + 3 * \text{Inkr. (s)}}$$
-
-Das Anwendungsbeispiel "`Einen Song aus einer Liste auszuwählen"' wurde nicht umgesetzt, da ein weiteres  Anwendungsbeispiele die Studiendauer deutlich erhöht hätte. 
-Außerdem ähnelt diese Interaktion sehr dem Anwendungsbeispiel einen Kontakt aus einem Liste zu wählen und hätte somit keinen wesentlichen Mehrwert. 
-Wir werden dieses Anwendungsbeispiel für die Evaluation verwenden.
