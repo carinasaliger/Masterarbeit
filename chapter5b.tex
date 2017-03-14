@@ -291,11 +291,11 @@ Ziehen wir die unimodale Zeit von der multimodalen ab, erhalten wir die Wechselk
 
 Wir haben die Aktion (DA) vor einem Modalitätswechsel für jede Modalität (ergibt 3 Aktionszeiten) und 13 Aktionen nach einem möglichen Modalitätswechsel für Touch und Geste (ergibt 17 Aktionszeiten) und 4 Aktionen nach einem möglichen Modalitätswechsel für Sprache identifiziert.
 Dies ergibt 24 Aktionen und 20 verschiedene Arten von Wechselkosten.
-Insgesamt kommen wir auf 44 verschiedene Interaktionszeiten für unser Modell.
+Insgesamt kommen wir auf 44 verschiedene Interaktionszeiten für das multimodale Modell. Zusätzlich ergaben sich noch drei Antwortzeiten, die von unserem Prototypen anhängen.
 
-In \fref{tab:DA} sind die zusammengefassten Zeiten der Aktion DA, die vor dem Modalitätswechsel stattfinden zu shene.
-\fref{tab:AktionenUnimodal} listet alle Aktionen mit ihren Interaktionszeiten auf.
-Wird eine dieser Aktionen mit einer anderen Modalität ausgeführt als die vorhergegangene DA müssen die Wechselkosten addiert werden.
+In \fref{tab:DA} sind die zusammengefassten Zeiten der Aktion Direktauswahl aus sichtbaren Elementen, die vor dem Modalitätswechsel stattfinden. 
+Die \fref{tab:AktionenUnimodal} listet alle Aktionen der drei Modalitäten mit ihren Interaktionszeiten auf.
+Wird eine dieser Aktionen mit einer anderen Modalität ausgeführt als die vorhergegangene DA, müssen die Wechselkosten addiert werden.
 Die dazugehörigen Wechselkosten für multimodale Interaktionen können aus \fref{tab:Wechselkosten} entnommen werden.
 
 \begin{table}[ht]
@@ -320,7 +320,7 @@ Die dazugehörigen Wechselkosten für multimodale Interaktionen können aus \fre
 				\hline
 				Aktion 					& Touch & Geste & Sprache \\
 				\hline
-				V (L$_1$) 		& {0,705} 	&	{0,425}	&	\\
+				V (L) 		& {0,705} 	&	{0,425}	&	\\
 				\hline
 				je (L)				& {0,813} &	{1,372} &\\
 				\hline
@@ -426,6 +426,12 @@ Immer wieder wurde jedoch angemerkt, dass haptische Bedienelemente für die Inkr
 \clearpage
 \section[Diskussion]{Diskussion zur Studie und Erstellung des Modells}
 Bei der Entwicklung des Prototypen und der Erhebung der Interaktionszeiten aus der Studie gab es einige Einschränkungen und Entscheidungen, die im Zusammenhang der Studienergebnisse im folgenden diskutiert und interpretiert werden.
+
+Aus den Ergebnissen der Studie wurden die durchschnittlichen Interaktionszeiten für insgesamt 24 Aktionen und 20 verschiedene Arten von Wechselkosten abgeleitet. 
+Die Interaktionszeiten für die Aktionen, die per Touch-Eingabe getätigt werden sind, verglichen mit Geste und Sprache, am schnellsten. 
+Für die Vorbereitungszeiten (V(L)) und V(Inkr. (s)) für die Touch-Eingabe, benötigten die Probanden allerdings länger als bei der Vorbereitung für Gesten dieser Aktionen.
+Das liegt an dem Interaktionsbereich, der für Gesteninteraktionen näher positioniert ist als der für die Touch-Eingabe. 
+Das deckt sich mit Fitts`Law, dass für eine weitere Distanz, ein zu treffenden Zieles längere Zeiten benötigt. 
 
 Als erste Einschränkung haben wir die Interaktion mit klassischen haptischen Bedienelementen aus unserer Studie ausgeschlossen.
 Dies lag dem großen Mehraufwand zugrunde, der dabei entstanden wäre.
