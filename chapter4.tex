@@ -126,15 +126,16 @@ Jeder Screen wurde in Unity in eine eigene Szene eingebaut. Für den Prototypen 
 Für eine genaue Auflistung der Icons und ihrer Autoren siehe Kapitel \ref{cha:Danksagung}.
 
 Die Selektion eines Buttons durch ein Touch-Event, eine Selektionsgeste oder durch einen Sprachbefehl, lädt die nächste Szene. 
-Im ersten Screen kann vom Versuchsleiter die Proband ID eingetragen und die passende Permutation geladen werden (mehr zur Permutation siehe Kapitel \ref{cha:Studie}).
-
-Um Fehler zu reduzieren ist es mit den Modalitäten Geste und Sprache nicht möglich eine falsche Auswahl zu tätigen. 
-Wir haben uns entschieden für die Sprache keinen Push To Talk Button zu verwenden, da haptischen Bedienelemente für unsere Arbeit ausgeschlossen wurden. 
+Im ersten Screen kann vom Versuchsleiter die Proband ID eingetragen und die passende Permutation geladen werden (genaueres zum Vorgehen der Permutation siehe Kapitel \ref{cha:Studie}). 
+Eine Permutation, enthält die Kombinationen der Anwendungsbeispiele, sowie die Reihenfolge der Modalitätskombinationen. 
+Durch vorgegebene Anwendungsbeispiel wissen wir welche Abfolge von Buttons betätigt werden sollen.
+Um Fehler zu reduzieren ist es, mit den Modalitäten "`Geste"' und "`Sprache"' nicht möglich eine falsche Auswahl zu tätigen. 
+Über unsere geladene Permutation, können wir abfragen, welcher Button im aktuellen Beispiel der richtige ist. 
 
 Die Direktauswahl aus sichtbaren Elementen wurde immer als erste Modalität verwendet.
 Anschließend folgt ein Modalitätswechsel. 
-Die drei möglichen Modalitäten wurden mit kleinen schwarzen Symbolen für Touch, Sprache und Geste in jedem Screen angezeigt. 
-Die Modalität, die der Proband verwenden soll, wurde grün hervorgehoben. 
+Die drei möglichen Modalitäten wurden mit kleinen schwarzen Symbolen in jedem Screen angezeigt. 
+Die Modalität, die der Proband verwenden soll, wurde grün hervorgehoben. Diese Information wurde ebenfalls aus der Permutation abgefragt.
 In \fref{fig:ModusAktiv} soll beispielsweise mit der Modalität Touch interagiert werden. 
 \begin{figure}[ht]
   \centering
@@ -173,9 +174,7 @@ Mit Touch als Eingabemodalität soll eines der fünf Symbole gewählt werden (si
 \end{figure}
 
 \subsubsection[Touch]{Realisierung der Toucheingabe} 
-\citet{Wobbrock:2009} untersucht von Nutzern definierte Touchgesten auf einem Surface. 
-Sie fanden heraus, dass die Anzahl der Finger für eine Touchgeste für die meisten Nutzer irrelevant ist und das einhändige Touchgesten bevorzugt werden. 
-Bei unseren Touchgesten entschieden wir uns für drei verschiedene Touchgesten (siehe \fref{fig:TouchGestures}):
+Für die Touchgesten entschieden wir uns für drei verschiedene direkte Touchgesten (siehe \fref{fig:TouchGestures}):
 \begin{itemize}
 \item Einen direkten Touch (Tap), um einen Button auszuwählen. 
 Die Selektion geschieht erst wenn der Finger den Touchscreen verlässt. 
@@ -199,19 +198,19 @@ Dieser Interaktionsbereich ist je nach Anzahl der Buttons in drei oder vier Bere
 Je nachdem in welchem Bereich sich die Hand befindet ändert der passende Button dieses Bereichs die Farbe zu gelb.
 Dies entspricht der Markierungsfarbe. 
 Somit erkennt der Nutzer welcher Button gerade angewählt ist. 
-Um einen Button nun zu selektieren, muss der Zeigefinger schnell nach unten bewegt werden, ohne dabei die Hand zu bewegen. 
+Um einen Button zu selektieren, muss der Zeigefinger, wie bei einem Mausklick, schnell nach unten bewegt werden, ohne dabei die Hand zu bewegen. 
 Nur wenn ein entsprechender Button gelb markiert ist und die Selektionsgeste mit dem Zeigefinger ausgelöst wurde, wird dieser Button selektiert und somit die nächste Szene geladen. 
 
 Die nächste Geste ist eine Wischgeste, um in einer Liste seitenweise zu scrollen oder einen Wert zu inkrementieren.
 Das entspricht unseren Aktionen (L) und (Inkr. (s)). 
 Diese Geste wurde in den Anwendungsbeispielen verwendet, um die Temperatur zu verändern und um die Liste der Kontakte zu durchsuchen. 
 Wie zuvor muss die rechte Hand erkannt werden und sich im Interaktionsbereich befinden. 
-Wenn sich die Hand entlang der x-Achse mit mindestens 80 Millimeter pro Sekunde von rechts nach links bewegen, löst dies eine Animation aus, die zur nächsten Seite navigiert. 
+Wenn sich die Hand entlang der x-Achse mit mindestens 80 Millimeter pro Sekunde von rechts nach links bewegen, löst dies eine Animation aus, die zur nächsten Seite navigiert. Ist die Hand langsamer wird nicht zur nächsten Seite navigiert. 
 Damit die Hand nicht unbeabsichtigt zwei Seiten auf einmal oder direkt hintereinander scrollen lässt, wird die Erkennung der Wischgeste nach jeder Erkennung für eine Sekunde deaktiviert. 
 
 Die dritte und letzte Geste ist eine Geste, um einen Slider zu verstellt. 
 Hierfür müssen sich Daumen und Zeigefinger berühren und somit einen geschlossenen Kreis über dem Leap Motion Controller bilden.
-Damit dieser Kreis von der Leap erkannt wird, ist es wichtig die anderen Finger abzuspreizen, siehe \ref{fig:Gestures}. 
+Damit dieser Kreis von der Leap erkannt wird, ist es wichtig die anderen Finger abzuspreizen (siehe \ref{fig:Gestures}). 
 Ist dieser Kreis geschlossen wird der Slider aufgenommen und kann verschoben werden. 
 Um den Slider nach rechts oder links zu verstellen muss die Geste entlang der x-Achse durch Bewegung der Hand in eben diese Richtung verändert werden. 
 Ist der gewünschte Wert erreicht, muss der Kreis geöffnet werden, indem sich Zeigefinger und Daumen wieder lösen. 
@@ -225,21 +224,22 @@ Ist der gewünschte Wert erreicht, muss der Kreis geöffnet werden, indem sich Z
 \subsubsection[Sprache]{Realisierung der Spracheingabe}
 Um die Spracherkennung zu ermöglichen wurden in Unity in jeder Szene die dementsprechenden Sprachbefehle als String definiert. 
 Im Beispiel des Hauptscreens waren dies die Sprachbefehle: "`Telefon"', "`Navigation"', "`Medien"' und "`Temperatur"'. 
-Die in Windows integgriert Spracherkennung verarbeitet gesprochene Befehle zu Strings.
+Die in Windows integrierte Spracherkennung verarbeitet gesprochene Befehle zu Strings.
 Stimmt Strings mit einem der vordefiniertem String überein wird der passende Button selektiert. 
 
-Damit der Nutzer bei der Direktauswahl aus sichtbaren Elementen zusätzlich zum Soundgeräusch Feedback bekommt wird der selektierte Button vor dem tatsächlichen Klick farblich gelb hervorgehoben. 
-Um diesen Effekt erzielen zu können musste eine Verzögerung von einer halben Sekunden eingebaut werden.
+Damit der Nutzer bei der Direktauswahl aus sichtbaren Elementen zusätzlich, zum Klick-Geräusch des eingeloggten Buttons, ein visuelles Feedback bekommt, wird der selektierte Button vor der Selektion farblich gelb hervorgehoben. 
+Um diesen Effekt erzielen zu können, musste eine Verzögerung von einer halben Sekunden eingebaut werden.
+Da das gelbe Hervorheben, eines selektierten Buttons, für Geste und Touch umgesetzt wurde, sollte dieses Feedback konsistent auch für die Spracheingabe eingebaut werden, obwohl ein visuelles Feedback nicht zwingen notwendig ist.
 
-Im Beispiel der Listen wird zur Veranschaulichung erst zum entsprechenden Wert geswiped, das heißt eine Animation ist sichtbar und anschließend wird die Kachel selektiert. 
+Im Beispiel "`Kontakt anrufen"' wird nach dem Sprachbefehl "`Maria Müller"' zur Veranschaulichung erst zum entsprechenden Wert geswiped, das heißt eine Animation ist sichtbar und anschließend wird die Kachel selektiert. 
+
 Im Beispiel der Texteingabe wird das Inputfeld mit dem gesprochenen Ziel aktualisiert.
 
 \subsubsection[Protokollierung]{Protokollierung der relevanten Events}
 Um die Interaktionszeiten messen zu können werden die relevanten Aktionen mit Zeitstempeln in einer Textdatei protokolliert (Logdatei). 
 Diese Logdatei ist so strukturiert, dass Werte durch Tabs separiert sind, um später in Excel leichter bearbeitet werden zu können.
 An relevanten Stellen im Code wird die Logdatei geöffnet und der Zeitstempel zusammen mit dem Event in die Datei geschrieben und wieder geschlossen. 
-Zur Veranschaulichung ist in \fref{fig:Auszug_Logging_Sound_TT} ein Auszug des Protokolls zusehen. 
-Die Logdatei wurde hier bereits angepasst und in Excel als Tabelle formatiert (mehr dazu in Kapitel \ref{cha:Studie}). 
+Zur Veranschaulichung ist in \fref{fig:Auszug_Logging_Sound_TT} ein Auszug des Protokolls zusehen.  
 \begin{figure}[ht]
 	\centering
 		\includegraphics[width=1\textwidth]{img/Auszug_Logging_Sound_TT.JPG}
@@ -247,11 +247,12 @@ Die Logdatei wurde hier bereits angepasst und in Excel als Tabelle formatiert (m
 	\label{fig:Auszug_Logging_Sound_TT}
 \end{figure}
 
-Sobald ein Anwendungsbeispiel startet werden die Einstellungsinformationen siehe \fref{fig:ProbandenSettings} protokolliert. 
+Sobald ein Anwendungsbeispiel startet werden die Einstellungsinformationen protokolliert (siehe \fref{fig:ProbandenSettings}). 
 Diese enthalten die ID des Probanden, das aktuelle Anwendungsbeispiel, die zu verwendenden Modalitäten und ob es sich um einen Probe- oder um einen Messdurchgang handelt. 
+
 Nach jedem Messdurchgang werden die Antworten protokolliert, die die Probanden über Eignung und Gefallen der gerade ausgeführten Moduskombination eingaben.
-Nach jedem Durchgang erscheint wieder der Einstellungsscreen, indem der Versuchsleiter das nächste Anwendungsbeispiel laden oder den Messdurchgang aktiviert kann. 
-Für jede Runde werden die entsprechenden Infos vom Setting protokolliert.
+Nach jedem Durchgang erscheint wieder die Einstellungsansicht, indem der Versuchsleiter das nächste Anwendungsbeispiel laden oder den Messdurchgang aktiviert kann. Diese Anpassung kann durch die externe Tastatur vorgenommen werden.
+Für jede Runde werden die entsprechenden Informationen von den Einstellungen protokolliert.
 \begin{figure}[ht]
   \centering
   \includegraphics[width=1\textwidth]{img/SettingsPrototyp.jpg}
@@ -259,9 +260,8 @@ Für jede Runde werden die entsprechenden Infos vom Setting protokolliert.
   \label{fig:ProbandenSettings}
 \end{figure} 
 
-Während des Anwendungsbeispiels wird der aktuelle Screen protokolliert, sobald er sichtbar geladen wurde. 
+Während des Anwendungsbeispiels wird der aktuelle Screen protokolliert, sobald er geladen wurde. 
 Jeder Touch, jede erkannte Geste und jeder erkannte Sprachbefehl wird ebenfalls protokolliert. 
 Außerdem wird bei Listen die aktuelle Seite und beim Slider die Start- und Endwerte während einer Bewegung durch Touch oder Geste protokolliert. 
 Bei jedem Button wird der Name des Buttons protokolliert, sobald der Button ausgelöst wurde. 
 Mit diesen Logzeiten sollen nach der Studie die Zeiten der Operatoren berechnet werden. 
-Dazu mehr in Kapitel \ref{cha:Studie}.  
