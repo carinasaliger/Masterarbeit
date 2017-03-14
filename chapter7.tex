@@ -1,25 +1,45 @@
 \chapter{Zusammenfassung und Ausblick}\label{cha:Zusamenfassung}
+Ausgehen von den vergangenen und aktuellen Forschungen in Bereichen der Informationssysteme in Fahrzeugen, multimodalen Interaktionen und Modellen zur Bestimmung von Bedienzeiten, wurde in dieser Arbeit ein multimodales Modell vorgestellt, mit deren Hilfe multimodale Interaktionszeiten abgeschätzt und Vergleiche zwischen Kombinationen aus Modalitäten getroffen werden können.
+
 Motiviert wurden wir durch die Vorteile verschiedener Modalitäten und die damit verbundene Möglichkeit, den Nutzer zu entlasten und ihn somit weniger von der Fahraufgabe abzulenken.
 Der Fahrer kann selbst entscheiden, in welchen Situationen, welche Modalität für den jeweiligen Schritt am geeignetsten und ungefährlichsten ist, was auch laut \citet{Muller_2011} einen wesentlichen Vorteil in Autos darstellt.
 
-Deshalb war unsere Motivation solche multimodalen Interaktionen in IVIS besser verstehen zu können und diese optimal umsetzen zu können. 
+Im Rahmen dieser Arbeit sollte unter anderem erforscht werden, wie multimodale Interaktionen im Fahrzeug aussehen, in welche Aktionen sich diese gliedern lassen und welche Umsetzungsmöglichkeiten sich für die Modalitäten von Haptik, Touch, Geste und Sprache anbieten.
+In einem Workshop wurden dazu diverse Anwendungsbeispiele in vereinfachte Aktionen gegliedert und Umsetzungsmöglichkeiten dieser gesammelt.
+Auf dieser Grundlage wurde ein Konzept für ein multimodales Modell entworfen und in einem multimodalen Prototypen umgesetzt, der mit Touch-, Gesten- und Spracheingabe bedient werden kann.
+
+Die Basis des implementierten Prototyp bildeten dabei ein Surface zur Erkennung von Touch-Eingaben, ein Leap Motion Controller, um die  Gestenerkennung zu ermöglichen und das Abgreifen definierter Wörtern mit Hilfe der Windows integrierten Spracherkennung.  
+Diese wurden in einem 6er Gran Coupé angebracht, um den Interaktionsraum realistisch abzubilden. 
+
+Der Touchdisplay wurde vor das ursprüngliche Display angebracht und der Leap Motion Controller befand sich zwischen Gangschaltung und Dashboard. 
+Der Interaktionsbereich für Gesten befand sich in dem Dreiecks-Bereich von Lenkrad, Rückspiegel und Gangschaltung, der von \citet{Riener:2013:SIG} als häufigsten Interaktionsbereich identifiziert wurde.
+Für die Benutzerstudie wurden in vier Anwendungsbeispielen alle Kombinationen der Modalitäten Touch, Geste und Sprache mit einem Modalitätswechsel von jedem der 22 Probanden in zwei Messdurchgängen gemessen. 
+Um Lerneffekte auszugleichen wurden die Kombinationen permutiert.
+
+Aus dieser Studie konnten wir verschiedene Aktionszeiten für jede Modalität ermitteln und unser multimodales Modell daraus ableiten, das unimodale Aktionszeiten und deren Wechselkosten abbildet. 
+Zusätzlich wurde die Eignung und Gefallen der Kombinationen abgefragt, sowie die Eignung der Modalitäten für die verschiedenen Screentypen.
+
+Um das multimodale Modell zu Validieren wurde in einer zweiten Benutzerstudie, der Prototyp für neue Anwendungsbeispiele angepasst, die bis zu vier Modalitätswechsel enthalten.
+Die Gesamtdauer der Anwendungsbeispiele wurde mit den, aus dem Modell vorhergesagten, Interaktionszeiten verglichen. 
+Mit einem durchschnittlichen Vorhersagefehler von 14,746\% lagen unsere Ergebnisse in den empfohlenen Bereichen von 5-30\% (siehe \citep{Card_1980, Luo_2005,Teo:2006}. 
+
 Mit der Entwicklung unseres Modells zur Vorhersage von multimodalen Interaktionszeiten ist es uns gelungen Designern die Möglichkeit zu geben, bereits in einem frühem Stadium der Entwicklungsphase multimodale Interaktionen einzuschätzen und zu vergleichen. 
 Damit können in geeigneter Weise die besten potenziellen Kombinationen unterstützt werden, um dem Fahrer auch die besten Möglichkeiten in verständlicher Weise anzuzeigen. 
 Damit soll natürlich auch die visuelle und mentale Beanspruchung für den Fahrer so gering wie möglich gehalten werden. 
 
-Ob eine Variante besonders gut oder schlecht ist hängt natürlich von der Situation ab, deshalb wäre ein seriell redundantes multimodalen IVIS am besten, um in jedem Schritt den Fahrer selbst die beste Modalität wählen zu lassen. 
+Ob eine Variante besonders gut oder schlecht ist hängt natürlich von der Situation ab, deshalb wäre ein seriell redundantes multimodales IVIS am besten, um in jedem Schritt den Fahrer selbst die beste Modalität wählen zu lassen. 
 Die Eingabe eines Zieles per Touch ist zum Beispiel im stehenden Auto eine gute Variante, die jedoch während der Fahrt den Fahrer durch die längere Interaktion zu sehr ablenken könnte. 
 In diesem Fall stellt die Texteingabe per Sprache eine sehr geeignete Alternative dafür.
 
-Unser Modell zur Vorhersage von multimodalen Interaktionen im IVIS sollte in Zukunft noch dahingehend weiterentwickelt werden auch haptische Bedienelemente miteinzubeziehen. 
-Zudem kann das Modell auf weitere Gesten erweitert werden und auch die weitere Untersuchungen von gesprochenen Sätzen könnte hilfreich sein.
+Unter Betrachtung der Übertragbarkeit wurden diverse Optimierungen unseres multimodalen Modells erläutert.
+Unser Modell zur Vorhersage von multimodalen Interaktionen im IVIS sollte in Zukunft noch dahingehend weiterentwickelt werden auch haptische Bedienelemente mit Aktionszeiten miteinzubeziehen. 
+Des weiteren sollte das Modell auf weitere Gesten erweitert werden. 
+Außerdem wäre eine detailliertere Untersuchungen von Sprachbefehle bis hin zur Ermittlung von gesprochenen Sätzen ein wichtiger Schritt, um die Interaktionszeiten für zukünftige multimodale Interfaces besser vorhersagen zu können.
 
-Beispielsweise haben wir in unserer Evaluation nicht alle Aktionen mit allen Modalitäten evaluiert. Mit 1,5 Stunden dauerte die erste Studie sehr lange und es konnte beobachtet werden, dass die Konzentration mit der Zeit etwas nach ließ. Die Evaluationsstudie wollten wir dementsprechend kürzer gestalten. 
+Die Validierung unseres Modell wurde nur für einige Aktionen vorgenommen, da wir die Studiendauer in einem Rahmen von 45 Minuten halten wollten. 
+Statt alle Aktionen zu testen, einigten wir uns auf fünf Anwendungsbeispiele, die als realistisch Repräsentation von üblichen Anwendungen erschien.
+Dabei wurden unter anderem die Einschätzungen der Probanden zur Eignung von Kombinationen der Modalitäten zur Rate gezogen (siehe \fref{fig:Smiley_Eignung_Gefallen}).
+Eine komplette Validierung des multimodalen Modells, sollte jedoch noch vorgenommen werden. 
 
-Außerdem haben wir uns speziell Anwendungsbeispiele für die Evaluationsstudie herausgesucht, die uns möglichst realistisch in der Anwendung erschienen. 
-Die Bewertung der Nutzer auf die Eignung der Interaktionen und wie gut sie Ihnen gefallen hat schnitt ganz gut. 
-Das lässt darauf hindeuten, dass unsere Wahl zutreffend war, siehe \fref{fig:Smiley_Eignung_Gefallen}.
-Die Texteingabe per Touch wurde nicht evaluiert, da die Spracheignung deutlich besser eingeschätzt wurde. 
-Ebenso die Aktion Inkr. (d) und Inkr. (s) wurde für die Gesteninteraktion nicht evaluiert. 
-
-Im Zuge dieser Masterarbeit wurde im Workshop Connected Minds die Bedienung im Fahrzeug beobachtet und diskutiert. Es wurde ein Konzept für ein multimodales Modell entworfen und in einem multimodalen Prototypen umgesetzt. Dieser kann mit Touch, Sprache und Geste bedient werden. Zur Erhebung der Interaktionszeiten und der Evaluierung des Modells wurde der Prototyp seriell exklusiv umgesetzt, da dem Nutzer die Modalität vorgegeben war. Unser Modell unterscheidet verschiedene Aktionen in Abhängigkeit der Modalität und enthält entstehende Wechselkosten wenn der Nutzer die Modalität ändert. 
+Aus den zwei Studien konnte beobachtet werde, das beide Bereiche für einige Nutzer zu weit positioniert waren.   
+Für eine bessere Bedienbarkeit und zur Reduktion der Fahrerablenkung, sollten die Interaktionsbereiche zur Touch-Eingabe und Geste-Eingabe auf ihre Erreichbarkeit verbessert werden. 
