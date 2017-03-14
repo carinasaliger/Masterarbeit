@@ -1,16 +1,204 @@
 \chapter[Multimodaler Prototyp]{Umsetzung des multimodalen Prototyps}\label{cha:Prototyp}
-Im nächsten Schritt sollen die Anwendungsbeispiele in geeigneter Weise umgesetzt werden, um in einer Studie Interaktionszeiten erheben zu können. 
+Basierend auf den Erkenntnissen des Workshops, erfolgte die Entwicklung eines Prototyps, der die Anwendungsbeispiele in geeigneter Form ermöglicht und der die Durchführung der geplanten Nutzerstudien ermöglicht.
 
 Unser erster Ansatz war das Interface als Klickdummy zu erstellen und mit der "`Wizard of Oz"' Methode umzusetzen \citep{salber1993applying}. 
 In der "`Wizard of Oz"' Methode simuliert der sogenannte "`Wizard"' die Funktionalität eines Systems, indem er Events durch seine Beobachtungen manuell auslöst. 
-Das heißt die Funktionalität, bestimmte Gesten oder Sprachbefehle zu erkennen, muss in diesem Fall nicht implementiert werden und ist somit auch nicht anfällig für Fehler. 
-Dies ist ein großer Vorteil für ein Modell, dass von Experten ausgeht, die mit dem System vertraut sind und keine Fehler machen. 
-Auch Fehler des Systems können mit dieser Methode ausgeschlossen werden. 
+Das heißt die Funktionalität, bestimmte Gesten oder Sprachbefehle zu erkennen, muss in diesem Fall nicht implementiert werden und ist somit auch nicht anfällig für Erkennungsfehler auf Seiten des Systems. 
+Dies ist ein großer Vorteil, da sich somit keine Erkennungsfehler auf die Bewertung der Benutzbarkeit oder die Gesamtdauer einer Aufgabe auswirkt.
 
-Da in der "`Wizard of Oz"' Methode, Events nur durch den "`Wizard"' ausgelöst werden können, ist es schwieriger diese Events zu protokollieren. 
-Studien dieser Art werden meist per Video aufgezeichnet und anschließend mit einer Videoanalyse ausgewertet. 
-Natürlich gibt es einige Hilfen, um eine Videoanalysen zu optimieren, allerdings bleibt der Zeitaufwand hoch, weshalb wir uns dafür entschieden haben diese Methode nicht zu verwenden. 
-Mit einem vollständig funktionsfähigem Prototypen können Events mit Zeitstempeln protokolliert werden, um später die Zeiten für unsere Aktionen und deren Wechselkosten berechnen zu können. 
+Da in der "`Wizard of Oz"' Methode, Events nur durch den "`Wizard"' ausgelöst werden können, ist es schwieriger, diese Events zu protokollieren. Als Events betrachten wir definierte Vorkommnisse, auf die reagiert werden. 
+Das kann zum Beispiel ein Klick eines Buttons, eine Interaktionsgeste oder ein Sprachbefehl sein.
+
+Studien zur Analyse von Operatorzeiten werden oft per Video aufgezeichnet und anschließend mit einer Videoanalyse ausgewertet (siehe \citep{SchneegaB_2011, how2005optimizing}). 
+Natürlich gibt es Hilfen, wie das Setzen von Markierungspunkten oder zusätzliche Protokollierung, um eine Videoanalysen zu erleichtern, allerdings bleibt der Zeitaufwand hoch, weshalb wir uns dafür entschieden haben diese Methode nicht zu verwenden. 
+
+Stattdessen soll ein multimodaler Prototyp entwickelt werden. 
+Mit einem vollständig funktionsfähigem Prototypen können Events mit Zeitstempeln protokolliert werden, um später Interaktionszeiten und deren Wechselkosten berechnen zu können. 
+
+\section[Aufbau und Implementation]{Aufbau und Implementation des multimodalen Prototypen}
+
+\subsection{Hardwarekomponenten}
+Der multimodale Prototyp wurde in Unity (Version 5.4 \citep{Unity}) auf einem Surface umgesetzt, was die Touch Interaktion ermöglicht. 
+Für die Gestenerkennung wird ein Leap Motionen Controller \citep{Leap} verwendet. 
+In Unity wurde ein Software Developer Kit namens Orion \citep{OrionBeta} verwendet, welches in die Unity Szene eingebunden wird. 
+Um die Spracherkennung zu gewährleisten wurde in Unity ein Skript eingebunden, dass auf die Windows integrierte Spracherkennung zugreift. 
+Die Skripte wurden mit Visual Studio in C\# geschrieben.
+
+Das Surface wurde vor dem ursprünglichen Display im oberen Bereich der Mittelkonsole angebracht. 
+Der Interaktionsbereich befand sich somit auf gleicher Höhe (siehe \fref{fig:AnbringungSurface}), jedoch etwas näher am Fahrer
+Dies ist für die Touchbedienung geeigneter. 
+Die Auflösung des Surface musste auf 1240x800 Pixel reduziert werden, damit die Darstellung groß genug war. 
+Die Kacheln auf dem ersten und zweiten Screen hatten somit eine Größe von 3,5 mal 4,5 cm. 
+
+Der Leap Motion Controller, zur Erkennung der Gesten, wurde zwischen Gangschaltung und Mittelkonsole angebracht. 
+Somit konnte die Hand bereits am Lenkrad erkannt werden, befand sich allerdings noch nicht im Interaktionsbereich, um Gesten auszuführen. 
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=1\textwidth]{img/AutoSetting2.jpg}
+  \caption{Physischer Aufbau des Prototyps: Im oberen Bereich der Mittelkonsole wurde ein
+Surface als Touch-Screen angebracht. Zwischen Gangschaltung und Mittelkonsole wurde der Leap Motion Controller zur Erkennung der Gesten befestigt.}
+  \label{fig:AnbringungSurface}
+\end{figure} 
+
+Das Surface wurde wie oben beschrieben angebracht und der Leap Motion Controller, sowie die externe Tastatur über einen Hub angeschlossen. 
+Der Verteiler war ebenfalls am Stromnetz angeschlossen und wurde auf der Beifahrerseite zwischen Gurt und Mittelkonsole eingeklemmt siehe \fref{fig:Hub}. 
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.5\textwidth]{img/Hub.jpg}
+  \caption{Anschluss für die Leap Motion und der externen Tastatur}
+  \label{fig:Hub}
+\end{figure} 
+
+\subsection[Implementation]{Implementation des multimodalen Prototypen}
+Jeder Screen wurde in Unity in eine eigene Szene eingebaut.
+Die Selektion eines Buttons durch ein Touch-Event, eine Selektionsgeste oder durch einen Sprachbefehl, lädt die nächste Szene. 
+Im ersten Screen wird vom Versuchsleiter die Proband ID eingetragen und die passende Permutation geladen (mehr zur Permutation siehe Kapitel \ref{cha:Studie}). 
+In der Permutation steckt das aktuelle Anwendungsbeispiel, sowie die zu verwendenden Modalitäten. 
+Die permutierte Reihenfolge der Kombinationen verhindert das eventuell entstandene Lerneffekte unsere Messungen beeinflussen. 
+
+Nach jedem durchgeführten Messdurchgang eines Anwendungsbeispiels wurde innerhalb der Anwendung eine Bewertung abgefragt, wie geeignet die Probanden die eben ausgeführte Aufgabe fanden und wie sehr ihnen die Aufgabe gefallen hat. 
+Mit Touch als Eingabemodalität soll eines der fünf Symbole gewählt werden (siehe \fref{fig:Smileys}).
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=0.7\textwidth]{img/Smileys.JPG}
+	\caption[Eignung und Gefallen eines Anwendungsbeispiels]{Eignung und Gefallen eines Anwendungsbeispiels. Verwendung der Icons siehe Kapitel \ref{cha:Danksagung}.
+}
+	\label{fig:Smileys}
+\end{figure}
+
+Der Versuchsleiter kann mit den Pfeiltasten einer externen Tastatur das nächste Anwendungsbeispiel laden, einen Messdurchgang aktiviert und den Durchgang gestartet.  
+Zur Vorbereitung wird als erstes ein schwarzer Screen für drei Sekunden gezeigt.
+Anschließend wird der Hauptscreen geladen, mit dem die Interaktion beginnt.
+
+Um Fehler zu reduzieren ist es mit den Modalitäten Geste und Sprache nicht möglich eine falsche Auswahl zu tätigen. 
+Wir haben uns entschieden für die Sprache keinen Push To Talk Button zu verwenden, da wir Aktionszeiten messen wollen und wir uns auf die Modalitäten Touch, Geste und Sprache fokussieren. 
+Sollter dieser haptische Knopfdruck verwendet werden, müsste die Zeit für diese Aktion hinzugefügt werden.  
+
+Die Direktauswahl aus sichtbaren Elementen wurde immer als erste Modalität verwendet.
+Anschließend folgt ein Modalitätswechsel. 
+Die drei möglichen Modalitäten wurden mit kleinen schwarzen Symbolen für Touch, Sprache und Geste in jedem Screen angezeigt. 
+Die Modalität, die der Proband verwenden soll, wurde grün hervorgehoben. 
+In \fref{fig:ModusAktiv} soll beispielsweise mit der Modalität Touch interagiert werden. 
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.5\textwidth]{img/ModusAktiv.jpg}
+  \caption[Symbolische Anzeige der aktiven Modalität]{Symbolische Anzeige der aktiven Modalität, die von den Probanden ausgeführt werden soll. Diese Symbole sind in jedem Screen eingebaut und dienen als Hilfe, welche Modalität verwendet werden soll.
+	Referenz zu den Icons siehe Kapitel \ref{cha:Danksagung}}
+  \label{fig:ModusAktiv}
+\end{figure}
+
+Ist die Modalität Geste aktiv, haben wir eine zusätzliche Information in die Gestensymbolik eingebaut. 
+In der aktiven grünen Hand ist ein Punkt zu sehen, der wie bei einer Ampel entweder rot, gelb oder grün ist. 
+Dieser Punkt dient dazu besser erkennen zu können, ob und wo die rechte Hand vom Leap Motion Controller erkannt wird. 
+Wie in \fref{fig:Ampeldarstellung} zu sehen ist, ist der Punkt rot, wenn die Hand von dem Controller nicht erkannt wird. 
+Wird die Hand vom Controller erkannt, befindet sich aber nicht im Interaktionsbereich, indem Gesten ausgeführt werden können, ist der Punkt gelb.
+Grün wird der Punkt, sobald die Hand erkannt wurde und sich im Interaktionsbereich befindet.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.5\textwidth]{img/Gestenerkennung.jpg}
+  \caption[Ampeldarstellung zur Gestenerkennung]{Ampeldarstellung zur Gestenerkennung. Der rote Punkt bedeutet, das die rechte Hand vom Leap Motion Controller nicht erkannt wurde. 
+	Gelb wird der Punkt, wenn die Hand erkannt wurde, sich aber nicht im Interaktionsbereich befindet. 
+	Grün ist der Punkt wenn sich die Hand im Interaktionsbereich befindet. Referenz zu den Icons siehe Kapitel \ref{cha:Danksagung}}
+  \label{fig:Ampeldarstellung}
+\end{figure} 
+Mit dieser Visualisierung soll für den Beobachter veranschaulicht werden, falls Gesten nicht erkannt wurden. 
+
+Wird ein Button angewählt bekommt dieser eine gelbe Markierungsfarbe. 
+Bei einer Selektion bekommt der Nutzer ein zusätzliches Audio Feedback eines Klickgeräuschs.
+
+\subsubsection[Touch]{Realisierung der Toucheingabe} 
+\citet{Wobbrock:2009} untersucht von Nutzern definierte Touchgesten auf einem Surface. 
+Sie fanden heraus, dass die Anzahl der Finger für eine Touchgeste für die meisten Nutzer irrelevant ist und das einhändige Touchgesten bevorzugt werden. 
+Bei unseren Touchgesten entschieden wir uns für drei verschiedene Touchgesten (siehe \fref{fig:TouchGestures}):
+\begin{itemize}
+\item Einen direkten Touch (Tap), um einen Button auszuwählen. 
+Die Selektion geschieht erst wenn der Finger den Touchscreen verlässt. 
+\item Eine Swipegeste, um eine Liste seitenweise zu scrollen oder einen Wert zu inkrementieren.
+\item Eine direkte Inkrementation des Slides, um den Wert des Sliders zu verstellen (Slidegeste).
+Hierbei wird der Regler des Slider ähnlich wie bei Drag and Drop direkt verschoben, allerdings nur entlang des Achse des Sliders.
+Der Finger bleibt während der Verschiebung auf der Touchfläche.
+\end{itemize}
+In der \ref{fig:TouchGestures} sind die 3 Varianten veranschaulicht.
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=1\textwidth]{img/TouchGestures.jpg}
+	\caption{Touchgesten: Tap, Slidegeste und Swipegeste für die Toucheingabe}
+	\label{fig:TouchGestures}
+\end{figure}
+
+\subsubsection[Geste]{Realisierung der Gesteneingabe}
+Auch bei der Erkennung der Gesten wurden drei verschiedene Arten implementiert. 
+Um einen Button zu selektieren wird zuerst geprüft, ob sich eine rechte Hand im festgelegten Interaktionsbereich befindet. 
+Dieser Interaktionsbereich ist je nach Anzahl der Buttons in drei oder vier Bereiche entlang der x-Achse unterteilt. 
+Je nachdem in welchem Bereich sich die Hand befindet ändert der passende Button dieses Bereichs die Farbe zu gelb.
+Dies entspricht der Markierungsfarbe. 
+Somit erkennt der Nutzer welcher Button gerade angewählt ist. 
+Um einen Button nun zu selektieren, muss der Zeigefinger schnell nach unten bewegt werden, ohne dabei die Hand zu bewegen. 
+Nur wenn ein entsprechender Button gelb markiert ist und die Selektionsgeste mit dem Zeigefinger ausgelöst wurde, wird dieser Button selektiert und somit die nächste Szene geladen. 
+
+Die nächste Geste ist eine Wischgeste, um in einer Liste seitenweise zu scrollen oder einen Wert zu inkrementieren.
+Das entspricht unseren Aktionen (L) und (Inkr. (s)). 
+Diese Geste wurde in den Anwendungsbeispielen verwendet, um die Temperatur zu verändern und um die Liste der Kontakte zu durchsuchen. 
+Wie zuvor muss die rechte Hand erkannt werden und sich im Interaktionsbereich befinden. 
+Wenn sich die Hand entlang der x-Achse mit mindestens 80 Millimeter pro Sekunde von rechts nach links bewegen, löst dies eine Animation aus, die zur nächsten Seite navigiert. 
+Damit die Hand nicht unbeabsichtigt zwei Seiten auf einmal oder direkt hintereinander scrollen lässt, wird die Erkennung der Wischgeste nach jeder Erkennung für eine Sekunde deaktiviert. 
+
+Die dritte und letzte Geste ist eine Geste, um einen Slider zu verstellt. 
+Hierfür müssen sich Daumen und Zeigefinger berühren und somit einen geschlossenen Kreis über dem Leap Motion Controller bilden.
+Damit dieser Kreis von der Leap erkannt wird, ist es wichtig die anderen Finger abzuspreizen, siehe \ref{fig:Gestures}. 
+Ist dieser Kreis geschlossen wird der Slider aufgenommen und kann verschoben werden. 
+Um den Slider nach rechts oder links zu verstellen muss die Geste entlang der x-Achse durch Bewegung der Hand in eben diese Richtung verändert werden. 
+Ist der gewünschte Wert erreicht, muss der Kreis geöffnet werden, indem sich Zeigefinger und Daumen wieder lösen. 
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=1\textwidth]{img/Gestures-mit_Pfeile.jpg}
+	\caption{Selektionsgeste, Slidegeste und Swipegeste}
+	\label{fig:Gestures}
+\end{figure}
+
+\subsubsection[Sprache]{Realisierung der Spracheingabe}
+Um die Spracherkennung zu ermöglichen wurden in Unity in jeder Szene die dementsprechenden Sprachbefehle als String definiert. 
+Im Beispiel des Hauptscreens waren dies die Sprachbefehle: "`Telefon"', "`Navigation"', "`Medien"' und "`Temperatur"'. 
+Die in Windows integgriert Spracherkennung verarbeitet gesprochene Befehle zu Strings.
+Stimmt Strings mit einem der vordefiniertem String überein wird der passende Button selektiert. 
+
+Damit der Nutzer bei der Direktauswahl aus sichtbaren Elementen zusätzlich zum Soundgeräusch Feedback bekommt wird der selektierte Button vor dem tatsächlichen Klick farblich gelb hervorgehoben. 
+Um diesen Effekt erzielen zu können musste eine Verzögerung von einer halben Sekunden eingebaut werden.
+
+Im Beispiel der Listen wird zur Veranschaulichung erst zum entsprechenden Wert geswiped, das heißt eine Animation ist sichtbar und anschließend wird die Kachel selektiert. 
+Im Beispiel der Texteingabe wird das Inputfeld mit dem gesprochenen Ziel aktualisiert.
+
+\subsubsection[Protokollierung]{Protokollierung der relevanten Events}
+Um die Interaktionszeiten messen zu können werden die relevanten Aktionen mit Zeitstempeln in einer Textdatei protokolliert (Logdatei). 
+Diese Logdatei ist so strukturiert, dass Werte durch Tabs separiert sind, um später in Excel leichter bearbeitet werden zu können.
+An relevanten Stellen im Code wird die Logdatei geöffnet und der Zeitstempel zusammen mit dem Event in die Datei geschrieben und wieder geschlossen. 
+Zur Veranschaulichung ist in \fref{fig:Auszug_Logging_Sound_TT} ein Auszug des Protokolls zusehen. 
+Die Logdatei wurde hier bereits angepasst und in Excel als Tabelle formatiert (mehr dazu in Kapitel \ref{cha:Studie}). 
+\begin{figure}[ht]
+	\centering
+		\includegraphics[width=1\textwidth]{img/Auszug_Logging_Sound_TT.JPG}
+	\caption[Ausschnitt aus der Logdatei vom Anwendungsbeipiel Lautstärke]{Ausschnitt aus der Logdatei vom Anwendungsbeipiel Lautstärke, das mit den Modalität Touch und Touch, also unimodal ausgeführt wurde}
+	\label{fig:Auszug_Logging_Sound_TT}
+\end{figure}
+
+Sobald ein Anwendungsbeispiel startet werden die Einstellungsinformationen siehe \fref{fig:ProbandenSettings} protokolliert. 
+Diese enthalten die ID des Probanden, das aktuelle Anwendungsbeispiel, die zu verwendenden Modalitäten und ob es sich um einen Probe- oder um einen Messdurchgang handelt. 
+Nach jedem Messdurchgang werden die Antworten protokolliert, die die Probanden über Eignung und Gefallen der gerade ausgeführten Moduskombination eingaben. TODO(smileys erwähnen bzw. Erläuterung hier einbauen)
+Nach jedem Durchgang erscheint wieder der Einstellungsscreen, indem der Versuchsleiter das nächste Anwendungsbeispiel laden oder den Messdurchgang aktiviert kann. 
+Für jede Runde werden die entsprechenden Infos vom Setting protokolliert.
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=1\textwidth]{img/SettingsPrototyp.jpg}
+  \caption{Einstellungen vor jedem Durchlauf}
+  \label{fig:ProbandenSettings}
+\end{figure} 
+
+Während des Anwendungsbeispiels wird der aktuelle Screen protokolliert, sobald er sichtbar geladen wurde. 
+Jeder Touch, jede erkannte Geste und jeder erkannte Sprachbefehl wird ebenfalls protokolliert. 
+Außerdem wird bei Listen die aktuelle Seite und beim Slider die Start- und Endwerte während einer Bewegung durch Touch oder Geste protokolliert. 
+Bei jedem Button wird der Name des Buttons protokolliert, sobald der Button ausgelöst wurde. 
+Mit diesen Logzeiten sollen nach der Studie die Zeiten der Operatoren berechnet werden. 
+Dazu mehr in Kapitel \ref{cha:Studie}.  
 
 Im folgenden werden die Anwendungsbeispiele und deren Implementation erläutert.
 
@@ -75,150 +263,3 @@ $$\textbf{\text{DA} + 3 * \text{Inkr. (s)}}$$
 Das Anwendungsbeispiel "`Einen Song aus einer Liste auszuwählen"' wurde nicht umgesetzt, da ein weiteres  Anwendungsbeispiele die Studiendauer deutlich erhöht hätte. 
 Außerdem ähnelt diese Interaktion sehr dem Anwendungsbeispiel einen Kontakt aus einem Liste zu wählen und hätte somit keinen wesentlichen Mehrwert. 
 Wir werden dieses Anwendungsbeispiel für die Evaluation verwenden.
-
-Die Direktauswahl aus sichtbaren Elementen wurde immer als erste Modalität verwendet.
-Anschließend folgt ein Modalitätswechsel. 
-Die drei möglichen Modalitäten wurden mit kleinen schwarzen Symbolen für Touch, Sprache und Geste in jedem Screen angezeigt. 
-Die Modalität, die der Proband verwenden soll, wurde grün hervorgehoben. 
-In \fref{fig:ModusAktiv} soll beispielsweise mit der Modalität Touch interagiert werden. 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.5\textwidth]{img/ModusAktiv.jpg}
-  \caption[Symbolische Anzeige der aktiven Modalität]{Symbolische Anzeige der aktiven Modalität, die von den Probanden ausgeführt werden soll. Diese Symbole sind in jedem Screen eingebaut und dienen als Hilfe, welche Modalität verwendet werden soll.
-	Referenz zu den Icons siehe Kapitel \ref{cha:Danksagung}}
-  \label{fig:ModusAktiv}
-\end{figure}
-
-Ist die Modalität Geste aktiv, haben wir eine zusätzliche Information in die Gestensymbolik eingebaut. 
-In der aktiven grünen Hand ist ein Punkt zu sehen, der wie bei einer Ampel entweder rot, gelb oder grün ist. 
-Dieser Punkt dient dazu besser erkennen zu können, ob und wo die rechte Hand vom Leap Motion Controller erkannt wird. 
-Wie in \fref{fig:Ampeldarstellung} zu sehen ist, ist der Punkt rot, wenn die Hand von dem Controller nicht erkannt wird. 
-Wird die Hand vom Controller erkannt, befindet sich aber nicht im Interaktionsbereich, indem Gesten ausgeführt werden können, ist der Punkt gelb.
-Grün wird der Punkt, sobald die Hand erkannt wurde und sich im Interaktionsbereich befindet.
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.5\textwidth]{img/Gestenerkennung.jpg}
-  \caption[Ampeldarstellung zur Gestenerkennung]{Ampeldarstellung zur Gestenerkennung. Der rote Punkt bedeutet, das die rechte Hand vom Leap Motion Controller nicht erkannt wurde. 
-	Gelb wird der Punkt, wenn die Hand erkannt wurde, sich aber nicht im Interaktionsbereich befindet. 
-	Grün ist der Punkt wenn sich die Hand im Interaktionsbereich befindet. Referenz zu den Icons siehe Kapitel \ref{cha:Danksagung}}
-  \label{fig:Ampeldarstellung}
-\end{figure} 
-Mit dieser Visualisierung soll für den Beobachter veranschaulicht werden, falls Gesten nicht erkannt wurden. 
-
-Wird ein Button angewählt bekommt dieser eine gelbe Markierungsfarbe. 
-Bei einer Selektion bekommt der Nutzer ein zusätzliches Audio Feedback eines Klickgeräuschs.
-
-\section[Implementation]{Implementation des multimodalen Prototypen}
-Der multimodale Prototyp wurde in Unity (Version 5.4 \citep{Unity}) auf einem Surface umgesetzt, was die Touch Interaktion ermöglicht. 
-Für die Gestenerkennung wird ein Leap Motionen Controller \citep{Leap} verwendet. 
-In Unity wurde ein Software Developer Kit namens Orion \citep{OrionBeta} verwendet, welches in die Unity Szene eingebunden wird. 
-Um die Spracherkennung zu gewährleisten wurde in Unity ein Skript eingebunden, dass auf die Windows integrierte Spracherkennung zugreift. 
-Die Skripte wurden mit Visual Studio in C\# geschrieben.
-
-Jeder Screen wurde in Unity in eine eigene Szene eingebaut.
-Die Selektion eines Buttons durch ein Touch-Event, eine Selektionsgeste oder durch einen Sprachbefehl, lädt die nächste Szene. 
-Im ersten Screen wird vom Versuchsleiter die Proband ID eingetragen und die passende Permutation geladen (mehr zur Permutation siehe Kapitel \ref{cha:Studie}). 
-In der Permutation steckt das aktuelle Anwendungsbeispiel, sowie die zu verwendenden Modalitäten. 
-Die permutierte Reihenfolge der Kombinationen verhindert das eventuell enstandene Lerneffekte unsere Messungen beeinflussen. 
-
-Der Versuchsleiter kann mit den Pfeiltasten einer externen Tastatur das nächste Anwendungsbeispiel laden, einen Messdurchgang aktiviert und den Durchgang gestartet.  
-Zur Vorbereitung wird als erstes ein schwarzer Screen für drei Sekunden gezeigt.
-Anschließend wird der Hauptscreen geladen, mit dem die Interaktion beginnt.
-
-Um Fehler zu reduzieren ist es mit den Modalitäten Geste und Sprache nicht möglich eine falsche Auswahl zu tätigen. 
-Wir haben uns entschieden für die Sprache keinen Push To Talk Button zu verwenden, da wir Aktionszeiten messen wollen und wir uns auf die Modalitäten Touch, Geste und Sprache fokussieren. 
-Sollter dieser haptische Knopfdruck verwendet werden, müsste die Zeit für diese Aktion hinzugefügt werden.  
-
-\subsection[Touch]{Realisierung der Toucheingabe} 
-\citet{Wobbrock:2009} untersucht von Nutzern definierte Touchgesten auf einem Surface. 
-Sie fanden heraus, dass die Anzahl der Finger für eine Touchgeste für die meisten Nutzer irrelevant ist und das einhändige Touchgesten bevorzugt werden. 
-Bei unseren Touchgesten entschieden wir uns für drei verschiedene Touchgesten (siehe \fref{fig:TouchGestures}):
-\begin{itemize}
-\item Einen direkten Touch (Tap), um einen Button auszuwählen. 
-Die Selektion geschieht erst wenn der Finger den Touchscreen verlässt. 
-\item Eine Swipegeste, um eine Liste seitenweise zu scrollen oder einen Wert zu inkrementieren.
-\item Eine direkte Inkrementation des Slides, um den Wert des Sliders zu verstellen (Slidegeste).
-Hierbei wird der Regler des Slider ähnlich wie bei Drag and Drop direkt verschoben, allerdings nur entlang des Achse des Sliders.
-Der Finger bleibt während der Verschiebung auf der Touchfläche.
-\end{itemize}
-In der \ref{fig:TouchGestures} sind die 3 Varianten veranschaulicht.
-\begin{figure}[ht]
-	\centering
-		\includegraphics[width=1\textwidth]{img/TouchGestures.jpg}
-	\caption{Touchgesten: Tap, Slidegeste und Swipegeste für die Toucheingabe}
-	\label{fig:TouchGestures}
-\end{figure}
-
-\subsection[Geste]{Realisierung der Gesteneingabe}
-Auch bei der Erkennung der Gesten wurden drei verschiedene Arten implementiert. 
-Um einen Button zu selektieren wird zuerst geprüft, ob sich eine rechte Hand im festgelegten Interaktionsbereich befindet. 
-Dieser Interaktionsbereich ist je nach Anzahl der Buttons in drei oder vier Bereiche entlang der x-Achse unterteilt. 
-Je nachdem in welchem Bereich sich die Hand befindet ändert der passende Button dieses Bereichs die Farbe zu gelb.
-Dies entspricht der Markierungsfarbe. 
-Somit erkennt der Nutzer welcher Button gerade angewählt ist. 
-Um einen Button nun zu selektieren, muss der Zeigefinger schnell nach unten bewegt werden, ohne dabei die Hand zu bewegen. 
-Nur wenn ein entsprechender Button gelb markiert ist und die Selektionsgeste mit dem Zeigefinger ausgelöst wurde, wird dieser Button selektiert und somit die nächste Szene geladen. 
-
-Die nächste Geste ist eine Wischgeste, um in einer Liste seitenweise zu scrollen oder einen Wert zu inkrementieren.
-Das entspricht unseren Aktionen (L) und (Inkr. (s)). 
-Diese Geste wurde in den Anwendungsbeispielen verwendet, um die Temperatur zu verändern und um die Liste der Kontakte zu durchsuchen. 
-Wie zuvor muss die rechte Hand erkannt werden und sich im Interaktionsbereich befinden. 
-Wenn sich die Hand entlang der x-Achse mit mindestens 80 Millimeter pro Sekunde von rechts nach links bewegen, löst dies eine Animation aus, die zur nächsten Seite navigiert. 
-Damit die Hand nicht unbeabsichtigt zwei Seiten auf einmal oder direkt hintereinander scrollen lässt, wird die Erkennung der Wischgeste nach jeder Erkennung für eine Sekunde deaktiviert. 
-
-Die dritte und letzte Geste ist eine Geste, um einen Slider zu verstellt. 
-Hierfür müssen sich Daumen und Zeigefinger berühren und somit einen geschlossenen Kreis über dem Leap Motion Controller bilden.
-Damit dieser Kreis von der Leap erkannt wird, ist es wichtig die anderen Finger abzuspreizen, siehe \ref{fig:Gestures}. 
-Ist dieser Kreis geschlossen wird der Slider aufgenommen und kann verschoben werden. 
-Um den Slider nach rechts oder links zu verstellen muss die Geste entlang der x-Achse durch Bewegung der Hand in eben diese Richtung verändert werden. 
-Ist der gewünschte Wert erreicht, muss der Kreis geöffnet werden, indem sich Zeigefinger und Daumen wieder lösen. 
-\begin{figure}[ht]
-	\centering
-		\includegraphics[width=1\textwidth]{img/Gestures-mit_Pfeile.jpg}
-	\caption{Selektionsgeste, Slidegeste und Swipegeste}
-	\label{fig:Gestures}
-\end{figure}
-
-\subsection[Sprache]{Realisierung der Spracheingabe}
-Um die Spracherkennung zu ermöglichen wurden in Unity in jeder Szene die dementsprechenden Sprachbefehle als String definiert. 
-Im Beispiel des Hauptscreens waren dies die Sprachbefehle: "`Telefon"', "`Navigation"', "`Medien"' und "`Temperatur"'. 
-Die in Windows integgriert Spracherkennung verarbeitet gesprochene Befehle zu Strings.
-Stimmt Strings mit einem der vordefiniertem String überein wird der passende Button selektiert. 
-
-Damit der Nutzer bei der Direktauswahl aus sichtbaren Elementen zusätzlich zum Soundgeräusch Feedback bekommt wird der selektierte Button vor dem tatsächlichen Klick farblich gelb hervorgehoben. 
-Um diesen Effekt erzielen zu können musste eine Verzögerung von einer halben Sekunden eingebaut werden.
-
-Im Beispiel der Listen wird zur Veranschaulichung erst zum entsprechenden Wert geswiped, das heißt eine Animation ist sichtbar und anschließend wird die Kachel selektiert. 
-Im Beispiel der Texteingabe wird das Inputfeld mit dem gesprochenen Ziel aktualisiert.
-
-\subsection[Protokollierung]{Protokollierung der relevanten Events}
-Um die Interaktionszeiten messen zu können werden die relevanten Aktionen mit Zeitstempeln in einer Textdatei protokolliert (Logdatei). 
-Diese Logdatei ist so strukturiert, dass Werte durch Tabs separiert sind, um später in Excel leichter bearbeitet werden zu können.
-An relevanten Stellen im Code wird die Logdatei geöffnet und der Zeitstempel zusammen mit dem Event in die Datei geschrieben und wieder geschlossen. 
-Zur Veranschaulichung ist in \fref{fig:Auszug_Logging_Sound_TT} ein Auszug des Protokolls zusehen. 
-Die Logdatei wurde hier bereits angepasst und in Excel als Tabelle formatiert (mehr dazu in Kapitel \ref{cha:Studie}). 
-\begin{figure}[ht]
-	\centering
-		\includegraphics[width=1\textwidth]{img/Auszug_Logging_Sound_TT.JPG}
-	\caption[Ausschnitt aus der Logdatei vom Anwendungsbeipiel Lautstärke]{Ausschnitt aus der Logdatei vom Anwendungsbeipiel Lautstärke, das mit den Modalität Touch und Touch, also unimodal ausgeführt wurde}
-	\label{fig:Auszug_Logging_Sound_TT}
-\end{figure}
-
-Sobald ein Anwendungsbeispiel startet werden die Einstellungsinformationen siehe \fref{fig:ProbandenSettings} protokolliert. 
-Diese enthalten die ID des Probanden, das aktuelle Anwendungsbeispiel, die zu verwendenden Modalitäten und ob es sich um einen Probe- oder um einen Messdurchgang handelt. 
-Nach jedem Messdurchgang werden die Antworten protokolliert, die die Probanden über Eignung und Gefallen der gerade ausgeführten Moduskombination eingaben. TODO(smileys erwähnen bzw. Erläuterung hier einbauen)
-Nach jedem Durchgang erscheint wieder der Einstellungsscreen, indem der Versuchsleiter das nächste Anwendungsbeispiel laden oder den Messdurchgang aktiviert kann. 
-Für jede Runde werden die entsprechenden Infos vom Setting protokolliert.
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=1\textwidth]{img/SettingsPrototyp.jpg}
-  \caption{Einstellungen vor jedem Durchlauf}
-  \label{fig:ProbandenSettings}
-\end{figure} 
-
-Während des Anwendungsbeispiels wird der aktuelle Screen protokolliert, sobald er sichtbar geladen wurde. 
-Jeder Touch, jede erkannte Geste und jeder erkannte Sprachbefehl wird ebenfalls protokolliert. 
-Außerdem wird bei Listen die aktuelle Seite und beim Slider die Start- und Endwerte während einer Bewegung durch Touch oder Geste protokolliert. 
-Bei jedem Button wird der Name des Buttons protokolliert, sobald der Button ausgelöst wurde. 
-Mit diesen Logzeiten sollen nach der Studie die Zeiten der Operatoren berechnet werden. 
-Dazu mehr in Kapitel \ref{cha:Studie}.  
