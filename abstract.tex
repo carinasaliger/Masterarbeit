@@ -1,34 +1,32 @@
 \chapter*{Zusammenfassung}
-Informationssysteme im Auto werden immer komplexer und werden teils schon mit multimodalen Eingaben wie Sprache, Touch oder Gestik bedient.
-Diese multimodalen Interaktionen eröffnen den Nutzern neue Möglichkeiten, die passende Modalität je nach Situation und Eignung zu wählen.
-Allerdings muss darauf geachtet werden, die Ablenkung des Fahrers gering zu halten und die Modalitäten in geeigneten Kombinationen zu unterstützen.
+Informationssysteme im Auto werden zunehmend komplexer und werden teilweise schon heute mit multimodalen Eingaben wie Sprache, Touch oder Gestik bedient.
+Diese multimodalen Interaktionen eröffnen dem Nutzern auch die Möglichkeit, die passende Modalität je nach Situation und Eignung zu wählen.
+Dabei muss darauf geachtet werden, die Ablenkung des Fahrers gering zu halten und die Modalitäten in geeigneten Kombinationen zu unterstützen.
 
-Dadurch motiviert erstellen wir in dieser Arbeit ein multimodales Modell, dass Designern multimodaler Schnittstellen helfen soll, die Interaktionszeiten verschiedener Modalitäten vorherzusagen und zu vergleichen.
+Hierdurch motiviert erstellen wir in dieser Arbeit ein multimodales Modell, welches Designern multimodaler Schnittstellen helfen soll, die Interaktionszeiten verschiedener Modalitäten vorherzusagen und zu vergleichen.
 Dazu entwickeln wir einen Prototypen, der mit Touch, Geste und Sprache bedient werden kann.
-Mittels eines within-subject Design testen 22 Probanden in vier Anwendungsbeispielen alle Kombinationen von Modalitäten mit einem Moduswechsel, sowie die entsprechenden unimodalen Varianten.
-Aus diesen Interaktionszeiten leiten wir ein Modell mit verschiedenen Aktionszeiten für die Modalitäten Touch, Sprache und Geste ab, sowie deren Wechselkosten untereinander.
-Unser Modell lehnt sich an das Konzept des Keystroke-Level Modells und Erweiterungen an.
-Wir konzentrieren uns jedoch nicht auf einzelne Operatoren, sondern auf grob körnigere Aktionen und deren Wechselkosten.
+Mittels eines within-subject Design testen 22 Probanden in vier Anwendungsbeispielen alle Kombinationen von Modalitäten sowohl mit einem Moduswechsel, als auch deren entsprechenden unimodalen Varianten.
+Aus diesen Interaktionszeiten leiten wir ein Modell mit verschiedenen Aktionszeiten für die Modalitäten Touch, Sprache und Geste, sowie deren Wechselkosten untereinander ab.
+Unser Modell lehnt sich an das Konzept des Keystroke-Level Modells und dessen Erweiterungen an.
+Wir konzentrieren uns jedoch nicht auf einzelne Operatoren, sondern auf grobgranularere Aktionen und deren Wechselkosten.
 
 Zur Validierung des multimodalen Modells werden in einer weiteren Studie fünf verschiedene Aufgaben mit bis zu vier Moduswechseln untersucht und mit unserer Vorhersage des Modells verglichen.
-Es zeigte sich, dass unser Modell multimodale Interaktionen mit einem durchschnittlichen Vorhersagefehler von 14,746\% vorhersagen konnte
-Diese Abschätzung von multimodalen Interaktionszeiten im Auto ermöglicht es Designern bereits in einem frühen Stadium der Entwicklung zu unterstützen und hilft ihnen die Ablenkung des Fahrers zu minimieren.
+Es zeigte sich, dass unser Modell multimodale Interaktionen mit einem durchschnittlichen Fehler von 14,746\% vorhersagen konnte.
+Durch diese Abschätzung von multimodalen Interaktionszeiten im Auto können Designer bereits in einem frühen Stadium der Entwicklung zu unterstützen werden und hilft ihnen die Ablenkung des Fahrers zu minimieren.
 
 
 %\selectlanguage{english}
 \chapter*{Abstract}
-In-Vehicle-Information-Systems are getting more and more complex and the possibilities for using multimodal interactions like speech, touch and gestures are growing.
-A big advantage of multimodal interactions is that a user can decide in which situation he wants to use the most suitable kind of interaction.
-ON the other hand such a multimodal system should minimize the distraction of the driver and support the best combinations of modalities.
+In-Vehicle Information Systems are becoming more and more complex, and the possibilities of using multimodal interactions such as speech, touch and gestures are growing.
+One large advantage of multimodal interactions is that it gives the user the opportunity to decide which kind of interaction to use in which situation. An in-vehicle multimodal system should, however, also minimize the distraction of the driver and support the best combinations of modalities.
 
-Motivated by this we design in this thesis a multimodal model to support designers of multimodal interfaces by predicting the interaction time of such systems.
-By comparing interaction times, the best combinations can be detected and a favorable design is possible.
-Our model is similar to the concept of the keystroke-level-model and its extensions.
-However we focus on actions for each modality and the resulting change costs instead of single operators.
-With the measured interaction times of our first study we develope a model with different times for each modality (touch, speech and gestures).
-We also model the changing costs between one modality to another.
+Motivated by these two aspects, we design a multimodal model to support designers of multimodal interfaces by predicting the interaction time of such systems. We describe our approach in this thesis and evaluate the performance of our model.
 
-To validate our multimodal model we investigate in a second study five tasks and compared the total task time with the prediction time of our model.
-We show that the prediction time of our model is a good match compared to the observed times.
-The average RMSE was 14,746\%.
-These predictions can support designer in an early stage of implementation and help them to reduce driver distraction.
+The best combinations of multimodal interactions can be detected by comparing interaction times, and as a consequence a prefered design approach can be established.
+While our model is similar to the concept of the keystroke-level-model and its extensions, we focus on actions of each modality and the resulting change costs instead of single operators.
+Using the resulting interaction times from our initial study, we develop a more complex but elegant model with different times for each modality (touch, speech and gestures). 
+We furthermore model the changing costs between two modalities (touch-speech, touch-gestures, speech-gestures).
+
+To validate the performance of our multimodal model, we evaluate our model on five individual tasks and compare the total task time with the prediction time of our model.
+We show that our model's prediction time is comparable to the observed times, with an average RMSE of 14,746\%. <<< do you want to make this 14.75 maybe. Should be 14.746\% if not 
+The performance of our multimodal model suggests that our model can serve as a supporting element for a designer in an early stage of implementation and help them reduce driver distraction.
